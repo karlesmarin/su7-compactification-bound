@@ -1,13 +1,15 @@
 # ⚛️ An Upper Bound on the Compactification Scale of SU(7) Grand Gauge-Higgs Unification
 
-[![DOI](https://img.shields.io/badge/DOI-PENDIENTE-1B6F8C?logo=doi&logoColor=white)](PENDIENTE)
 [![License](https://img.shields.io/badge/License-Apache_2.0-B5530F)](LICENSE)
 [![Gates](https://img.shields.io/badge/gates-15_green-1B6F8C)](paper/)
 [![Language](https://img.shields.io/badge/paper-EN_%2B_ES-1B6F8C)](.)
+[![Reproduction](https://img.shields.io/badge/scripts-70%2F70_byte--for--byte-1B6F8C)](outputs/)
 
 **…and the dijet angular distribution that tests it.**
 
-**📄 Paper (EN + ES) and every verification script on Zenodo → PENDIENTE**
+**📄 The paper, in English and Spanish, is in [`paper/`](paper/) — with every script that made a
+number in it, and every archived run.** The Zenodo record and its DOI are being minted; this line
+will carry them.
 
 > ### 📚 Part **VII** of a series
 > - **Part I — *Anomaly- and Tadpole-Compatible Fermion Completion of 6D SU(4) GHU***

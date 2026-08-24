@@ -1,0 +1,77 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+====================================================================================================
+1 -- OUR RUNG k=0 IS THEIR EQ. (2.13).  checked against our own basis at alpha = 0
+====================================================================================================
+Their (2.13):  F_-(0) = -(15/16) F_+(0).  In our variables  F(0) = zeta(5) (S_0 + 31 Delta_0)/32,
+because n_+ = (S_0+Delta_0)/2, n_- = (S_0-Delta_0)/2 gives  n_+ - (15/16) n_- = (S_0+31 Delta_0)/32.
+
+   eta(5)/zeta(5) = 0.937500000000000   and   15/16 = 0.937500000000000   ->  SAME
+
+row              S_0        Delta_0   (S_0+31D_0)/32     F(0) numeric        err
+(1)            175/2          -43/2     -18.76191157     -18.76191157    6.3e-11
+(2)            175/2          -51/2     -22.78000662     -22.78000662    5.9e-11
+(3)            153/2          -57/2     -26.15002183     -26.15002183    4.6e-11
+(4)            165/2          -53/2     -23.94655035     -23.94655035    5.3e-11
+(5)            167/2          -47/2     -20.90057506     -20.90057506    5.7e-11
+
+====================================================================================================
+2 -- THE OBSTRUCTION ALONG THE LADDER.  gauge sector alone, rung by rung
+====================================================================================================
+rung k     p          S_k      Delta_k     S_k+(2^p-1)D_k   parity
+0          5        -13/2          1/2                  9      ODD
+1          3        -19/2         -5/2                -27      ODD
+2          1        -43/2        -29/2                -36     even
+
+The half-integer part is carried by the single term (m,s,c) = (-7/2,-1,1) -- the P_6 = -1 pairs,
+whose weight 1/2 is DERIVED from their eqs. (63)-(67), not assumed (see MARGINALITY.md).  It
+enters rung k as   -7/2 + (2^p-1)(+7/2)  =  (7/2)(2^p - 2)  =  7 (2^{p-1} - 1):
+   k=0, p=5:  7 (2^{p-1} - 1) = 105   -> ODD, obstruction lives
+   k=1, p=3:  7 (2^{p-1} - 1) =  21   -> ODD, obstruction lives
+   k=2, p=1:  7 (2^{p-1} - 1) =   0   -> EVEN, obstruction dies
+
+So the obstruction lives at moments 0 and 2 and dies at 4 -- and the reason is ONE number.
+
+====================================================================================================
+3 -- MATTER CONTRIBUTES EVEN AT EVERY RUNG, so the parity is the gauge sector's alone
+====================================================================================================
+   per term, m and c integers:  m c^{2k} [1 + (2^p-1) s]  =  m c^{2k} 2^p   (s=+1)
+                                                          or  m c^{2k}(2-2^p) (s=-1),  both even.
+multiplet             k=0            k=1            k=2
+7(+,+)                -30             -6              0
+7(+,-)                 32              8              2
+28(+,+)               -56             16             34
+28(+,-)                68              2              8
+48(+,+)              -144              0             36
+48(+,-)               166             28             16
+84(+,+)              -164             10            136
+84(+,-)               208             80            218
+   multiplets contributing an ODD amount at any rung: NONE
+
+====================================================================================================
+4 -- THEREFORE: the VALUE can never be marginal either, in Komori-Maru's model
+====================================================================================================
+Sweeping every content of at most 6 multiplets:
+   contents swept                              : 3002
+   with a marginal VALUE      (S_0+31 D_0 = 0) : 0
+   with a marginal CURVATURE  (S_1+ 7 D_1 = 0) : 0
+   smallest |S_0+31 Delta_0| found             : 1
+
+   32 F(0)/zeta(5) = 9 + even  ->  ALWAYS ODD  ->  never zero, and |F(0)| >= zeta(5)/32.
+   Their own stability criterion, applied to a model they did not consider, is always decided.
+
+====================================================================================================
+5 -- THE CONTRAST THAT KEEPS THE TWO STATEMENTS APART
+====================================================================================================
+In THEIR setting the multiplicities are component COUNTS -- all integers, no half-weights.  Then
+the criterion  n_+ - (15/16) n_-  vanishes iff  16 n_+ = 15 n_- , which has solutions:
+   n_+ = 15, n_- = 16  ->  16 n_+ - 15 n_- = 0
+   n_+ = 30, n_- = 32  ->  16 n_+ - 15 n_- = 0
+   n_+ = 45, n_- = 48  ->  16 n_+ - 15 n_- = 0
+
+So marginality at the value IS reachable with pure counts.  What forbids it here is the
+half-weight 1/2 of the P_6 = -1 gauge pairs -- and that half-weight is a 6D effect: it exists
+only because there is a second parity.  The protection is the same one MARGINALITY.md found for
+the curvature, and it is now visible one rung further up.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\ladder_obstruction.json

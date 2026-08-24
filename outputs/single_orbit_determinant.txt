@@ -1,0 +1,51 @@
+==============================================================================================
+EL REPARTO 3:1 o 4:1, EN UNA SOLA ORBITA CARGADA
+==============================================================================================
+
+[C1] LOS MODOS m >= 1 ESTAN SUPRIMIDOS?  (si no, no hay limite que tomar)
+     peso relativo del modo transverso m, contra el m = 0, en el enrollamiento k = 1
+
+     R_5/R_6             m = 1          m = 2
+     10              4.068e-26      8.198e-53
+     100            1.007e-269      0.000e+00
+     1000            0.000e+00      0.000e+00
+
+     C1 PASS -- a R_5/R_6 = 1000 el primer modo transverso pesa menos de 1e-100.
+        Asi que a orden dominante SOLO cuenta lo que tiene modo cero en x_6.
+
+[C2] QUE TIENE MODO CERO EN x_6, SECTOR A SECTOR
+
+     Bajo x_6 -> -x_6 un generador de paridad eps tiene A_mu y A_5 con paridad eps -- modos
+     cos, que incluyen m = 0 -- y A_6 con paridad -eps -- modos sin, que empiezan en m = 1.
+     Los fantasmas heredan la paridad de A_mu.
+
+     sector         A_mu    A_5    A_6  fantasmas     neto
+     P_6 = +1          4      1      -         -2        3
+     P_6 = -1          -      -      1          -        1
+
+     con fantasmas : 3 y 1,  que suman 4 = D-2 en seis dimensiones
+     C2 PASS
+
+[C3] Y SIN RESTAR LOS FANTASMAS?  El control que convierte la sospecha en diagnostico.
+     con fantasmas   (3 y 1)  ->  (3/2, 3, 6)
+     sin fantasmas   (4 y 1)  ->  (2, 4, 7)  <-- REPRODUCE su ec. (68)
+
+     C3 PASS -- omitir la resta de fantasmas en el sector periodico reproduce (2,4,7) EXACTAMENTE.
+        La diferencia entre las dos cuentas es, ni mas ni menos, un determinante de
+        Faddeev-Popov en el sector P_6 = +1.  Eso no demuestra que su ec. (68) este mal: puede
+        haber una cancelacion implicita en como construyen el espectro.  Lo que demuestra es que
+        la discrepancia tiene UN solo origen y esta localizada.
+
+[C4] Y QUE LE PASA AL TEOREMA DE LOS OCTAVOS IMPARES
+     su conteo        (2, 4, 7)    8D_gauge = -27     IMPAR -> Teorema 1 VIVE
+     con fantasmas   (3/2, 3, 6)   8D_gauge = -18     PAR -> Teorema 1 MUERE
+
+     La materia siempre aporta 8D par (c y m enteros), asi que la paridad de 8D la decide
+     enteramente el sector gauge.  Por eso esto no es un ajuste fino de un coeficiente: es la
+     diferencia entre que exista un teorema y que no.
+
+==============================================================================================
+VERDICT: el conteo con fantasmas da 3:1 y sumaria D-2 = 4; el de la ec. (68) da 4:1 y suma
+         cinco.  La diferencia es un determinante de Faddeev-Popov en el sector periodico,
+         y decide si el Teorema de los octavos impares existe.
+==============================================================================================

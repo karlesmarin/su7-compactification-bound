@@ -1,0 +1,50 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE GENERATOR MATRIX, IN FOUR COLUMNS
+====================================================================================================
+  multiplet        A4       8D       2U        V
+  7(+,+)            0       -6        2        0
+  7(+,-)            1        8        0        0
+  28(+,+)          17       16       40        0
+  28(+,-)           4        2       34        0
+  48(+,+)          18        0       48        0
+  48(+,-)           8       28       36        0
+  84(+,+)          68       10      346        0
+  84(+,-)         109       80      168       81
+
+  generators with V = 0 : 7      with V != 0 : 1  (84(+,-))
+
+====================================================================================================
+2 -- RANK.  the question is whether V adds a direction or repeats one
+====================================================================================================
+  rank over Q of (A4, 8D, 2U), all eight generators      : 3
+  rank over Q of (A4, 8D, 2U), only the V = 0 generators : 3
+  rank over Q of (A4, 8D, 2U, V), all eight              : 4
+
+  ==> THE V = 0 BLOCK ALREADY REACHES RANK THREE, so the eighth generator, the only one
+      with V != 0, can only ADD a direction.  THE LATTICE IS FOUR-DIMENSIONAL.
+      The sentence 'V is not a fourth direction, since V = 81 n_{84(+,-)}' confuses two
+      things: V IS determined by one multiplicity, and that makes it cheap to describe --
+      it does NOT make it dependent on the other three.  Carles caught this and he is
+      right; the paper has to say four.
+
+====================================================================================================
+3 -- SMITH NORMAL FORM.  an index is a number; the congruences are the invariant factors
+====================================================================================================
+  (A4, 8D)           invariant factors [1, 6]                 index 6         Z^2/L = Z_6
+  (A4, 8D, 2U)       invariant factors [1, 2, 72]             index 144       Z^3/L = Z_2 x Z_72
+  (A4, 8D, 2U, V)    invariant factors [1, 1, 18, 648]        index 11664     Z^4/L = Z_18 x Z_648
+
+  So 'the index is 144, therefore Theorem 2 is one congruence of twenty-four' is not a
+  statement about congruences at all: 144 is the ORDER of a finite abelian group, and the
+  number of independent congruences is the number of invariant factors above one -- at most
+  the rank.  The honest sentence is that the lift multiplies the index by a factor, and the
+  group is the one printed here.
+
+====================================================================================================
+4 -- CONTROL: the 2D index must still be the paper's six
+====================================================================================================
+  invariant factors in (A4, 8D) : [1, 6]   index 6   expected 6 : True
+
+  CONTROL -- every generator must lie in the lattice its own invariant factors define:
+     number of invariant factors equals the rank, in every dimension : True

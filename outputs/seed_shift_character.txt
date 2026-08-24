@@ -1,0 +1,49 @@
+========================================================================================
+LAS CINCO COORDENADAS DEL SECTOR GAUGE, DERIVADAS DEL CORCHETE
+========================================================================================
+  publicada  (a,b)=(2,1/2)   corchete (2, 4, 7)
+      A4   = -18        ok
+      D8   = -27        ok
+      U2   = -39        ok
+      V    = 0          ok
+      W2   = -3         ok
+      F0   = 9          ok
+  candidata  (a,b)=(3/2,1/2)   corchete (3/2, 3, 6)
+      A4   = -27/2      ok
+      D8   = -18        ok
+      U2   = -30        ok
+      V    = 0          ok
+      W2   = -3         ok
+      F0   = 18         ok
+
+========================================================================================
+EL DESPLAZAMIENTO ENTRE LAS DOS SEMILLAS, EN LAS COORDENADAS ENTERAS
+========================================================================================
+  Delta = (2A_4, 8D, 2U, V, 2W) = (9, 9, 9, 0, 0)
+
+  Un enunciado lineal ell sobre el contenido sobrevive al cambio de semilla exactamente
+  cuando ell(Delta) se anula en el modulo en que el enunciado esta escrito.
+
+========================================================================================
+CADA FILA DE LA TABLA DE DOS RAMAS, COMO UNA CONTRACCION CONTRA Delta
+========================================================================================
+  enunciado                      ell(Delta)     mod        veredicto
+  ----------------------------------------------------------------------------
+  8D impar                       9              2          lo detecta   de acuerdo con el articulo
+  A_4 entero  (2A_4 par)         9              2          lo detecta   de acuerdo con el articulo
+  2U impar                       9              2          lo detecta   de acuerdo con el articulo
+  2W impar                       0              2          invariante   de acuerdo con el articulo
+  32F(0)/zeta(5) impar           9              2          lo detecta   de acuerdo con el articulo
+  ley mod 6:  8D - 2A_4          0              6          invariante   de acuerdo con el articulo
+  congruencia 8D - 2U (mod 8)    0              8          invariante   de acuerdo con el articulo
+
+========================================================================================
+Las 7 filas salen de una sola contraccion, y ninguna hace falta probarla aparte.
+La ley mod 6 sobrevive por la razon mas fuerte de todas: ell(Delta) es CERO, no cero mod 6,
+porque el desplazamiento mueve 2A_4 y 8D EXACTAMENTE LO MISMO, nueve.
+Y 2W sobrevive porque el desplazamiento no lo toca en absoluto: lee la diferencia de los dos
+pesos de carga uno, y el candidato los mueve a los dos igual.
+========================================================================================
+
+CONTROL, y puede fallar: una semilla ficticia que mueva TAMBIEN el peso antiperiodico
+  corchete (3/2, 3, 5):  Delta(2W) = 1  ->  2W deja de ser invariante, como debe ser

@@ -1,0 +1,32 @@
+====================================================================================
+CONTROL -- their own assignment must give n- = 6 and n+ = 2, hence W_anti = 7
+====================================================================================
+  P5P5' = (1, 1, 1, -1, -1, 1, -1)
+  P6    = (1, 1, 1, -1, -1, -1, -1)
+  pairs with P5P5'=-1:  P6=+1 -> n+ = 2 ,  P6=-1 -> n- = 6
+  W_anti = 2*2 + 6/2 = 7.0   ODD -> D != 0
+  matches their eq. (68) coefficient 7 : True
+
+====================================================================================
+THE SWEEP -- every diagonal +-1 (P5P5', P6) obeying their pi_5 = pi_7 precondition
+====================================================================================
+  assignments obeying the precondition: 4096
+
+  n- mod 4            count of which D != 0
+  0                    2112              0
+  2                    1984           1984
+
+  assignments with W_anti odd (so D can NEVER vanish): 1984 of 4096  = 48.4 %
+  and every one of them has n- = 2 (mod 4): True
+
+====================================================================================
+D -- the mod-4 rule collapses:  pairs (5,k) and (7,k) always share parities
+====================================================================================
+  over all 4096 assignments:  n- = 2m  AND  (D never vanishes  <=>  m odd)
+  counterexamples: 0   PASS
+
+  their own assignment: m = 3
+  and the indices that make it up are [1, 2, 3]
+  -- indices 1,2,3 are the SU(3)_C colour indices of their eq. (78),(79).
+
+  >> D CANNOT VANISH BECAUSE THE NUMBER OF COLOURS IS ODD.

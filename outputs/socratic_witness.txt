@@ -1,0 +1,49 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+Q1 -- 8D = 1 > 0, SO THE ORIGIN IS A MAXIMUM.  WHERE IS THE MINIMUM?
+====================================================================================================
+  witness : 17x7(+,+) + 2x7(+,-) + 57x28(+,-)
+  A4 = 212   8D = 1   G = -228.260   N = 76
+
+  F at alpha -> 0      : 1.114373e+02
+  F at alpha = 1       : -2.049877e+02
+  interior local minima: 1
+     alpha = 0.016129   F = 1.114372e+02
+
+  ==> the deepest interior minimum is at alpha = 0.016129
+      and the edge value is BELOW it
+
+====================================================================================================
+Q2 -- IS THERE STILL A LOCAL MINIMUM AT SMALL ALPHA, WHERE THE CLOSED FORM LIVES?
+====================================================================================================
+  the closed form predicts a stationary point at alpha = 0.016133
+  interior minima inside the radius of convergence (alpha < 1/3) : 1
+     alpha = 0.016129   F'' = +2.0717e+00   m_h = 126.25 GeV
+
+====================================================================================================
+Q3/Q4 -- WHERE DOES IT BREAK?  walk the rung 8D = 1 from the five rows' scale upward
+====================================================================================================
+  The five published rows sit at A4 ~ 190-270 with SMALL contents.  The certificate wants
+  A4 = 212 with a content of 76.  Same A4, different size -- so size is the variable to
+  sweep, not A4.  Take the family n x 28(+,-) plus what is needed to hold 8D = 1.
+
+  N      content                                  A4         8D       minima    alpha_min m_h
+  40     8x7(+,+) + 2x7(+,-) + 30x28(+,-)        104          1            1     0.034659 39.8
+  76     17x7(+,+) + 2x7(+,-) + 57x28(+,-)       212          1            1     0.016129 126.3
+
+====================================================================================================
+Q5 -- AND THE FIVE PUBLISHED ROWS, WHICH IS THE CONTROL THAT MUST PASS
+====================================================================================================
+  If this file's machinery said the published rows had no minimum either, it would be the
+  machinery that is broken and not the witness.
+
+  row       minima    alpha_min      F at edge    global?
+  (1)            1     0.055304   4.452309e+01       True
+  (2)            1     0.083062   5.255928e+01       True
+  (3)            1     0.043593   4.918926e+01       True
+  (4)            1     0.046879   4.938368e+01       True
+  (5)            1     0.055277   4.841156e+01       True
+
+  the published rows must have an interior minimum that is also the deepest point of the
+  domain -- that is what Part VII's false_vacuum_km.py already measured, and this file has
+  to agree with it or be wrong.

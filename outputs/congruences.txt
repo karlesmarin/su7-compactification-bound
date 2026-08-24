@@ -1,0 +1,219 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE THREE CONGRUENCES AS SMITH PRINTS THEM, AND WHY THEY ARE UNREADABLE
+====================================================================================================
+  A vector lies in L (the lattice the eight MATTER multiplets generate) exactly when each of
+  these vanishes.  The gauge sector is NOT in L -- that is what the Z_2 measures -- so a bulk
+  content sits at the gauge sector's residue, printed in the last column.
+
+  mod    coefficients on (A_4, 8D, 2U, V, 2W)                  gauge residue
+  2      [-42, 15, 5, 40, 39]                                              1
+  72     [32, -13, -3, -32, -36]                                           0
+  2592   [-810, 324, 81, 800, 891]                                         0
+
+  Nothing is legible there, which is why they were left unread.  But 72 = 8 x 9 and
+  2592 = 32 x 81 are coprime factorisations, so each congruence is really TWO, and each of
+  those has small coefficients.
+
+====================================================================================================
+2 -- THE CRT SPLIT, EACH PIECE IN LOWEST TERMS
+====================================================================================================
+  from     modulus  coefficients                             content ==
+  mod 2    mod 2    {'A_4': 0, '8D': 1, '2U': 1, 'V': 0, '2W': 1}          1
+  mod 72   mod 8    {'A_4': 0, '8D': 3, '2U': 5, 'V': 0, '2W': 4}          0
+  mod 72   mod 9    {'A_4': 5, '8D': 5, '2U': 6, 'V': 4, '2W': 0}          0
+  mod 2592 mod 32   {'A_4': 22, '8D': 4, '2U': 17, 'V': 0, '2W': 27}          0
+  mod 2592 mod 81   {'A_4': 0, '8D': 0, '2U': 0, 'V': 71, '2W': 0}          0
+
+  the five moduli multiply to 373248, and the index of L in Z^5 is 373248 : True
+  So these five ARE the whole of what the lattice forbids: independent, and jointly complete.
+
+====================================================================================================
+3 -- THE FOUR STATEMENTS, WRITTEN AS SOMEONE WOULD SAY THEM
+====================================================================================================
+  statement                                            on L on content
+  (1)  8D + 2U + 2W == 1 (mod 2)                          0          1
+                                                   the Z_2 factor -- NOT the parity character by itself; see below
+  (2)  8D == 2U + 4(2W) (mod 8)                           0          0
+                                                   the Z_72 factor, two-adic half
+  (3)  A_4 + 8D + 3(2U) == V (mod 9)                      0          0
+                                                   the Z_72 factor, three-adic half
+  (4)  2W == -(2A_4 + 12(8D) + 3(2U)) (mod 32)            0          0
+                                                   the Z_2592 factor, two-adic half -- and it SOLVES for 2W
+  (5)  V == 0 (mod 81)                                    0          0
+                                                   the Z_2592 factor, three-adic half -- automatic, V is 81 x a multiplicity
+
+  The 15 objects tested are the eight matter generators, the gauge sector, the witness of
+  Figure~\ref{fig:vacuum} and the five published rows of \cite{KM25} -- contents built for
+  other purposes entirely.
+
+  AND THE PARITY CHARACTER IS NOT ONE OF THESE FIVE.  It is the joint mod-2 shadow of three
+  of them, which is a sharper thing to be able to say.  Reduce (2) and (4) modulo 2:
+       (2) -> 8D == 2U          (the 4(2W) dies)
+       (4) -> 2W == 3(2U) == 2U (2A_4 and 12(8D) die)
+  so 8D == 2U == 2W already, and (1) then reads 3 x 8D == 1, i.e. 8D odd.  Theorem 1, the 2W
+  theorem and the unexplained oddness of 2U are one consequence of three congruences, and no
+  single lattice factor carries it.
+  CONTROL -- 8D, 2U, 2W all even on every generator and all odd on every content : True
+
+====================================================================================================
+4 -- (4) SOLVED FOR 2W, AND THE HALF OF THE PARITY CHARACTER IT ABSORBS
+====================================================================================================
+  27 is invertible mod 32, so (4) solves for 2W:
+
+      2W  ==  -( 2 A_4 + 12 (8D) + 3 (2U) )   (mod 32)
+
+  V is absent.  So knowing (A_4, 8D, 2U) pins 2W modulo 32, i.e. W modulo 16.  Verified:
+
+  object                           2W  predicted      agree
+  7(+,+)                            2          2       True
+  7(+,-)                           -2         30       True
+  28(+,+)                           6          6       True
+  28(+,-)                          -6         26       True
+  48(+,+)                          12         12       True
+  48(+,-)                         -12         20       True
+  84(+,+)                          18         18       True
+  84(+,-)                         -18         14       True
+  gauge                            -3         29       True
+  the paper's witness               5          5       True
+  \cite{KM25} row (1)              63         31       True
+  \cite{KM25} row (2)              75         11       True
+  \cite{KM25} row (3)              75         11       True
+  \cite{KM25} row (4)              73          9       True
+  \cite{KM25} row (5)              69          5       True
+
+  AND IT ABSORBS ONE HALF OF THE PARITY CHARACTER.  Reduce (4) mod 2: 2A_4 and 12(8D) are
+  even, so 2W == 3(2U) == 2U (mod 2).  The theorem '2W is odd' and the unexplained '2U is
+  odd' of \S\ref{sec:open} are therefore the SAME parity, and (4) is why -- one of them
+  follows from the other, on any content, with no reference to the -7/2.
+  CONTROL -- 2W == 2U (mod 2) on every object above : True
+
+====================================================================================================
+5 -- (3) MOD 3 IS A DIVISIBILITY THE PAPER ALREADY PRINTS WITHOUT EXPLAINING
+====================================================================================================
+  Reduce (3) modulo 3.  V = 81 x (multiplicity of 84(+,-)) is divisible by 3, and so is
+  3(2U), so it collapses to
+
+      A_4 + 8D  ==  0   (mod 3)
+
+  which the paper states twice, both times as an observation: the ceiling search steps A_4 by
+  three, and \cite{KM25}'s five rows 'give 8D + A_4 = 273, 300, 198, 234, 270, all divisible
+  by three'.  Those are the same fact, and (3) is the mod-NINE statement it is a shadow of:
+
+  row                             A_4       8D   A_4 + 8D    mod 3      (3) mod 9
+  the paper's witness             104        1        105        0              0
+  \cite{KM25} row (1)             258       15        273        0              0
+  \cite{KM25} row (2)             271       29        300        0              0
+  \cite{KM25} row (3)             189        9        198        0              0
+  \cite{KM25} row (4)             223       11        234        0              0
+  \cite{KM25} row (5)             255       15        270        0              0
+
+  The 'mod 3' column is zero because it must be; the 'mod 9' column is zero because of a
+  statement nobody had written down.  Carrying 2U buys one more power of three.
+
+====================================================================================================
+5b -- AND THEY CANNOT MOVE THE CEILING, FOR A STRUCTURAL REASON AND NOT BY INSPECTION
+====================================================================================================
+  The ceiling is decided on the (A_4, 8D) plane: \S\ref{sec:ceiling} walks A_4 down at fixed
+  8D, and every vertex it can visit is a point of the PROJECTION of the content set to those
+  two coordinates.  So the question 'do the new congruences forbid a vertex' is the question
+  'is the projection smaller than the mod-6 rule already says'.  It is not, and that is
+  decidable rather than a matter of opinion: project the lattice and take its index.
+
+  index of the projected lattice in Z^2 : 6   (the paper's Z_6)
+
+  Six, so the mod-6 rule 8D == 2A_4 + 3 IS the complete statement in those two coordinates,
+  and no congruence involving 2U, V or 2W can cut the plane further: whatever they forbid,
+  they forbid it in the fibre over a vertex and not among the vertices.  A search that walks
+  the plane therefore cannot be sped up by them, and a bound proved by exhausting each fibre
+  cannot be tightened by them either.
+
+  THE ONE PLACE THEY COULD STILL HAVE BITTEN is a vertex whose fibre they empty completely.
+  Test it where it would matter -- the deciding vertex and the two the paper argues about:
+
+  (A_4, 8D)       A_4 mod 9 2U mod 3 forced
+  (104, 1)                5        [1]
+  (212, 1)                5        [1]
+  (215, 1)                8        [0]
+
+  Each vertex forces 2U into ONE class mod 3 rather than emptying the fibre, and 2U ranges
+  over all three classes among the eight multiplets, so no vertex is excluded.  The negative
+  is therefore real and not an artefact of looking in the wrong place.
+  CONTROL -- 2U mod 3 over the eight multiplets : [0, 1, 2]   (must be all three, or the
+             argument above is vacuous)
+
+====================================================================================================
+5c -- AND ELIMINATING 2W CLOSES A DIFFERENT OPEN ROW OF THE PAPER
+====================================================================================================
+  The honest-limits table carries a row reading 'what the second congruence of
+  Z^4/L = Z_18 x Z_648 forbids: the group is computed, its conditions on the multiplicities are
+  not written out'.  That is the FOUR-coordinate projection, (A_4, 8D, 2U, V), and it is the
+  present five with 2W eliminated -- so it costs nothing extra once these are in hand.
+
+  The three-adic pieces (3) and (5) never mention 2W, so they survive projection untouched.
+  The two-adic ones do mention it, and (4) is what removes it: it fixes 2W modulo 32 in terms
+  of the rest, so substituting it into (1) and (2) leaves conditions on (A_4, 8D, 2U) alone.
+
+      (1) mod 2 : 2W == 2U by (4), so 8D + 2U + 2U == 8D          ->   8D odd on a content
+      (2) mod 8 : the 4(2W) term is 4 x (2W mod 2)                ->   8D - 2U == 4 (2W mod 2)
+
+  and the second is the place to be careful, because the two readings differ.  On the matter
+  lattice 2W is EVEN, so 4(2W) dies and the law is 8D == 2U (mod 8); on a content 2W is odd,
+  so it does not, and the law is 8D == 2U + 4.  The first version of this section wrote the
+  content form and tested it against the generators, where it fails on all eight.  Written
+  homogeneously, as everything else here is, there is one law with two readings:
+
+      8D == 0 (mod 2)   |  1        8D - 2U == 0 (mod 8)   |  4      <- on L | on a content
+      A_4 + 8D + 3(2U) - V == 0 (mod 9)   |  0        V == 0 (mod 81)   |  0
+
+  index 2 x 8 x 9 x 81 = 11664, and |Z^4/L_4| = 18 x 648 = 11664
+
+  VERIFIED BY BRUTE FORCE rather than by the elimination above, because the elimination is
+  exactly the sort of hand argument that quietly drops a case.  Build the subgroup of
+  (Z/32)^4 x (Z/81)^4 that the eight multiplets generate, and count it.
+
+  two-adic   : subgroup has    65536 of 32^4 =  1048576 elements  ->  index 16
+  three-adic : subgroup has    59049 of 81^4                 ->  index 729
+  product of the two indices : 11664   against 18 x 648 = 11664   agree : True
+
+  And the four written laws must cut exactly that much and no more -- same test as before,
+  on the projected coordinates:
+  form                          mod       on L   on content
+  8D                              2          0            1
+  8D - 2U                         8          0            4
+  A_4 + 8D + 3(2U) - V            9          0            0
+  V                              81          0            0
+  So that row of the table is answered too, and the answer is four lines long.
+
+====================================================================================================
+6 -- CONTROLS
+====================================================================================================
+  (i) EACH STATEMENT MUST BE ABLE TO REJECT.  A congruence that every integer vector
+      satisfies says nothing.  Take the paper's witness and perturb one coordinate by one:
+      the perturbed vector is not a content and every statement that sees that coordinate
+      has to notice.
+
+      statement                                  A_4     8D      2U      V       2W    
+      (1)  8D + 2U + 2W == 1 (mod 2)             blind   catch   catch   blind   catch 
+      (2)  8D == 2U + 4(2W) (mod 8)              blind   catch   catch   blind   catch 
+      (3)  A_4 + 8D + 3(2U) == V (mod 9)         catch   catch   catch   catch   blind 
+      (4)  2W == -(2A_4 + 12(8D) + 3(2U)) (mod 32) catch   catch   catch   blind   catch 
+      (5)  V == 0 (mod 81)                       blind   blind   blind   catch   blind 
+
+      A 'blind' is not a failure: it says the statement does not involve that coordinate,
+      which is readable straight off the coefficients.  What would be a failure is a row of
+      five blinds, or a coordinate no statement catches.
+      every coordinate caught by at least one statement : True   [True, True, True, True, True]
+
+  (ii) AND THE STATEMENTS MUST BE THE SMITH CONGRUENCES AND NOT A REWRITE THAT LOST
+       INFORMATION.  Sweep a box of integer vectors and check that satisfying the five
+       statements is EXACTLY the same as satisfying Smith's three -- same set, not merely
+       implied one way.
+       vectors swept : 114244      the two descriptions agree on : 114244      of which contents : 32
+       Equivalent on every vector, and the sweep does contain contents, so it is not vacuous.
+
+  (iii) THE MODULI MUST ACCOUNT FOR THE INDEX EXACTLY.  Already asserted in section 2:
+        2 x 9 x 8 x 32 x 81 = 373248 = |Z^5 / L|.  If a piece had been dropped the product would
+        be a proper divisor and the description would be incomplete without saying so.
+
+archived: outputs/congruences.json

@@ -1,0 +1,70 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE DEPTH OF THE ELECTROWEAK WELL, IN CLOSED FORM
+====================================================================================================
+  F(x) - F(0) = -zeta(3) D x^2/2 + x^4 (G - A_4 ln x)/24 + R.
+  Stationarity (eq. amin) gives  G - A_4 ln x = [24 zeta(3) D / x^2 + A_4]/4, so the quartic
+  term becomes  zeta(3) D x^2/4 + A_4 x^4/96  and the depth collapses to
+
+      F(x*) - F(0) = - zeta(3) D x*^2/4 + A_4 x*^4/96 .
+
+  Then (II), which holds once m_h is pinned, gives 6 mu + A_4 = 12 zeta(3) D / x*^2, hence
+  A_4 = 12 zeta(3) D/x*^2 - 6 mu, and substituting:
+
+      F(x*) - F(0) = - zeta(3) D x*^2 / 8  -  mu x*^4 / 16 .
+
+  Two terms, both negative, and the second is negligible.  Checked against the exact
+  potential on the five published rows and on the constrained witness:
+
+  content                                        formula         exact      err %
+  (1)                                          -0.014586     -0.014577      -0.06
+  (2)                                          -0.061386     -0.061287      -0.16
+  (3)                                          -0.005651     -0.005650      -0.02
+  (4)                                          -0.007877     -0.007874      -0.03
+  (5)                                          -0.014602     -0.014594      -0.06
+  witness (104,1)                              -0.000104     -0.000104      -0.00
+
+====================================================================================================
+2 -- THE TWO SCALES, SIDE BY SIDE
+====================================================================================================
+  a counterexample must beat 9.22 TeV, so alpha < 2 m_W/9220 = 0.017440, i.e. x < 0.054790
+  the quantised gap at alpha = 1 : |F(1) - F(0)| >= (31/32) zeta(5) = 1.004524
+
+  8D             well depth      quantum gap well shallower?
+  1                0.000103         1.004524 True
+  3                0.000216         1.004524 True
+  9                0.000554         1.004524 True
+  51               0.002922         1.004524 True
+  501              0.028295         1.004524 True
+  5001             0.282022         1.004524 True
+  17817            1.004638         1.004524 False
+  20000            1.127724         1.004524 False
+
+  the argument reaches every rung with 8D < 17815.
+  And it does not need to reach further: the certificate bounds rung 3 at 6.27 TeV and every
+  rung above it lower still, so no rung other than 8D = 1 can beat 9.22 TeV at all.
+
+====================================================================================================
+3 -- THE ARGUMENT, PUT TOGETHER
+====================================================================================================
+  Let C be a content with 1/R5 > 9.22 TeV whose electroweak point is the true vacuum.
+  (a) Only the rung 8D = 1 can exceed 9.22 TeV, so D = 1/8.
+  (b) Its well is at most 0.000103 deep, against a quantum gap of 1.004524 -- a factor 9755.
+  (c) If W < 0 then F(1) <= F(0) - 1.004524 < F(0) - 0.000103 <= F(x*), so the electroweak point is
+      NOT the global minimum, contradicting the assumption.
+  (d) W = 0 is arithmetically impossible (2W is odd).
+  (e) Hence W > 0.  And the integer program over W > 0 finds no content above 9.22 TeV.
+
+  ==> W > 0 IS NECESSARY IN THE ONLY REGION WHERE IT MATTERS, so 1/R5 <= 9.22 TeV holds for
+      ANY bulk content whose electroweak point is its true vacuum -- not merely for the
+      screened family.  The screen was never a restriction where the bound is decided.
+
+  CONTROLS, and both can fail:
+     the depth formula must reproduce the exact well : see section 1
+     the factor of safety must be large, not marginal : 9755
+
+  WHAT IS STILL ASSUMED, said plainly: step (a) uses the per-rung certificate, which is
+  itself global only under the measured monotonicity of t*(k)/k.  This argument removes the
+  W > 0 caveat from 9.22 TeV; it does not remove that one.
+
+  data written: outputs/necessity_of_W.json

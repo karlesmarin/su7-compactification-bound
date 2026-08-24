@@ -1,0 +1,169 @@
+su7_hierarchy.pdf: 73 pages
+  p1   ink  111.0.. 772.0   largest internal gap   42.0 pt at y=505
+  p2   ink   71.0.. 774.0   largest internal gap    2.0 pt at y=93
+  p3   ink   71.0.. 719.0   largest internal gap   17.0 pt at y=680
+  p4   ink   67.0.. 763.0   largest internal gap   18.0 pt at y=463
+  p5   ink   70.0.. 774.0   largest internal gap   18.0 pt at y=94
+  p6   ink   70.0.. 763.0   largest internal gap   22.0 pt at y=480
+  p7   ink   68.0.. 779.0   largest internal gap   11.0 pt at y=688
+  p8   ink   70.0.. 776.0   largest internal gap   17.0 pt at y=531
+  p9   ink   70.0.. 778.0   largest internal gap   17.0 pt at y=299
+  p10  ink   68.0.. 769.0   largest internal gap   24.0 pt at y=330
+  p11  ink   68.0.. 779.0   largest internal gap   17.0 pt at y=621
+  p12  ink   68.0.. 698.0   largest internal gap   14.0 pt at y=329
+  p13  ink   68.0.. 765.0   largest internal gap   21.0 pt at y=347
+  p14  ink   70.0.. 776.0   largest internal gap   18.0 pt at y=313
+  p15  ink   68.0.. 764.0   largest internal gap   23.0 pt at y=473
+  p16  ink   70.0.. 776.0   largest internal gap   21.0 pt at y=152
+  p17  ink   70.0.. 736.0   largest internal gap   13.0 pt at y=108
+  p18  ink   70.0.. 776.0   largest internal gap   17.0 pt at y=734
+  p19  ink   68.0.. 777.0   largest internal gap   10.0 pt at y=231
+  p20  ink   70.0.. 767.0   largest internal gap   22.0 pt at y=624
+  p21  ink   68.0.. 752.0   largest internal gap   20.0 pt at y=368
+  p22  ink   68.0.. 776.0   largest internal gap   21.0 pt at y=407
+  p23  ink   70.0.. 779.0   largest internal gap   18.0 pt at y=652
+  p24  ink   68.0.. 767.0   largest internal gap   23.0 pt at y=375
+  p25  ink   70.0.. 776.0   largest internal gap   18.0 pt at y=592
+  p26  ink   68.0.. 776.0   largest internal gap   21.0 pt at y=361
+  p27  ink   68.0.. 776.0   largest internal gap   20.0 pt at y=395
+  p28  ink   68.0.. 775.0   largest internal gap   22.0 pt at y=378
+  p29  ink   68.0.. 776.0   largest internal gap   18.0 pt at y=290
+  p30  ink   70.0.. 777.0   largest internal gap   18.0 pt at y=94
+  p31  ink   66.0.. 776.0   largest internal gap   18.0 pt at y=213
+  p32  ink   70.0.. 775.0   largest internal gap   18.0 pt at y=629
+  p33  ink   70.0.. 776.0   largest internal gap   17.0 pt at y=455
+  p34  ink   70.0.. 758.0   largest internal gap   18.0 pt at y=661
+  p35  ink   70.0.. 753.0   largest internal gap   18.0 pt at y=400
+  p36  ink   68.0.. 778.0   largest internal gap   19.0 pt at y=443
+  p37  ink   68.0.. 774.0   largest internal gap   17.0 pt at y=285
+  p38  ink   70.0.. 777.0   largest internal gap   20.0 pt at y=458
+  p39  ink   67.0.. 778.0   largest internal gap   17.0 pt at y=239
+  p40  ink   68.0.. 769.0   largest internal gap   18.0 pt at y=455
+  p41  ink   70.0.. 775.0   largest internal gap   18.0 pt at y=732
+  p42  ink   70.0.. 772.0   largest internal gap   18.0 pt at y=184
+  p43  ink   67.0.. 776.0   largest internal gap   21.0 pt at y=465
+  p44  ink   70.0.. 777.0   largest internal gap    9.0 pt at y=417
+  p45  ink   70.0.. 746.0   largest internal gap    5.0 pt at y=554
+  p46  ink   67.0.. 771.0   largest internal gap   22.0 pt at y=538
+  p47  ink   68.0.. 777.0   largest internal gap   24.0 pt at y=429
+  p48  ink   68.0.. 772.0   largest internal gap    1.0 pt at y=68
+  p49  ink   70.0.. 772.0   largest internal gap   13.0 pt at y=518
+  p50  ink   70.0.. 776.0   largest internal gap   18.0 pt at y=476
+  p51  ink   70.0.. 759.0   largest internal gap   22.0 pt at y=406
+  p52  ink   70.0.. 775.0   largest internal gap   27.0 pt at y=424
+  p53  ink   68.0.. 776.0   largest internal gap   18.0 pt at y=189
+  p54  ink   70.0.. 774.0   largest internal gap   18.0 pt at y=108
+  p55  ink   68.0.. 767.0   largest internal gap   22.0 pt at y=546
+  p56  ink   70.0.. 772.0   largest internal gap    7.0 pt at y=194
+  p57  ink   70.0.. 773.0   largest internal gap   10.0 pt at y=249
+  p58  ink   70.0.. 776.0   largest internal gap    7.0 pt at y=122
+  p59  ink   68.0.. 630.0   largest internal gap   22.0 pt at y=442
+  p60  ink   68.0.. 776.0   largest internal gap   17.0 pt at y=287
+  p61  ink   68.0.. 770.0   largest internal gap   24.0 pt at y=472
+  p62  ink   70.0.. 777.0   largest internal gap    9.0 pt at y=216
+  p63  ink   70.0.. 775.0   largest internal gap   12.0 pt at y=122
+  p64  ink   70.0.. 776.0   largest internal gap    9.0 pt at y=216
+  p65  ink   70.0.. 770.0   largest internal gap   10.0 pt at y=709
+  p66  ink   70.0.. 719.0   largest internal gap   22.0 pt at y=130
+  p67  ink   68.0.. 755.0   largest internal gap    4.0 pt at y=68
+  p68  ink   68.0.. 777.0   largest internal gap    4.0 pt at y=68
+  p69  ink   68.0.. 773.0   largest internal gap   24.0 pt at y=561
+  p70  ink   70.0.. 765.0   largest internal gap   21.0 pt at y=421
+  p71  ink   70.0.. 776.0   largest internal gap   21.0 pt at y=230
+  p72  ink   70.0.. 768.0   largest internal gap   20.0 pt at y=232
+  p73  ink   72.0.. 592.0   largest internal gap    1.0 pt at y=72
+ su7_hierarchy.pdf: pages flagged (internal band over 120 pt, or foot slack over 150 pt): 0
+su7_hierarchy_es.pdf: 74 pages
+  p1   ink  111.0.. 774.0   largest internal gap   42.0 pt at y=518
+  p2   ink   71.0.. 774.0   largest internal gap    2.0 pt at y=117
+  p3   ink   71.0.. 775.0   largest internal gap    1.0 pt at y=71
+  p4   ink   71.0.. 771.0   largest internal gap   22.0 pt at y=121
+  p5   ink   69.0.. 768.0   largest internal gap   17.0 pt at y=176
+  p6   ink   69.0.. 750.0   largest internal gap   21.0 pt at y=636
+  p7   ink   68.0.. 779.0   largest internal gap   11.0 pt at y=685
+  p8   ink   69.0.. 779.0   largest internal gap   16.0 pt at y=721
+  p9   ink   69.0.. 776.0   largest internal gap   20.0 pt at y=518
+  p10  ink   68.0.. 769.0   largest internal gap   21.0 pt at y=333
+  p11  ink   67.0.. 778.0   largest internal gap   14.0 pt at y=486
+  p12  ink   69.0.. 776.0   largest internal gap   17.0 pt at y=163
+  p13  ink   68.0.. 755.0   largest internal gap   23.0 pt at y=341
+  p14  ink   68.0.. 736.0   largest internal gap   17.0 pt at y=134
+  p15  ink   68.0.. 775.0   largest internal gap   23.0 pt at y=484
+  p16  ink   69.0.. 742.0   largest internal gap   22.0 pt at y=453
+  p17  ink   67.0.. 776.0   largest internal gap   17.0 pt at y=119
+  p18  ink   69.0.. 778.0   largest internal gap   16.0 pt at y=375
+  p19  ink   66.0.. 771.0   largest internal gap   18.0 pt at y=375
+  p20  ink   69.0.. 764.0   largest internal gap   17.0 pt at y=544
+  p21  ink   68.0.. 762.0   largest internal gap   22.0 pt at y=368
+  p22  ink   68.0.. 762.0   largest internal gap   15.0 pt at y=272
+  p23  ink   68.0.. 779.0   largest internal gap   22.0 pt at y=420
+  p24  ink   68.0.. 776.0   largest internal gap   16.0 pt at y=194
+  p25  ink   68.0.. 776.0   largest internal gap   22.0 pt at y=392
+  p26  ink   69.0.. 773.0   largest internal gap   18.0 pt at y=435
+  p27  ink   68.0.. 770.0   largest internal gap   24.0 pt at y=360
+  p28  ink   68.0.. 776.0   largest internal gap   20.0 pt at y=396
+  p29  ink   68.0.. 752.0   largest internal gap   22.0 pt at y=389
+  p30  ink   69.0.. 750.0   largest internal gap   13.0 pt at y=227
+  p31  ink   68.0.. 778.0   largest internal gap   16.0 pt at y=235
+  p32  ink   69.0.. 774.0   largest internal gap   17.0 pt at y=149
+  p33  ink   69.0.. 771.0   largest internal gap   17.0 pt at y=230
+  p34  ink   69.0.. 773.0   largest internal gap   16.0 pt at y=420
+  p35  ink   69.0.. 757.0   largest internal gap   17.0 pt at y=674
+  p36  ink   69.0.. 773.0   largest internal gap   17.0 pt at y=411
+  p37  ink   68.0.. 778.0   largest internal gap   21.0 pt at y=453
+  p38  ink   69.0.. 776.0   largest internal gap   16.0 pt at y=357
+  p39  ink   69.0.. 779.0   largest internal gap   21.0 pt at y=570
+  p40  ink   69.0.. 776.0   largest internal gap   17.0 pt at y=639
+  p41  ink   69.0.. 757.0   largest internal gap   17.0 pt at y=108
+  p42  ink   69.0.. 776.0   largest internal gap    8.0 pt at y=150
+  p43  ink   69.0.. 761.0   largest internal gap   17.0 pt at y=247
+  p44  ink   67.0.. 770.0   largest internal gap   22.0 pt at y=477
+  p45  ink   69.0.. 776.0   largest internal gap   11.0 pt at y=315
+  p46  ink   69.0.. 774.0   largest internal gap    2.0 pt at y=706
+  p47  ink   67.0.. 776.0   largest internal gap   23.0 pt at y=550
+  p48  ink   69.0.. 777.0   largest internal gap    8.0 pt at y=163
+  p49  ink   68.0.. 774.0   largest internal gap   22.0 pt at y=442
+  p50  ink   69.0.. 759.0   largest internal gap    1.0 pt at y=69
+  p51  ink   68.0.. 776.0   largest internal gap   17.0 pt at y=407
+  p52  ink   69.0.. 779.0   largest internal gap   16.0 pt at y=122
+  p53  ink   67.0.. 768.0   largest internal gap   17.0 pt at y=470
+  p54  ink   67.0.. 773.0   largest internal gap   17.0 pt at y=336
+  p55  ink   69.0.. 764.0   largest internal gap   17.0 pt at y=108
+  p56  ink   69.0.. 776.0   largest internal gap   17.0 pt at y=230
+  p57  ink   69.0.. 773.0   largest internal gap   22.0 pt at y=300
+  p58  ink   69.0.. 768.0   largest internal gap    9.0 pt at y=740
+  p59  ink   69.0.. 776.0   largest internal gap    5.0 pt at y=190
+  p60  ink   69.0.. 763.0   largest internal gap    6.0 pt at y=108
+  p61  ink   68.0.. 777.0   largest internal gap   20.0 pt at y=443
+  p62  ink   69.0.. 777.0   largest internal gap   14.0 pt at y=181
+  p63  ink   68.0.. 774.0   largest internal gap   22.0 pt at y=476
+  p64  ink   69.0.. 776.0   largest internal gap    9.0 pt at y=525
+  p65  ink   69.0.. 769.0   largest internal gap    9.0 pt at y=735
+  p66  ink   69.0.. 765.0   largest internal gap    9.0 pt at y=149
+  p67  ink   69.0.. 757.0   largest internal gap   21.0 pt at y=561
+  p68  ink   68.0.. 770.0   largest internal gap    4.0 pt at y=68
+  p69  ink   68.0.. 758.0   largest internal gap    4.0 pt at y=68
+  p70  ink   68.0.. 765.0   largest internal gap   24.0 pt at y=622
+  p71  ink   69.0.. 765.0   largest internal gap   20.0 pt at y=517
+  p72  ink   69.0.. 776.0   largest internal gap   21.0 pt at y=340
+  p73  ink   69.0.. 773.0   largest internal gap   21.0 pt at y=384
+  p74  ink   72.0.. 739.0   largest internal gap    1.0 pt at y=72
+ su7_hierarchy_es.pdf: pages flagged (internal band over 120 pt, or foot slack over 150 pt): 0
+
+falsification of the foot-slack absolution:
+  stranded heading then prose        absolves=False expected=False  ok
+  orphaned display then prose        absolves=False expected=False  ok
+  abandoned paragraph                absolves=False expected=False  ok
+  15-row table that cannot fit       absolves=True  expected=True   ok
+  short table that WOULD have fit    absolves=False expected=False  ok
+
+
+====================================================================================
+DESBORDE HORIZONTAL -- el .log dice si algo es mas ancho que su caja, el PDF si se ve
+====================================================================================
+  su7_hierarchy.log        1 Overfull en el log, 0 sin razon escrita
+  su7_hierarchy.pdf        ninguna caja enmarcada tiene tinta fuera del marco
+  su7_hierarchy_es.log     1 Overfull en el log, 0 sin razon escrita
+  su7_hierarchy_es.pdf     ninguna caja enmarcada tiene tinta fuera del marco
+
+both editions clean

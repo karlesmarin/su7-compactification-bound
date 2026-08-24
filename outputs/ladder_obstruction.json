@@ -1,0 +1,16 @@
+{
+ "gauge_numerator": {
+  "0": "9",
+  "1": "-27",
+  "2": "-36"
+ },
+ "half_weight_term": {
+  "5": 105,
+  "3": 21,
+  "1": 0
+ },
+ "swept": 3002,
+ "marginal_value": 0,
+ "marginal_curvature": 0,
+ "min_abs_value_numerator": "1"
+}

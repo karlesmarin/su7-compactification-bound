@@ -1,0 +1,69 @@
+====================================================================================================
+THE TOWER IN chi_dijet AT HADRON LEVEL -- SPACELIKE CHANNELS ONLY
+====================================================================================================
+
+  binning read from E:\proyectos\Curiosity\tools\cijet\CIJET\data\bininput.card
+  8 mass bins, 12 chi bins, sqrt(s) = 13000 GeV, |y_boost| < 1.11
+
+[C1] ARE THE pT AND RAPIDITY CUTS ACTIVE AT LO HERE?
+      lowest LO jet pT anywhere in the fiducial region : 565 GeV (cut 500)
+      largest |y| reachable                            : 2.496  (cut 2.5)
+
+      C1 PASS -- the region is exactly |y_b|<1.11 and 1<chi<16
+
+  asking LHAPDF for 1280 (x, Q) points, no interpolation
+  computed SM
+  computed ceiling
+  computed escape
+
+[C2] THE QCD-ONLY chi DISTRIBUTION MUST BE NEARLY FLAT
+      peak-to-peak of the normalised density, per mass bin:
+      0.21  0.19  0.17  0.15  0.14  0.13  0.14  0.16
+
+      C2 PASS (worst 0.21; a Rutherford 1/t^2 gives a mild rise, not a factor)
+
+[1] THE DEFORMATION, AS CMS WOULD SEE IT
+
+    CMS normalises the chi distribution to unit area in each mass bin, so the observable is a
+    RATIO OF SHAPES and the overall enhancement divides straight out.  Both numbers are given
+    below because the difference between them is the single largest dilution in this file.
+
+    1/R_5 = 9.09 TeV
+      mass bin [TeV]      raw 1st   norm 1st  norm last    max dev
+        2.4-3.0             1.084     1.0512     0.9827     0.0512
+        3.0-3.6             1.156     1.0946     0.9691     0.0946
+        3.6-4.2             1.261     1.1551     0.9510     0.1551
+        4.2-4.8             1.403     1.2325     0.9288     0.2325
+        4.8-5.4             1.585     1.3249     0.9032     0.3249
+        5.4-6.0             1.812     1.4298     0.8751     0.4298
+        6.0-7.0             2.135     1.5638     0.8402     0.5638
+        7.0-13.0            2.786     1.7876     0.7841     0.7876
+
+    1/R_5 = 3.97 TeV
+      mass bin [TeV]      raw 1st   norm 1st  norm last    max dev
+        2.4-3.0             1.489     1.2673     0.9124     0.2673
+        3.0-3.6             1.937     1.4617     0.8539     0.4617
+        3.6-4.2             2.596     1.6861     0.7892     0.6861
+        4.2-4.8             3.492     1.9134     0.7261     0.9134
+        4.8-5.4             4.641     2.1234     0.6695     1.1234
+        5.4-6.0             6.054     2.3066     0.6215     1.3066
+        6.0-7.0             8.047     2.4833     0.5763     1.4833
+        7.0-13.0           11.954     2.6919     0.5250     1.6919
+
+    Read the two middle columns together.  The raw column is the enhancement of the first chi
+    bin over the Standard Model; the normalised one is what survives CMS's per-bin
+    normalisation, and it is much smaller because the tower lifts the whole mass bin and only
+    the SHAPE is measured.  Anything quoted against the published distribution has to be the
+    normalised column.
+
+    [wrote outputs/hadronic_chi.json]
+
+====================================================================================================
+STATUS.  This is a LEADING-ORDER hadronic prediction with the spacelike channels only.
+        What it is NOT: a limit.  A limit needs the CMS covariance between chi bins and mass
+        bins, which is on HEPData and was unreachable when this was written, and it needs the
+        QCD scale choice profiled -- CMS's own small tension below 4.8 TeV moves between their
+        two scale choices, so a fit that does not carry that as a nuisance is measuring the
+        scale and not the tower.
+VERDICT: controls pass.  The numbers above are the input to a fit, not its output.
+====================================================================================================

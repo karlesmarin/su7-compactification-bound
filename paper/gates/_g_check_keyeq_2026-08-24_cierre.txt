@@ -1,0 +1,44 @@
+============================================================================================
+LAS CAJAS ENMARCADAS, .DICEN LO MISMO EN LAS DOS EDICIONES?
+============================================================================================
+  28 cajas en la inglesa, 28 en la castellana
+
+  [ 0] (sin label)             EN l.648   ES l.658    igual
+  [ 1] eq:modes                EN l.717   ES l.728    igual
+  [ 2] (sin label)             EN l.727   ES l.738    igual
+  [ 3] eq:amin                 EN l.838   ES l.853    igual
+  [ 4] eq:lambert              EN l.851   ES l.866    igual
+  [ 5] eq:fpp                  EN l.986   ES l.1002   igual
+  [ 6] eq:oddeighths           EN l.1043  ES l.1060   igual
+  [ 7] eq:mod6law              EN l.1128  ES l.1143   igual
+  [ 8] eq:ladderab             EN l.1176  ES l.1192   igual
+  [ 9] eq:gaugerung            EN l.1184  ES l.1200   igual
+  [10] eq:valuebound           EN l.1210  ES l.1227   igual
+  [11] eq:analytic             EN l.1256  ES l.1281   igual
+  [12] eq:two                  EN l.1308  ES l.1334   igual
+  [13] eq:ceiling              EN l.1350  ES l.1378   igual
+  [14] eq:ceilinginteger       EN l.1608  ES l.1645   igual
+  [15] eq:nevermarginal        EN l.1708  ES l.1747   igual
+  [16] eq:ceilingtrue          EN l.1753  ES l.1792   igual
+  [17] eq:ceilingmeasured      EN l.1771  ES l.1810   igual
+  [18] eq:rigorousceiling      EN l.1840  ES l.1880   igual
+  [19] eq:escapeceiling        EN l.2061  ES l.2106   igual
+  [20] (sin label)             EN l.2223  ES l.2275   igual
+  [21] eq:coloron              EN l.2341  ES l.2393   igual
+  [22] eq:resum                EN l.2419  ES l.2472   igual
+  [23] eq:combchi              EN l.2751  ES l.2820   igual
+  [24] eq:twoparities          EN l.2892  ES l.2969   igual
+  [25] (sin label)             EN l.2996  ES l.3077   igual
+  [26] (sin label)             EN l.3069  ES l.3152   igual
+  [27] eq:chigauge             EN l.3533  ES l.3632   igual
+
+============================================================================================
+las cajas enmarcadas llevan los mismos numeros, refs y citas en las dos ediciones.
+============================================================================================
+
+============================================================================================
+FALSACION -- la caja rancia del 24-ago, .la ve?
+============================================================================================
+  la maquina que zanjaba la clase, 24-ago-2026   la firma difiere, salta
+
+la caja rancia salta.

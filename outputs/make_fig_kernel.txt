@@ -1,0 +1,15 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+============================================================================================
+WHAT THE FIGURE ASSERTS, as numbers
+============================================================================================
+  left panel  : 48(+,+)  against  24 x 7(+,+) + 18 x 7(+,-)
+     multiplets            : 1 against 42
+     max |F difference| over 1600 points of [0,1] : 2.87e-11
+     double precision epsilon                     : 2.22e-16
+
+  right panel : singular values of the six basis functions
+     4.486e+01  4.477e+01  4.463e+01  1.400e+00  1.398e+00  3.527e-12
+     rank at 1e-10 relative : 5
+
+  written: fig_kernel.pdf, fig_kernel_es.pdf (here and in paper/), plus .png

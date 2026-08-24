@@ -1,0 +1,210 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+====================================================================================================
+0 -- THE LATTICE.  every content is  gauge + sum_j n_j * multiplet_j,  n in Z^8_{>=0}
+====================================================================================================
+multiplet      A4     8D            G       G/A4
+7(+,+)          0     -6     -0.69315        nan
+7(+,-)          1      8      2.08333     2.0833
+28(+,+)        17     16     21.55372     1.2679
+28(+,-)         4      2     -3.45017    -0.8625
+48(+,+)        18      0     20.86447     1.1591
+48(+,-)         8     28      4.19002     0.5238
+84(+,+)        68     10     21.75220     0.3199
+84(+,-)       109     80     79.87137     0.7328
+gauge         -18    -27    -23.98363
+all three moments are LINEAR in the multiplicities; A4 and 8D are integers.
+
+====================================================================================================
+1 -- THE TWO EXACT RELATIONS, on the five published rows (m_h is OUR m_h, not their column)
+====================================================================================================
+row            x       m_h         mu |   x from (I)        err |  x from (II)        err
+(1)     0.174116  143.5466   105.6893 |     0.174116    3.8e-14 |     0.174116    0.0e+00
+(2)     0.262571  125.8524    81.2397 |     0.262571    1.6e-14 |     0.262571    0.0e+00
+(3)     0.137040  148.1111   112.5175 |     0.137040    6.4e-14 |     0.137040    0.0e+00
+(4)     0.147432  149.6805   114.9148 |     0.147432    3.7e-14 |     0.147432    0.0e+00
+(5)     0.174021  143.9952   106.3509 |     0.174021    2.8e-14 |     0.174021    0.0e+00
+
+max relative error over the five rows: 6.4e-14  -- these are identities, not fits.
+
+====================================================================================================
+2 -- THE MOD-6 LAW:   8D = 2 A4 + 3   (mod 6)   for every bulk content
+====================================================================================================
+Proof.  Per term (m, s, c) of the potential, with c and m integers for matter:
+   A4 gets  m c^4 (s=+1 only);   8D = 8A2 - 6B2  gets  8 m c^2 (s=+1) or -6 m c^2 (s=-1).
+   mod 3:  s=-1 gives -6mc^2 = 0;  s=+1 gives  m c^2 (8 + c^2) = m c^2 (c^2 + 2) = 0,
+           because c^4 = c^2 (mod 3) for EVERY integer c (Fermat).  So 8D + A4 = 0 (mod 3).
+   mod 2:  matter contributes 8A2 - 6B2, even; the gauge sector contributes -27, odd.
+   Together:  8D + A4 = 0 (mod 3)  and  8D odd  =>  8D = 2A4 + 3 (mod 6).
+
+Check on the five published rows and on the generators:
+   content          8D     A4   8D+A4 %3      8D %2
+   (1)              15    258          0          1
+   (2)              29    271          0          1
+   (3)               9    189          0          1
+   (4)              11    223          0          1
+   (5)              15    255          0          1
+   generators violating  a + 8d = 0 (mod 3): NONE (all eight)
+   gauge: A4 = -18, 8D = -27, sum mod 3 = 0, 8D mod 2 = 1
+   random control: 20000 contents with multiplicities in [0,8], violations = 0
+
+The odd-eighths theorem of section 3 is the mod-2 half of this.  The mod-3 half is new: it
+removes two thirds of the (A4, 8D) plane, and the ceiling below feels it -- the real LP optimum
+falls at (216, 1), where 216 + 1 = 217 is not divisible by 3, so no content sits there.  The
+effect on the number is small (control (c) below measures it: 7 GeV); the effect on the
+LATTICE is not, and it is what makes the ceiling a statement about contents rather than about
+a relaxation.
+
+====================================================================================================
+3 -- THE CEILING.  exact rational LP dual over the moment cone
+====================================================================================================
+For a content at (A4, 8D) = (t, k) whose Higgs mass sits at the top of the window, (II) fixes
+x, hence 1/R5, with no freedom left.  (I) then DEMANDS a specific value of G:
+
+     G*(t,k) = t (ln x + 3/4) + 3 mu ,      x = sqrt( 12 z3 (k/8) / (6 mu + t) )
+
+so the pair (t,k) is realisable only if some content at (t,k) has G <= G*(t,k).  Relaxing the
+multiplicities to the reals turns 'the smallest G at (t,k)' into a two-constraint LP whose DUAL
+has only two variables -- so its vertices can be enumerated EXACTLY in rationals.
+
+dual feasible region  { (lam,nu) : lam*a_j + nu*(8d)_j <= g_j  for all eight j } -- vertices:
+   lam = -276091334727928902242 nu = 2310490601866484364724   tight on 7(+,+), 28(+,-)
+   lam = -397100206951907026009 nu = 3927834023173023420030   tight on 7(+,-), 28(+,-)
+   (verified in exact rational arithmetic; ln2 and ln3 rounded so the bound stays a bound)
+
+      8D     max A4    alpha_min     1/R5 (GeV)     m_h forced        TeV
+       1        215     0.016025        10034.0          127.0      10.03
+       3        336     0.025660         6266.5          127.0       6.27
+       5        436     0.031300         5137.3          127.0       5.14
+       7        533     0.035247         4562.1          127.0       4.56
+       9        630     0.038207         4208.7          127.0       4.21
+      15        918     0.044017         3653.1          127.0       3.65
+      21       1209     0.047431         3390.2          127.0       3.39
+      33       1800     0.051238         3138.3          127.0       3.14
+      45       2397     0.053304         3016.6          127.0       3.02
+      65       3400     0.055206         2912.7          127.0       2.91
+      99       5112     0.056788         2831.6          127.0       2.83
+     129       6630     0.057507         2796.2          127.0       2.80
+     201      10272     0.058396         2753.6          127.0       2.75
+     301      15335     0.058936         2728.4          127.0       2.73
+     501      25470     0.059371         2708.4          127.0       2.71
+
+CEILING, valid for arbitrary bulk content:  1/R5 <= 10034 GeV = 10.03 TeV
+   attained at  A4 = 215,  D = 1/8 = 0.1250,  alpha_min = 0.01603
+   the per-D ceiling is monotone decreasing in D: True.  So the maximum sits on the QUANTUM
+   D = 1/8 -- the hierarchy is generated by sitting on the smallest curvature the lattice has,
+   which is the odd-eighths theorem doing physical work.  At large D it flattens out towards
+   ~2.7 TeV; D large is not what kills the ceiling, it is what makes it ordinary.
+
+====================================================================================================
+4 -- WHAT THE CAP WAS WORTH.  the ceiling as a function of the content size N
+====================================================================================================
+The last three columns are section 6's: how many of the window contents hold Part VI's host, how
+many can still afford to donate it (8D >= 11), and the best hierarchy among those that can.
+   N     contents  in window   host can pay   best 1/R5          D content
+   4          494          0     --      --          --
+   5         1286          1      1       1        1924       29/8 1x28(+,+) + 4x84(+,+)
+   6         3002          3      3       3        2182       21/8 1x28(+,+) + 1x28(+,-) + 1x48(+,+) + 3x84(+,+)
+   7         6434         15     15      13        3604        7/8 3x7(+,+) + 2x28(+,+) + 2x84(+,+)
+   8        12869         30     29      22        9138        1/8 3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+,+)
+   9        24309         62     58      47        9138        1/8 3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+,+)
+  10        43757        110     99      86        9138        1/8 3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+,+)
+  11        75581        212    184     167        9138        1/8 3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+,+)
+  12       125969        388    332     307        9156        1/8 4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)
+  13       203489        670    562     525        9156        1/8 4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)
+  14       319769       1097    906     857        9156        1/8 4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)
+
+The 2.18 TeV in STATE.md section 4 is the N=6 row.  It is a ceiling on the SIZE OF THE CONTENT,
+not on the model: at N=14 the same window already allows 9.16 TeV, a factor 4.20 more, and the
+certified sup over all N is 10.03 TeV.
+
+====================================================================================================
+5 -- CONTROLS
+====================================================================================================
+(a) EVERY champion of the curve, re-minimised numerically -- the closed form is not trusted to
+    police itself.  m_h at the numeric alpha must still land inside the window.
+    content                                                  closed    numeric    err %   m_h(num)
+    1x28(+,+) + 4x84(+,+)                                  0.083579   0.083062   +0.623   127.0698
+    1x28(+,+) + 1x28(+,-) + 1x48(+,+) + 3x84(+,+)          0.073698   0.073417   +0.383   125.7672
+    3x7(+,+) + 2x28(+,+) + 2x84(+,+)                       0.044616   0.044576   +0.091   126.3888
+    3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+   0.017597   0.017596   +0.008   126.8355
+    3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+   0.017597   0.017596   +0.008   126.8355
+    3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+   0.017597   0.017596   +0.008   126.8355
+    3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+   0.017597   0.017596   +0.008   126.8355
+    4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)           0.017562   0.017560   +0.009   125.9834
+    4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)           0.017562   0.017560   +0.009   125.9834
+    4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)           0.017562   0.017560   +0.009   125.9834
+    every champion survives its own numerical minimisation: True
+
+(b) the ceiling must dominate every content actually found in the window:
+    max 1/R5 over the 1097 window contents at N<=14 : 9156 GeV
+    certified ceiling                              : 10034 GeV   -> HOLDS
+
+(c) a control that must FAIL -- drop the mod-3 law and the ceiling lands on a phantom point:
+    (A4,8D) = (216,1):  cone bound G >= -236.100, G*(127) = -235.558  -> LP says feasible, but
+    (A4 + 8D) mod 3 = 1 != 0, so NO content sits there.  Ignoring it inflates the ceiling to
+    10041 GeV.
+
+(d) the ceiling scales with the Higgs window, as it must (1/R5 ~ m_h at fixed D):
+    m_h <=   125 GeV  ->  max A4 =   212,  1/R5 <=     9903 GeV
+    m_h <=   127 GeV  ->  max A4 =   215,  1/R5 <=    10034 GeV
+    m_h <=   200 GeV  ->  max A4 =   377,  1/R5 <=    15086 GeV
+
+====================================================================================================
+6 -- WHAT PART VI's ESCAPE COSTS THE CEILING
+====================================================================================================
+Part VI's surviving escape from proton decay is a family-dependent charge, and it must be hosted
+by an 84(+,+) donated to the brane -- which removes it from the Higgs potential.  Section 0's
+lattice already prices that: the host carries 8D = +10, so donating it takes 10/8 off D.
+
+Electroweak symmetry breaks only for D > 0, so a content can pay and survive iff  8D > 10.
+8D is ODD (section 2), so the condition is an integer one with no slack in it:
+
+     a content can afford the escape  <=>  8D >= 11
+
+and the per-rung ceiling of section 3 is monotone decreasing in D, so the escape does not merely
+forbid contents -- it moves the ceiling, by forbidding the rungs the ceiling lives on.
+
+      8D     max A4    alpha_min     1/R5 (GeV)
+      11        727     0.040530         3967.4
+      13        821     0.042460         3787.1
+      15        918     0.044017         3653.1
+      17       1015     0.045331         3547.2
+      19       1112     0.046456         3461.3
+      21       1209     0.047431         3390.2
+      23       1306     0.048284         3330.3
+      33       1800     0.051238         3138.3
+      51       2697     0.054016         2976.9
+      99       5112     0.056788         2831.6
+     201      10272     0.058396         2753.6
+     501      25470     0.059371         2708.4
+   ... 40 rungs scanned, from 8D = 11 to 501; monotone decreasing throughout: True
+
+CEILING for any content that can AFFORD the escape:  1/R5 <= 3967 GeV = 3.97 TeV
+   attained at  A4 = 727,  D = 11/8,  alpha_min = 0.04053
+   against 10034 GeV with the escape not required -- the escape divides the ceiling by 2.53.
+
+The two halves of the argument come from different papers and neither states this: Part VI prices
+the escape and says in its own words that the modified potential is not recomputed there; Part VII
+certifies the ceiling and imposes no anomaly condition.  The quantum does the work twice -- the
+unconstrained ceiling sits ON 8D = 1, and the escape's bill is exactly what makes that rung
+unaffordable.
+
+(e) CONTROL -- the enumeration must respect it.  Every content of at most 14 multiplets that
+    lands in the window AND holds a host AND still has D > 0 after donating it:
+    857 of the 1097 window contents can afford it (906 hold a host at all)
+    best 1/R5 among them : 3017 GeV   8D = 11 -> 1 after donating   m_h = 126.6
+    5x7(+,+) + 5x28(+,-) + 1x48(+,-) + 3x84(+,+)
+    certified escape ceiling : 3967 GeV   -> HOLDS
+    the champion of the unconstrained ceiling sits at 8D = 1 and holds 1 host(s): it is 10/8 short of the bill and cannot donate one
+    -- the content that generates the largest hierarchy is exactly the content that cannot pay.
+
+SCOPE, and it has to be said whole.  This bounds the content BEFORE the donation -- the row that
+pays.  It does NOT bound the world after: the post-donation bulk needs only 8D >= 1, which is the
+unconstrained ceiling again.  The statement is 'a bulk content in their Table 1's sense that can
+implement the escape by donating one of its own multiplets cannot generate more than 3.97 TeV',
+not 'a universe with the escape in it cannot'.  It also inherits Part VI's anchor caveat: it is
+our F, whose alpha_min column does not reproduce theirs.  What does NOT inherit it is the
+arithmetic: 8D >= 11 is a statement about integers.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\ceiling_ilp.json

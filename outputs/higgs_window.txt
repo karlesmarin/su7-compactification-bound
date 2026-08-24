@@ -1,0 +1,90 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE CEILING RISES WITH m_h, SO THE TOP OF THE WINDOW IS THE CONSERVATIVE CHOICE
+====================================================================================================
+  mu ~ m_h^2, and (II) is x^2 = 12 zeta(3) D / (A_4 + 6 mu), so a larger m_h means a larger
+  denominator, a smaller x, and 1/R5 = 2 pi m_W / x LARGER.  Measured rather than asserted,
+  at the fixed vertex A_4 = 104 so that only m_h moves:
+
+         m_h           mu      1/R5 at 104
+      124.00      78.8658           9038.3
+      125.00      80.1429           9098.1
+      125.20      80.3996           9110.1
+      126.00      81.4304           9158.0
+      127.00      82.7280           9218.0
+      128.00      84.0360           9278.0
+
+  CONTROL -- strictly increasing in m_h : True
+  So quoting the ceiling at 127 is right for an upper bound over the window.  What follows is
+  not a correction to that; it is the other number, which the paper does not give.
+
+====================================================================================================
+2 -- BUT 127 IS NOT A VALUE THE HIGGS MASS CAN HAVE
+====================================================================================================
+  measurement (PDG): m_h = 125.20 +- 0.11 GeV
+  the window used  : [125, 127], which is \cite{KM25}'s
+
+     the window's top, 127      is  16.4 sigma from the measurement
+     the window's floor, 125    is   1.8 sigma from the measurement
+
+  m_h                                 value   A_4 vertex     1/R5 (GeV)
+  PDG, -1 sigma                      125.09          101         9080.2
+  PDG central                        125.20          101         9086.8
+  PDG, +1 sigma                      125.31          101         9093.4
+  PDG, +5 sigma                      125.75          101         9119.8
+  the window's floor, 125            125.00          101         9074.8
+  the window's top, 127              127.00          104         9218.0
+
+  CONTROL -- the one-sigma band moves the vertex : False
+             (it must not, or the sharper number is not stable against the measurement)
+
+  the vertex at the measured mass : A_4 = 101
+  the vertex at the window's top  : A_4 = 104
+  they differ by 3, which is a whole step of the mod-6 lattice.
+
+====================================================================================================
+3 -- THE TWO NUMBERS, AND WHAT EACH ONE MEANS
+====================================================================================================
+  Both are true and they quantify different statements:
+
+     1/R5 <= 9.22 TeV   for any bulk content whose Higgs mass lies ANYWHERE in [125, 127]
+     1/R5 <= 9.09 TeV   for any bulk content whose Higgs mass is the MEASURED one
+
+  a 1.4 % difference, and the second is the one a reader wanting a number about the world
+  should take.
+
+  And the unconstrained ceiling of the same section, for completeness -- no W > 0 imposed:
+
+  m_h                                 value   A_4 vertex     1/R5 (GeV)
+  PDG central                        125.20          206         9870.7
+  the window's top, 127              127.00          212        10012.8
+
+====================================================================================================
+4 -- CONTROLS
+====================================================================================================
+  (i) THE SEARCH MUST BE ABLE TO RETURN SOMETHING ELSE.  Push m_h well outside the window in
+      both directions and the vertex has to move; if it does not, the scan is not measuring
+      m_h at all:
+
+             m_h   A_4 vertex     1/R5 (GeV)
+          110.00           86         8054.5
+          120.00           98         8751.7
+          125.20          101         9086.8
+          130.00          110         9443.5
+          140.00          125        10152.0
+      distinct vertices over that range : 5   <-- must be more than one
+
+  (ii) AND THE PAPER'S OWN NUMBER MUST COME BACK OUT.  At the top of the window the vertex
+       and the ceiling must be exactly what section ceiling prints:
+       A_4 = 104 (paper: 104)   1/R5 = 9218 GeV (paper: 9218)
+
+  (iii) THE NUMBERS AS THE PAPER WOULD PRINT THEM:
+       ceiling at the measured Higgs mass : 9087 GeV = 9.09 TeV
+       its vertex                         : A_4 = 101
+       at +1 sigma                        : 9093 GeV
+       at the window's top                : 9218 GeV = 9.22 TeV
+       the window's top, in sigma         : 16.4
+       unconstrained, measured mass       : 9871 GeV = 9.87 TeV
+       unconstrained, window's top        : 10013 GeV = 10.01 TeV
+
+archived: outputs/higgs_window.json

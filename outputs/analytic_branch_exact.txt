@@ -1,0 +1,39 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+0 -- THE OBJECTION, RESTATED AS A NUMBER
+====================================================================================================
+  the paper's champion of the branch has 1/R5 = 181 GeV, and 1/R5 = 2 m_W / alpha, so
+     alpha = 2 x 80.4 / 181 = 0.888
+  against a radius of convergence 1/c_max = 1/3 = 0.333.
+  So the closed form was evaluated a factor 2.7 OUTSIDE its own radius.
+  Nothing computed there is certified by the expansion.  Redo it exactly.
+
+====================================================================================================
+1 -- THE ELEVEN BASE FAMILIES, ON THE EXACT POTENTIAL
+====================================================================================================
+  A4 = 0 forces sum n_j A_j = 18 over the multiplets with A4 > 0, and 7(+,+) is free.
+  base solutions (no 7(+,+)) : 11
+
+  content                                     8D      alpha    1/R5 GeV    m_h GeV inside |a|<1/3
+  18x7(+,-)                                  117         --          --         -- no global minimum
+  14x7(+,-) + 1x28(+,-)                       87         --          --         -- no global minimum
+  10x7(+,-) + 2x28(+,-)                       57         --          --         -- no global minimum
+  10x7(+,-) + 1x48(+,-)                       81         --          --         -- no global minimum
+  6x7(+,-) + 3x28(+,-)                        27         --          --         -- no global minimum
+  6x7(+,-) + 1x28(+,-) + 1x48(+,-)            51         --          --         -- no global minimum
+  2x7(+,-) + 2x28(+,-) + 1x48(+,-)            21         --          --         -- no global minimum
+  2x7(+,-) + 2x48(+,-)                        45         --          --         -- no global minimum
+
+====================================================================================================
+2 -- AND THE FREE MULTIPLET, WHICH THE TRUNCATED ARGUMENT USED TO DISPOSE OF IT
+====================================================================================================
+  The truncated argument said: adding 7(+,+) only lowers G, and m_h grows with G, so the
+  maximum is at zero copies.  That argument lives entirely inside the expansion.  On the
+  exact potential the same sweep has to be done by hand.
+
+  base                                     n7pp      alpha    1/R5 GeV    m_h GeV
+
+====================================================================================================
+VERDICT
+====================================================================================================
+  no content on the branch has a real m_h on the exact potential at all.

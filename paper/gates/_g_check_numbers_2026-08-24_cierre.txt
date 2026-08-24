@@ -1,0 +1,44 @@
+su7_hierarchy.tex: every printed number against ../outputs/*, ../../part_vi/outputs/*
+  greppable in an archived run : 361
+  backed, rounded when printed : 15
+     0.01744 <- 0.017440347
+     0.0548 <- 0.05476882
+     0.6809 <- 0.68086781
+     111.44 <- 111.437000
+     204.99 <- 204.987700
+     4.7922 <- 4.79219000
+     0.039 <- 0.0386000
+     0.120 <- 0.1196000
+     0.168 <- 0.1675401
+     0.94 <- 0.935256
+     1.13 <- 1.125198
+     1.24 <- 1.235138
+     2.45 <- 2.445245
+     4.82 <- 4.816100
+     9.14 <- 9.138000
+  exact rationals, as printed  : 17
+  declared non-measurements    : 62
+  NOT FOUND                    : 0
+
+su7_hierarchy_es.tex: every printed number against ../outputs/*, ../../part_vi/outputs/*
+  greppable in an archived run : 361
+  backed, rounded when printed : 15
+     0.01744 <- 0.017440347
+     0.0548 <- 0.05476882
+     0.6809 <- 0.68086781
+     111.44 <- 111.437000
+     204.99 <- 204.987700
+     4.7922 <- 4.79219000
+     0.039 <- 0.0386000
+     0.120 <- 0.1196000
+     0.168 <- 0.1675401
+     0.94 <- 0.935256
+     1.13 <- 1.125198
+     1.24 <- 1.235138
+     2.45 <- 2.445245
+     4.82 <- 4.816100
+     9.14 <- 9.138000
+  exact rationals, as printed  : 17
+  declared non-measurements    : 62
+  NOT FOUND                    : 0
+

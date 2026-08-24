@@ -1,0 +1,32 @@
+OddEighths.lean -- salida real de la verificacion, archivada
+==========================================================
+
+  Autor: Carles Marin <karlesmarin@gmail.com>  (con Claude, Anthropic, como asistente)
+
+QUE ES ESTO.  El anexo A del articulo afirma tres cosas sobre el ladrillo de Lean: que los
+teoremas compilan, que `#print axioms` devuelve [propext, Quot.sound] para los cuatro y NINGUN
+axioma para `key_seed_independent`, y que no hay `sorryAx` en ninguna parte.  Hasta el 24-ago-2026
+esa afirmacion no tenia salida archivada detras.  Ahora la tiene, y es esta.
+
+COMO SE OBTUVO.  El fichero se compilo contra Mathlib con el toolchain leanprover/lean4:v4.30.0-rc2,
+en un arbol con Mathlib ya construido:
+
+    lake env lean OddEighths.lean
+
+Sin errores, sin avisos, codigo de salida 0.  La salida completa del fichero es la de los cinco
+`#print axioms` del final, y es esta, literal:
+
+'PartVII.mod6_law' depends on axioms: [propext, Quot.sound]
+'PartVII.twoW_odd' depends on axioms: [propext, Quot.sound]
+'PartVII.oddEighths' depends on axioms: [propext, Quot.sound]
+'PartVII.oddEighths_published' depends on axioms: [propext, Quot.sound]
+'PartVII.key_seed_independent' does not depend on any axioms
+
+QUE DICE Y QUE NO DICE.  Dice que los cuatro primeros no usan mas que los dos axiomas que Lean
+usa para casi todo ---extensionalidad proposicional y el cociente--- y que ninguno arrastra
+`sorryAx`, que es lo que aparece en cuanto queda un paso sin demostrar.  El quinto no usa ninguno:
+es una igualdad decidible entre dos enteros.  `Classical.choice` no aparece en ninguno.
+
+NO dice nada sobre la ec. (68) de Komori-Maru, que es un dato fisico y no un paso logico, ni sobre
+la mitad analitica del articulo ---la forma cerrada de Lambert, la escalera, las dos identidades---,
+que no esta formalizada y el anexo lo dice en su parrafo mas largo.

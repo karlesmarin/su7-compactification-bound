@@ -1,0 +1,59 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- WHERE THE HALF COMES FROM
+====================================================================================================
+  the gauge sector's own term list, and only its ODD charges matter:
+     m = -1      s = +1  c = 2   even charge, does not enter W
+     m = -2      s = +1  c = 1   contributes -s*m = 2
+     m = -7/2    s = -1  c = 1   contributes -s*m = -7/2
+  W(gauge) = -3/2
+
+  and every multiplet contributes an integer:
+  multiplet           W   multiplet           W
+  7(+,+)              1   7(+,-)             -1
+  28(+,+)             3   28(+,-)            -3
+  48(+,+)             6   48(+,-)            -6
+  84(+,+)             9   84(+,-)            -9
+
+  CONTROL -- every multiplet's W is an integer : True
+  CONTROL -- the gauge W is NOT : True   (it is -3/2)
+
+====================================================================================================
+2 -- THEREFORE 2W IS ODD, ALWAYS
+====================================================================================================
+  2W = 2 W(gauge) + 2 sum n_j W_j = -3 + even, and -3 is odd.
+
+  Checked by brute force over every content of at most six multiplets:
+     contents tested            : 3003
+     with W exactly zero        : 0   <-- must be 0
+     with 2W not an odd integer : 0   <-- must be 0
+
+====================================================================================================
+3 -- WHAT IT MEANS, AND IT IS THE SAME SHAPE AS THEOREM 1
+====================================================================================================
+  F(1) - F(0) = (31/16) zeta(5) W, and W is never zero, so the potential's values at the two
+  symmetric points are NEVER equal.  The orbifold is never marginally stable: for any bulk
+  content whatsoever, one of the two vacua is strictly deeper, and which one is decided by a
+  sign that cannot vanish.
+
+  Theorem 1 says 8D is an odd integer, so D != 0 and electroweak breaking is never marginal.
+  Both statements come from the SAME half-integer, the -7/2 of their eq. (68): at the
+  curvature it survives as 6 x 7/2 = 21, odd; at the value it survives as 3/2, half-odd.
+  One gauge coefficient, two non-degeneracies.
+
+====================================================================================================
+4 -- AND THE NUMBERS THE PAPER PRINTS HAD BEEN TRUNCATED
+====================================================================================================
+  vacuum_constraint.py formatted W with %d.  The correct values:
+
+  content                     W (printed)    W (exact)
+  (1)                                  31         63/2
+  (2)                                  37         75/2
+  (3)                                  37         75/2
+  (4)                                  36         73/2
+  (5)                                  34         69/2
+  witness (212,1)                    -157       -315/2
+  witness (104,1)                       2          5/2
+
+  the sign never changes, so no verdict moves -- but the printed integers were wrong and
+  the half is the whole content of section 3.

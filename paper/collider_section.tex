@@ -1,0 +1,174 @@
+% ===================================================================
+% DRAFT -- new section for su7_hierarchy.tex, to be spliced after \section{What this predicts}
+% (sec:pred) and before \section{A second anchor} (sec:anchor).
+%
+% Everything below is derived in collider_dictionary.py; its archived run is
+% outputs/collider_dictionary.txt and every control there passes.
+% ===================================================================
+\section{Which state a search bounds}\label{sec:collider}
+
+A bound on $1/R_5$ is a bound on a compactification scale, not on the mass of any one particle. A
+collider does not measure compactification scales; it measures resonances, each with a production
+rate and a width. Getting from one to the other looks like it needs a phenomenological study, and
+it does not: it is fixed by the three parity matrices of \cite{KM25} and the mode expansions that
+follow from them, all of which are already published. This section reads them.
+
+\paragraph{The parity that separates colour.} Of the three $\ZZ_2$ matrices, the one acting in
+$x_6$ is
+\begin{equation}\label{eq:P6}
+  P_6=\mathrm{diag}(+,+,+,-,-,-,-),
+\end{equation}
+\cite{KM25}'s (11), which splits the seven-dimensional index into the colour triplet and
+everything else. A gauge component along $E_{ij}$ carries the \emph{product} $P_6^{(i)}P_6^{(j)}$,
+so \eqref{eq:P6} has an immediate consequence that is arithmetic rather than dynamical:
+\begin{equation}\label{eq:colourparity}
+  P_6(i,j)=-1
+  \quad\Longleftrightarrow\quad
+  \text{exactly one of } i,j \text{ is a colour index,}
+\end{equation}
+that is, precisely when the generator changes colour. There are $24$ such components, and there is
+no colour-changing component with $P_6=+1$.
+
+\begin{theorem}[colour lives on the small circle]\label{thm:colourparity}
+Every colour-changing gauge boson of \cite{KM25} has $P_6=-1$. By its (21)--(24) each such
+component expands in $\sin(m x_6/R_6)$ with $m\ge1$. Hence its lightest level is at least $1/R_6$,
+and its wavefunction \emph{vanishes} at $x_6=0$.
+\end{theorem}
+\begin{proof}
+\eqref{eq:colourparity} is the statement that $P_6^{(i)}P_6^{(j)}=-1$ iff one index lies in the
+colour block, which is immediate from \eqref{eq:P6}. The four $P_6$-odd expansions of \cite{KM25},
+its (21)--(24), all carry $\sin(m x_6/R_6)$ and all start at $m=1$; the sine vanishes at the
+origin and the level is bounded below by the $m=1$ term.
+\end{proof}
+
+\noindent This matters because \cite{KM25} p.~3 fixes $R_5\gg R_6$ and calls $1/R_6$ ``an
+arbitrary parameter, which is the Planck scale for instance''. Theorem~\ref{thm:colourparity} then
+says the coloured exotics are not merely heavy but unobservable in principle at a hadron collider,
+and it says so without any assumption beyond the orbifold.
+
+\paragraph{So the brane quarks see exactly two towers.} \cite{KM25} p.~22 introduces ``quarks
+$q_L,u_R,d_R$ as the 4D fermions on the brane at the origin in a compactified space $(0,0)$''. A
+4D field there couples only to components whose mode function is non-zero at that point --- that
+is, to components whose $x_5$ \emph{and} $x_6$ factors are both cosines. Of the eight parity
+classes only two qualify, and both are colour-diagonal:
+
+\begin{center}\small
+\rowcolors{2}{white}{softgrey}
+\begin{tabular}{llllll}
+\toprule
+\rowcolor{hdrblue!10} parity & eq. & $x_5$ mode & $x_6$ mode & at $(0,0)$ & lightest level\\
+\midrule
+$(+,+,+)$ & (17) & $\cos(nx_5/R_5)$ & $\cos(mx_6/R_6)$ & \textbf{non-zero} & $0$, then $1/R_5$\\
+$(+,+,-)$ & (18) & $\cos((n{+}\tfrac12)x_5/R_5)$ & $\cos(mx_6/R_6)$ & \textbf{non-zero} & $1/(2R_5)$\\
+$(+,-,+)$ & (19) & $\sin((n{+}\tfrac12)x_5/R_5)$ & $\cos(mx_6/R_6)$ & zero & $1/(2R_5)$\\
+$(+,-,-)$ & (20) & $\sin(nx_5/R_5)$ & $\cos(mx_6/R_6)$ & zero & $1/R_5$\\
+$(-,\cdot,\cdot)$ & (21)--(24) & --- & $\sin(mx_6/R_6)$ & zero & $\ge 1/R_6$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The $(+,+,-)$ class is exactly the two positions $(6,7)$ and $(7,6)$ --- a colour
+singlet. So the half-integer tower, whose lightest state sits at $1/(2R_5)$ and which
+\S\ref{sec:pred} correctly flagged as the lowest level in the model, is \emph{not} something a
+dijet search can see; and it is not a clean prediction either, since $\langle W\rangle$ of
+\cite{KM25}'s (77) acts in the $(5,7)$ block and shifts it with $\alpha$. The one coloured object
+below the Planck scale is the gluon tower.
+
+\paragraph{And that answers a question \cite{KM25} left open.} Their conclusions read: ``Since the
+mass of $X$, $Y$ gauge bosons is small in our model, this causes rapid proton decay \emph{if they
+can couple to quarks and leptons}'', and they leave the question to future work. By
+Theorem~\ref{thm:colourparity} they cannot: the $X$ and $Y$ bosons are precisely the
+colour-changing components, and their wavefunction is zero at the fixed point where the same paper
+puts the quarks. The gauge-exchange channel is shut by the parity assignment itself.
+
+\noindent\textbf{The scope of that is narrow and worth stating.} It is a tree-level statement about
+gauge exchange, for the quarks localised as in \cite{KM25} p.~22. It says nothing about the brane
+Dirac masses that same paper introduces on p.~16 to lift its unwanted zero modes, and it is
+\emph{not} the escape of Part~VI \cite{PartVI}, which is a family-dependent charge hosted by a
+donated $\rep{84}^{(+,+)}$ --- a different mechanism, addressing a different operator. In
+particular \eqref{eq:escapeceiling} is untouched by it.
+
+\paragraph{The coloron, with no free parameters.} Three facts fix it. The mass: \cite{KM25} p.~16
+states that the $\su3_C$ generators ``are commutable with $\langle W\rangle$ irrespective of the
+VEV $\alpha_{\min}$'', so the colour tower takes no Wilson-line shift and sits at $n/R_5$ exactly.
+The coupling: their (17) carries $\sqrt2$ in front of every $(n,0)$ mode where the zero mode
+carries $1$, and $\cos(0)=1$, so at the brane the ratio is $\sqrt2$ --- and it is
+flavour-universal, because $q_L$, $u_R$ and $d_R$ sit at the same point and see the same mode
+function. The width then follows from the standard colour-octet result
+$\Gamma(C\to q\bar q)=n_f\,\alpha_s\cot^2\theta\,M/6$ with $\cot^2\theta=2$ and $n_f=6$:
+
+\begin{keyeq}
+\begin{equation}\label{eq:coloron}
+  M_n=\frac{n}{R_5},
+  \qquad
+  \frac{g_{G^{(n)}q\bar q}}{g_{gq\bar q}}=\sqrt2,
+  \qquad
+  \frac{\Gamma}{M}=2\alpha_s(M)\simeq0.16 .
+\end{equation}
+\end{keyeq}
+
+\noindent Carried across the rows of \S\ref{sec:pred}:
+
+\begin{center}\small
+\rowcolors{2}{white}{softgrey}
+\begin{tabular}{lrrrr}
+\toprule
+\rowcolor{hdrblue!10} & $1/R_5$ & $\alpha_s$ & $\Gamma/M$ & $\Gamma$\\
+\midrule
+\rowcolor{amber!14}ceiling at the measured $m_h$ & $9.09$~TeV & $0.0735$ & $0.147$ & $1337$~GeV\\
+ceiling once the vacuum must be the true one & $9.22$~TeV & $0.0734$ & $0.147$ & $1354$~GeV\\
+ceiling over \emph{all} contents & $10.03$~TeV & $0.0729$ & $0.146$ & $1463$~GeV\\
+contents that can afford the escape & $3.97$~TeV & $0.0789$ & $0.158$ & $626$~GeV\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Which changes what may be quoted against it.} A width of one sixth of the mass is not a
+narrow resonance, so the narrow benchmark of a dijet search does not bound this object: CMS's
+$6.6$~TeV for a narrow axigluon or coloron at $137\,\mathrm{fb}^{-1}$ \cite{CMSdijet} is a limit on
+a different particle. What does apply is the model-independent limit on $\sigma\,B\,A$ that the
+same analysis publishes as a function of mass \emph{and} width, read at $\Gamma/M\simeq0.16$. The
+previous version of this section compared \eqref{eq:escapeceiling} to a generic Kaluza-Klein gluon
+exclusion; \eqref{eq:coloron} is what makes that comparison a statement about this model rather
+than about a benchmark, and it is the reason the comparison is worth making at all.
+
+\paragraph{A correction to how the reach was stated.} An earlier version of this paper wrote that a
+machine reaching $10$--$20$~TeV settles the class. That conflates the energy of a collider with its
+reach in resonance mass, and the two are not the same: producing a $9$~TeV resonance at
+$\sqrt s=13$~TeV requires partons at values of $x$ where the parton densities are negligible. The
+correct statement is about mass reach in the relevant channel, and it makes the escape branch far
+more interesting than the ceiling --- $3.97$~TeV sits where Run~2 has real sensitivity, while
+$9.09$~TeV does not.
+
+\paragraph{The tower also acts below the first resonance.} Since every $(n,0)$ mode has the same
+$\sqrt2$ at $x_5=0$, integrating out the whole tower gives a colour-octet four-quark operator with
+a coefficient that is a pure number:
+\begin{equation}\label{eq:tower}
+  \sum_{n\ge1}\frac{g_n^2}{2M_n^2}
+  \;=\;g_s^2R_5^2\sum_{n\ge1}\frac{1}{n^2}
+  \;=\;\frac{\pi^2}{6}\,g_s^2R_5^2 ,
+  \qquad\text{i.e.}\qquad
+  \Lambda_8=\frac{\sqrt3}{\pi\sqrt{\alpha_s}}\,\frac{1}{R_5},
+\end{equation}
+which is $7.8$~TeV on the escape branch and $18.5$~TeV at the measured-$m_h$ ceiling. The $m\ge1$
+modes do not spoil the sum: they cost $1/R_6$, and their share is suppressed by $R_6/R_5$, which
+\cite{KM25} p.~3 takes to be tiny --- so the logarithmic divergence one would fear from a
+codimension-two brane never switches on at the scales in play. This is a collective prediction of
+the tower and does not require resolving any resonance; it cannot, however, be compared directly
+with published compositeness scales, whose operator has a different colour and chiral structure.
+
+\paragraph{And one number the model does not supply.} \cite{KM25} p.~16 lifts its unwanted zero
+modes by introducing ``4D fermion conjugate to the representations and charges of the massless
+fermions and their Dirac mass terms on the fixed points'', and does not fix those masses. If any
+coloured exotic sits below $M/2$ then $G^{(1)}\to\Psi\bar\Psi$ opens, the width grows and
+$\mathrm{BR}(G^{(1)}\to jj)$ falls by an amount nothing here determines. So
+\begin{equation}\label{eq:brhole}
+  \mathrm{BR}(G^{(1)}\to jj)=1 \quad\text{if every coloured exotic lies above } M/2,
+\end{equation}
+and less otherwise. That single unknown is what stands between the arithmetic ceiling and a
+model-specific exclusion, and a limit quoted without it would be model-independent in appearance
+only. It is stated here rather than absorbed.
+
+\bridge{The dictionary is derived, the one free parameter is named, and the comparison is now a
+statement about this model --- which leaves only the arithmetic instrument itself to be checked
+against someone else's table.}

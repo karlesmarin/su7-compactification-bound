@@ -1,0 +1,30 @@
+========================================================================================
+THE LADDER -- w_2k = eta(5-2k)/zeta(5-2k) = 1 - 2^(2k-4), and the gauge sector's parity
+========================================================================================
+2k         w_2k     2^(5-2k) D                gauge value     parity
+0         15/16   S + 31*Delta                          9        ODD
+2           3/4    S + 7*Delta                        -27        ODD
+4             0    S + 1*Delta                        -36       EVEN
+
+  matter must give an EVEN value at every rung -- checked:
+     all even at rungs 0, 2, 4 : True
+
+========================================================================================
+CONSEQUENCE -- the obstruction lives at moments 0 and 2 and DIES at moment 4
+========================================================================================
+  moment 0 : gauge = 9 (odd)  ->  can NEVER vanish
+  moment 2 : gauge = -27 (odd)  ->  can NEVER vanish
+  moment 4 : gauge = -36 (even)  ->  CAN vanish for suitable matter
+
+  moment 4 is A4, the strength of the alpha^4 ln alpha branch point.
+  A4 = 0 means the non-analyticity at the symmetric point switches OFF.
+  gauge A4 = -18 ; is there matter making the total vanish, WITH D > 0?
+
+  contents (<=6 multiplets) with A4 EXACTLY 0 : 17
+  of those with D > 0 (electroweak breaking) : 5
+     D = -27/8     1x48(+,+)
+     D = -3/8      1x7(+,-)+1x28(+,+)
+     D = 45/8      2x7(+,-)+2x48(+,-)
+     D = 21/8      2x7(+,-)+2x28(+,-)+1x48(+,-)
+     D = -3/8      2x7(+,-)+4x28(+,-)
+     D = -33/8     1x7(+,+)+1x48(+,+)

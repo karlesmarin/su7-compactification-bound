@@ -1,0 +1,77 @@
+================================================================================================
+1 -- CONTROL: their eq. (68) rebuilt from the parity assignment, not typed in
+================================================================================================
+  coefficients {(c,s): value} = {(1, -1): '7', (1, 1): '4', (2, 1): '2'}      (theirs: (2,+):2, (1,+):4, (1,-):7)
+  a = 1, b = 2, W = 7   ->  gauge table [('-7/2', -1, 1), ('-2', 1, 1), ('-1', 1, 2)]
+  rungs O(5), O(3), O(1) = ['9', '-27', '-36']        (ladder_obstruction.py: 9, -27, -36)
+
+================================================================================================
+2 -- THE GEOMETRIC LAW, and charge 2 as the fixed point
+================================================================================================
+  c      rho = c^2/4  weight along k = 0, 1, 2       behaviour
+  1      1/4          ['1', '1/4', '1/16']           decays
+  2      1            ['1', '1', '1']                CONSTANT
+  3      9/4          ['1', '9/4', '81/16']          grows
+
+  So a charge-2 state weighs the SAME on the value, the curvature and the fourth moment.
+  The gauge sector has only c = 1, 2, hence two parameters and the three-rung relation below.
+
+================================================================================================
+3 -- THE SWEEP: what holds on all 4096 assignments, and what does not
+================================================================================================
+  assignments swept: 4096
+
+  HOLDS   O(p) = 2^{p-1}(W - 2b) - (32a + W)            counterexamples: 0
+  HOLDS   O(5) - O(3) = 4 [ O(3) - O(1) ]               counterexamples: 0
+  FAILS   W - 2b = N_c                                  counterexamples: 3872 of 4096
+
+  >> The identification of the bracket with the number of colours is TRUE AT THEIR ASSIGNMENT
+     AND FALSE IN GENERAL.  It was a coincidence at one point; the 'two theorems are one'
+     reading built on it is withdrawn.  What survives is the geometry, which is stronger anyway.
+
+================================================================================================
+4 -- THE FALSIFIABLE CONSEQUENCE: which multiplet breaks the three-rung relation
+================================================================================================
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+A first guess -- 'it breaks as soon as a charge 3 appears' -- is WRONG, and the table below says
+so.  An ANTIPERIODIC term carries TWO modes, not one:
+
+      s = +1 :  one mode,  sigma = c^2/4
+      s = -1 :  two modes, sigma = c^2/4  AND  sigma = c^2
+
+so the modes available are  {1/4, 1, 9/4}  from c = 1, 2, 3  plus  {1, 4, 9}  from the
+antiperiodic ones.  Three rungs and two modes leave exactly one linear relation; a third mode
+destroys it.  The gauge sector reaches only {1/4, 1} -- which is WHY section 3 passes.
+
+PREDICTION, made before looking: the relation holds iff the term table has NO antiperiodic
+charge-2 state and NO charge-3 state.
+
+  content      modes                  O(5)       O(3)       O(1)        O5-O3     4(O3-O1) predicted/actual
+  7(+,+)       1/4,1                   -21        -33        -36           12           12 holds / holds
+  7(+,-)       1/4,1                    41        -19        -34           60           60 holds / holds
+  28(+,+)      1/4,1                   -47        -11         -2          -36          -36 holds / holds
+  28(+,-)      1/4,1,4                  77        -25        -28          102           12 BREAKS / BREAKS
+  48(+,+)      1/4,1                  -135        -27          0         -108         -108 holds / holds
+  48(+,-)      1/4,1,4                 175          1        -20          174           84 BREAKS / BREAKS
+  84(+,+)      1/4,1,9/4,4,9          -155        -17        100         -138         -468 BREAKS / BREAKS
+  84(+,-)      1/4,1,9/4,4             217         53        182          164         -516 BREAKS / BREAKS
+
+  prediction wrong on: 0 of 8   -> PREDICTION CONFIRMED
+
+  Read the column: the (+,+) and (+,-) versions of the 28 and the 48 differ by whether their
+  charge-2 state is periodic or ANTIPERIODIC, and that single flip unlocks the mode sigma = 4.
+  The 84 unlocks 9/4 and 9 because it is the only multiplet carrying a charge 3.
+
+  and on the five published rows -- all of which carry an 84, so all break it:
+  row           O5-O3     4(O3-O1) 
+  (1)            -594        -2004   BREAKS
+  (2)            -732        -2052   BREAKS
+  (3)            -816        -1476   BREAKS
+  (4)            -750        -1740   BREAKS
+  (5)            -660        -1980   BREAKS
+
+  >> THE LADDER IS A SUM OF GEOMETRIC MODES  O_k = sum_sigma A_sigma sigma^k, and the number of
+     modes a content reaches is what decides whether its value, curvature and fourth moment are
+     three independent numbers or two.  Komori-Maru's own five rows all reach four modes.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\ladder_closed_form.json

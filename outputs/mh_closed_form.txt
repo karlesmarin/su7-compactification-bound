@@ -1,0 +1,65 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+====================================================================================================
+1 -- F'' AT THE MINIMUM:  closed form  2 z3 D - A4 x^2/6   against a numerical derivative
+====================================================================================================
+row          D      A4   a_min(num)    F''(closed)   F''(numeric)    err %
+(1)       15/8     258     0.055304      31.678417      31.814351   -0.427
+(2)       29/8     271     0.083062      55.658478      56.347305   -1.222
+(3)        9/8     189     0.043593      20.862692      20.889875   -0.130
+(4)       11/8     223     0.046879      24.669262      24.721905   -0.213
+(5)       15/8     255     0.055277      31.839773      31.972991   -0.417
+
+====================================================================================================
+2 -- m_h, at the Standard-Model g4 = 0.63  (m_h scales linearly in g4)
+====================================================================================================
+row      m_h(closed)   m_h(numeric)    err %   m_h theirs
+(1)         143.9803       144.2889   -0.214        126.8
+(2)         127.0698       127.8536   -0.613        125.5
+(3)         148.2345       148.3311   -0.065        125.1
+(4)         149.8918       150.0516   -0.107        126.4
+(5)         144.4172       144.7190   -0.209        126.2
+
+CONTROL -- their eq. (80) returns no real m_h where F'' < 0.  At THEIR published alpha:
+   (1)    alpha_theirs = 0.0430   F'' =   +16.2016   
+   (2)    alpha_theirs = 0.0810   F'' =   +53.5722   
+   (3)    alpha_theirs = 0.0210   F'' =    -2.4488   NO REAL m_h
+   (4)    alpha_theirs = 0.0260   F'' =    +0.6096   
+   (5)    alpha_theirs = 0.0430   F'' =   +16.2520   
+
+====================================================================================================
+3 -- THE LIMIT:  largest 1/R5 over all EWSB contents, with and without the Higgs window
+====================================================================================================
+contents with EWSB and F''>0 : 754      of those inside m_h = 125-127 GeV : 3
+
+  1/R5 (GeV)      alpha       m_h       D     A4  content
+  -- unconstrained ceiling --
+  15702         0.01024    219.90     1/8    254  2x7(+,+)+4x84(+,+)
+  13234         0.01215    184.13     1/8    194  1x7(+,+)+2x28(+,-)+3x84(+,+)
+  13073         0.01230    183.35     1/8    173  1x7(+,-)+3x48(+,+)+2x84(+,+)
+  -- with the Higgs window imposed --
+  2182          0.07370    125.06    21/8    225  1x28(+,+)+1x28(+,-)+1x48(+,+)+3x84(+,+)
+  2134          0.07534    125.05    23/8    259  1x7(+,-)+1x28(+,-)+4x84(+,+)
+  1924          0.08358    125.85    29/8    271  1x28(+,+)+4x84(+,+)
+
+  CEILING with m_h in 125-127 GeV, content of at most 6 multiplets:  1/R5 <= 2182 GeV
+  (unconstrained it would be 15702 GeV -- the Higgs mass costs a factor 7.20)
+
+====================================================================================================
+THE FIVE PUBLISHED ROWS AFTER DONATING ONE 84(+,+)  (Part VI's escape, priced here)
+====================================================================================================
+Removing one 84(+,+) from the content and re-minimising.  The host carries 8D = +10, so the
+donation takes 10/8 off D; a row whose D goes non-positive has no interior minimum left.
+
+row     8D before     8D after      m_h after   in window?
+(1)            15            5          145.6           no
+(2)            29           19          114.7           no
+(3)             9           -1 no interior min           --
+(4)            11            1          169.0           no
+(5)            15            5          145.6           no
+
+rows landing in 125-127 GeV after the donation : 0 of 5
+  -- none of them.  Paying for the escape and keeping the Higgs mass are two different
+     demands, and the five published rows satisfy them one at a time.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\mh_closed_form.json

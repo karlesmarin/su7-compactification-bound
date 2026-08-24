@@ -1,0 +1,100 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+================================================================================================
+THE LAMBERT BRANCH, THE HIGGS MASS, AND WHAT 'NEVER MARGINAL' ACTUALLY SAYS
+================================================================================================
+
+[1] IDENTITY (II) AND THE CLOSED FORM ARE THE SAME STATEMENT
+    x^2 = -d/W  and  x^2 = 12 z3 D/(6 mu + A_4)  =>  W = -(6 mu + A_4)/A_4
+
+    row             A_4           8D     W_-1 (num)    -1-6mu/A4          rel
+------------------------------------------------------------------------------------------------
+    (1)        258.0000           15    -3.45789074  -3.45789074     3.08e-14
+    (2)        271.0000           29    -2.79866473  -2.79866473     1.81e-14
+    (3)        189.0000            9    -4.57198562  -4.57198562     3.61e-14
+    (4)        223.0000           11    -4.09187757  -4.09187757     2.39e-14
+    (5)        255.0000           15    -3.50237359  -3.50237359     2.24e-14
+------------------------------------------------------------------------------------------------
+   C1  W_-1 = -1 - 6 mu / A_4 on all five rows ............... PASS (worst 3.6e-14)
+
+    So pinning m_h does not only kill the logarithm -- it SELECTS A POINT of the
+    Lambert sheet.  m_h -> 0 is mu -> 0 is W -> -1: the branch point, where the
+    electroweak minimum and the outer root of \S ceiling coalesce.
+
+[2] THE DISCRIMINANT THE PAPER LEAVES OUT
+    two real branches  <=>  -1/e <= z < 0  <=>  L := b - 1 - ln d >= 0
+
+    row               z         -1/e              L           mu
+------------------------------------------------------------------------------------------------
+    (1)       -0.108910    -0.367879       1.217232   105.689302
+    (2)       -0.170414    -0.367879       0.769522    81.239690
+    (3)       -0.047263    -0.367879       2.052038   112.517547
+    (4)       -0.068366    -0.367879       1.682874   114.914783
+    (5)       -0.105512    -0.367879       1.248933   106.350877
+------------------------------------------------------------------------------------------------
+   C2  L > 0 on every published row ......................... PASS (min 0.7695)
+
+    And L >= 0 is not an extra hypothesis.  W_-1 <= -1 is the whole range of that
+    branch, and W_-1 = -1 - 6 mu/A_4, so on any content that HAS an electroweak
+    stationary point at all, mu >= 0 -- that is, m_h^2 >= 0 -- comes for free.  The
+    paper's conclusion is right; the reason it gives ('the argument is negative') is
+    not the reason.
+   C3  W_-1 <= -1 on every row (the branch's own range) ..... PASS
+
+[3] HOW CLOSE THE LATTICE GETS TO THE FOLD
+    marginality at the BROKEN point is L = 0, i.e. mu = 0, i.e. m_h = 0.
+    Theorem 'odd eighths' gives D != 0, which is the SYMMETRIC point.  Different
+    condition.  So: scan the real lattice and see how small L can be made.
+
+    contents within reach of the expansion (L >= 0) : 10793
+    contents outside it                   (L <  0) : 53612
+    smallest L found                               : 1.357e-05
+    at (A_4, 8D, G)                                : (316, 125, 183.609332)
+
+    IS THIS THE MODEL, OR IS IT THE TRUNCATION?  Do not estimate it -- measure it.  The full
+    potential is on disk; minimise it and compare.  (An earlier version of this file guessed the
+    error as (pi alpha)^2 and was wrong by more than an order of magnitude in both directions,
+    which is exactly why this block now calls numeric_min instead of reasoning.)
+
+      alpha the series puts the fold at    : 0.268825
+      alpha of the UNTRUNCATED minimum     : 0.218182
+      measured discrepancy at the fold     : 18.8 %
+      same measurement on the published rows: 0.62 % worst
+      and since 1/R_5 = 2 m_W / alpha, the fold sits at 1/R_5 = 598 GeV
+
+    So the fold lives at large alpha, which is small 1/R_5 -- the opposite end of the same line
+    from the ceiling this paper is built to compute.  There the series misplaces the stationary
+    point by tens of per cent, against a fraction of one per cent where the paper works.  And a
+    fold is a COALESCENCE of roots, so its position is the one thing a truncation cannot be
+    trusted about: the sensitivity of a double root to a perturbation diverges.  The marginal
+    broken vacuum is therefore not a result of this paper in either direction -- we can neither
+    assert it nor rule it out, and the reason is our own instrument.  UNAUDITABLE.
+
+    Nor is the smallest L above evidence of structure.  With 10793 admissible contents spread over
+    a range of L of order 3.0, the smallest value expected from sampling alone is about 2.8e-04;
+    the observed minimum is within a couple of orders of that.  It is what ten thousand draws
+    look like, not an accumulation at the fold.
+       (observed minimum 1.4e-05)
+
+   C4  the series misplaces the fold by >20x its own validated error  PASS
+       (this control PASSING is what makes the fold unclaimable, not what saves it)
+================================================================================================
+WHAT THIS CHANGES IN THE PAPER
+================================================================================================
+
+    The theorem proves: 8D is an odd integer, hence D != 0 and |D| >= 1/8.  D is the coefficient
+    of the quadratic term at alpha = 0.  What that establishes is that THE SYMMETRIC POINT is
+    never marginal -- the potential always has curvature there, and by a quantised amount.
+
+    It does not establish that the BROKEN vacuum cannot be marginal.  That is F''(alpha*) = 0 at
+    alpha* != 0, which by [1] and [2] above is exactly the Lambert fold L = 0, and D != 0 says
+    nothing about it.  The scope of the sentence should be narrowed to the symmetric point, and
+    the fold stated as what it is: the one marginality this model has available, at finite
+    holonomy, reached only in the limit m_h -> 0.
+
+    Whether the lattice can reach it is open.  The scan above says it does not, by a wide
+    margin, but a scan is not a theorem and the sentence in the paper should not pretend
+    otherwise.
+    
+================================================================================================
+VERDICT: C1-C4 pass.  One claim narrowed, one reason corrected, one question opened.
+================================================================================================

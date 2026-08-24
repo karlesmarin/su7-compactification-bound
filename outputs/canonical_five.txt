@@ -1,0 +1,122 @@
+==============================================================================================
+THE EIGHT MULTIPLET TYPES ARE FIVE, AND THE SEMIGROUP HAS NO HOLES
+==============================================================================================
+
+[0] THE SETTING, RECOMPUTED
+    rank of the eight potentials .................... 5
+   C0  the function space is five-dimensional ....... PASS
+
+[1] THE THREE RELATIONS, AND THEIR SIGNS
+    28(+,+)   = 20 x 7(+,+) + 17 x 7(+,-)         exact: True
+    48(+,+)   = 24 x 7(+,+) + 18 x 7(+,-)         exact: True
+    48(+,-)   = 1 x 7(+,+) + 4 x 7(+,-) + 1 x 28(+,-)  exact: True
+
+   C1  all three hold as identities of potentials ... PASS
+   C2  every coefficient is NON-NEGATIVE ............ PASS
+       this is what makes the rewriting physical: a negative coefficient would turn
+       a content into a formal difference of contents, which is not a content.
+
+[2] ARE THE SURVIVING FIVE A BASIS?
+    proposed canonical types : 7(+,+), 7(+,-), 28(+,-), 84(+,+), 84(+,-)
+
+   C3  the five are linearly independent ............ PASS (rank 5)
+
+    each type in that basis (rows must be integral and >= 0):
+      type         7(+,+)     7(+,-)    28(+,-)    84(+,+)    84(+,-)
+----------------------------------------------------------------------------------------------
+      7(+,+)            1          0          0          0          0
+      7(+,-)            0          1          0          0          0
+      28(+,+)          20         17          0          0          0
+      28(+,-)           0          0          1          0          0
+      48(+,+)          24         18          0          0          0
+      48(+,-)           1          4          1          0          0
+      84(+,+)           0          0          0          1          0
+      84(+,-)           0          0          0          0          1
+----------------------------------------------------------------------------------------------
+
+   C4  every type is an INTEGER combination of the five ... PASS
+   C5  and a NON-NEGATIVE one ............................ PASS
+
+[3] TWO CONTROLS THAT CAN ACTUALLY FAIL
+
+    A first draft of this file "verified" that the five canonical rows are unimodular by
+    computing every coordinate IN THE BASIS OF THOSE FIVE ROWS.  They came out as the identity,
+    determinant one, Smith factors all one -- and none of that tested anything, because it was
+    true by construction.  It is recorded here because a control that cannot fail is worse than
+    no control: it reports success.  Note also that the paper's index Z^5/L = Z_2 x Z_72 x
+    Z_2592 lives in the INVARIANT coordinates (A_4, 8D, 2U, V, 2W), whose ambient lattice is not
+    the one the multiplets span, so it was never the right comparison either.
+
+    What follows can fail.
+
+   F1  removing ANY one of the five drops the rank to 4 ... PASS (max 4)
+       so none of the five is redundant; the basis is minimal, not merely sufficient.
+
+   F2  is deferred to C8 in [5], and the reason is worth stating:
+       a bounded scan of x = B z against B^-1 x = z tests nothing, because it is an
+       identity.  Only a content built independently can disagree with the map.
+
+   F3  a spurious ninth type must break the rank-5 picture
+       rank of the five plus a spurious row : 5 ....... PASS
+       and its coordinates in the basis are MIXED IN SIGN, as a non-content should be
+   F4  a non-content does NOT reduce non-negatively ...... PASS
+       so C5 is a fact about these eight multiplets and not about any five vectors.
+
+[4] THE CONSEQUENCE, STATED AT ITS REAL STRENGTH
+
+    It is tempting to dress this up as a normality theorem: S = C n L, no holes, with a short
+    proof.  The proof is short because there is nothing to prove.  Once C4 and C5 hold,
+
+        S = B N^5 ,      L = B Z^5 ,      C = B R_>=0^5 ,
+
+    and B is invertible (C3), so x in C is EQUIVALENT to B^-1 x >= 0 and x in L is EQUIVALENT to
+    B^-1 x integral.  A point of C n L is therefore a non-negative integral z by definition, and
+    "no holes" is a restatement of the definitions.  That is the standard fact that a simplicial
+    cone spanned by a lattice basis is unimodular, hence normal.
+
+    So the honest statement is not that the semigroup is normal.  It is stronger and shorter:
+
+        S is a FREE commutative monoid on five generators:  S = N^5.
+
+    Free, not merely normal.  There are no holes because there is nowhere to put one.  All the
+    content sits in C4 and C5 -- that eight physical multiplet types collapse onto five with
+    coefficients that are integral AND non-negative -- and none of it sits in the deduction.
+
+   C7  the premises C3, C4, C5 all hold ............. PASS
+
+    SCOPE, AND IT DOES NOT CLOSE THE PAPER'S OPEN QUESTION.  What the paper asks is whether the
+    LIFTED semigroup is normal, in the four coordinates (A_4, 8D, 2U, V); it reports that the
+    projection is normal to A_4 = 420 and leaves the lift open.  The object proved normal here
+    is the FIVE-coordinate one, which is larger.  Projection does not preserve normality: a
+    point can lie in the projected cone and the projected lattice while every preimage of it in
+    the five-dimensional lattice falls outside the cone.  So this is not the answer to that
+    question.
+
+    What it does do is change what a hole would MEAN.  The paper's phrasing is that a hole would
+    be "a content every visible law permits and no bulk can build".  With the five-coordinate
+    semigroup normal, no POTENTIAL is missing: what a four-coordinate hole would record is a
+    (A_4, 8D, 2U, V) whose required 2W no content supplies.  The gap, if there is one, is in the
+    coordinate that was dropped and not in the space of potentials.
+
+    And the gauge sector is an additive offset, so the realisable set is the translate
+    I_gauge + S.  Translation commutes with intersection, so the conclusion carries across, but
+    what carries is a translate of a cone and not a cone.
+
+[5] THE INVERSE MAP
+
+    Because B is invertible over the rationals, five invariants determine five canonical
+    multiplicities: N = B^{-1} (I - I_gauge).  The lattice congruences are then nothing more
+    than the condition that B^{-1} applied to the invariant vector be integral, and the cone
+    inequalities are nothing more than N >= 0.  Explicitly, eliminating the three types:
+      N[7(+,+)]  = n[7(+,+)]  + 20 n[28(+,+)] + 24 n[48(+,+)] +  1 n[48(+,-)]
+      N[7(+,-)]  = n[7(+,-)]  + 17 n[28(+,+)] + 18 n[48(+,+)] +  4 n[48(+,-)]
+      N[28(+,-)] = n[28(+,-)] +  1 n[48(+,-)]
+      N[84(+,+)] = n[84(+,+)]        N[84(+,-)] = n[84(+,-)]
+
+   C8  the explicit reduction reproduces the coordinates on 3^8 contents  PASS
+==============================================================================================
+VERDICT: C0-C8 pass.  Eight multiplet types collapse onto five with non-negative
+         integer coefficients, the five are a minimal basis, the semigroup they
+         generate is FREE on them, and the invariants invert to a canonical content.
+         This does NOT settle the paper's question about the four-coordinate lift.
+==============================================================================================

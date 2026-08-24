@@ -1,0 +1,27 @@
+  elemento       EN     ES     
+  secciones      14     14     
+  puentes        13     13     
+  keyeq          28     28     
+  figuras        16     16     
+  theorem        4      4      
+  proof          3      3      
+  paragraph      77     77     
+  bibitem        52     52     
+  longtable      1      1      
+  tabular        13     13     
+  itemize        2      2      
+  item           24     24     
+  labels         99     99     
+  cites          56     56     
+  eqrefs         56     56     
+
+  longtable      EN     ES     filas de cada una
+    tabla 0      49     49     
+
+  figuras: EN 15, ES 15
+  todas las figuras de la edicion ES son las variantes _es
+  ningun '\,\%' en la edicion ES
+  35 citas textuales descontadas antes de buscar palabras inglesas
+  el cuerpo de la edicion ES no lleva palabras funcionales inglesas
+
+paridad estructural: las dos ediciones llevan los mismos elementos

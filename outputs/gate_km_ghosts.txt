@@ -1,0 +1,173 @@
+==================================================================================================
+LA EC. (68) DE KOMORI-MARU, AUDITADA CONTRA SU PROPIO TEXTO
+==================================================================================================
+
+[C1] CONTROL DE INSTRUMENTO: ABRIMOS LOS ARTICULOS QUE CREEMOS
+     KM  SU7_GGHU_2503.04090.pdf                     42 paginas
+         NITEP 240 SU(7) Grand Gauge-Higgs Unification Yuzuho Komoria and Nobuhito Marua,b aDepartment of Physics, Osaka Metropolitan University, Osaka 558-858
+     HY  hy04_hep-ph_0401185.pdf                     21 paginas
+         arXiv:hep-ph/0401185v4  13 Feb 2004 Preprint typeset in JHEP style - HYPER VERSION hep-ph/0401185 KUNS-1896 A general formula of the eﬀective potentia
+
+     ojo: hep-ph/0401185 es HABA-YAMASHITA (5D), NO Komori-Maru.  La ec. (68) es de
+     arXiv:2503.04090.  Confundirlas manda al revisor al papel equivocado.
+     C1 PASS
+
+[C2] SU EC. (49) DEFINE N COMO GRADOS DE LIBERTAD *FISICOS*
+         p.9    where N is a physical degree of freedom for the fields running in the loop, F is a fermion
+     C2 PASS -- N es, por su propia definicion, un conteo FISICO
+
+[C3] SU EC. (51) ES UN TERMINO DE GAUGE-FIXING -> GAUGE COVARIANTE
+         p.10   Adding the following gauge-fixing term
+         p.10   LGF = 1
+     C3 PASS -- fijan el gauge, luego el determinante de FP es obligatorio
+
+[C4] CUANTAS VECES NOMBRAN AL FANTASMA
+       ghost            0
+       ghosts           0
+       Faddeev          0
+       Popov            0
+       FP determinant   0
+       BRST             0
+       anti-?ghost      0
+
+     C4 PASS -- en 42 paginas, 0 menciones.  Fijan el gauge y no introducen el
+        determinante que fijar el gauge exige.
+
+[C5] LAS DOS ASIGNACIONES, LITERALES
+         p.11   Substituting these KK mass spectrum into (49) and setting N = 4 for the physical
+         p.12   Substituting these KK mass spectrum into (49) and setting N = 1 for the physical
+     y la nota al pie que explica el 1:
+         p.12   3The reason why we take here the physical degrees of freedom to be N = 1 not N = 2 is the following.
+         p.12   Some linear combination of A5 and A6 are absorbed as the longitudinal mode of the nonzero KK gauge
+
+     C5 PASS -- A_mu lleva N = 4 ; A_5,6 lleva N = 1, y el 1 esta contado DESPUES de
+        quitar el Goldstone, por su propia nota.  El 4 no esta contado despues de nada.
+
+[C6] LA REGLA DE SUMA, QUE ES UNA CONDICION NECESARIA DE SU PROPIO MARCO
+       en D = 6 dimensiones un campo gauge tiene D - 2 = 4 grados fisicos
+
+       su conteo            :  N(A_mu) + N(A_5,6) = 4 + 1 = 5
+       covariante consistente:  4 - 2 + 1 + 1         = 4
+       fisico consistente    :  3 (vector masivo) + 1 = 4
+
+     C6 PASS -- su suma da 5 y tiene que dar 4.  Las dos contabilidades consistentes
+        dan 4 cada una; la suya toma la mitad de una y la mitad de la otra.
+        Un vector 4D tiene 2 grados sin masa y 3 con masa.  NUNCA cuatro.
+
+[C7] HABA-YAMASHITA ESCRIBEN -(D-2) EXPLICITO EN LA FORMULA GENERAL 5D
+         p.3    from the gauge and ghost, fermion and scalar are given by
+         p.3    Veﬀ[A5]g+gh = −(D −2) i
+         p.3    respectively, where f(D) = 2[D/2]. The diﬀerence of the gauge- and ghost-, fermion- and
+         p.5    expansion applies to the gauge sector (gauge and ghost) and bulk ﬁelds sector with ηη′ = +
+         p.6    and a complex scalar with ηη′ = +, are obtained by producting coeﬃcients, 4 and −2, in
+         p.7    SUSY breaking is induced by the SS mechanism‡. For the gauge and ghost contributions,
+         ... y 1 mas
+     C7 PASS -- el articulo que da la formula general SI cuenta D-2 y SI nombra fantasmas
+
+[C8] LA ESCAPATORIA 'SERA UNA CONVENCION' -- CERRADA
+       Una normalizacion global multiplica los TRES coeficientes por el mismo factor.
+       El cambio que discutimos mueve 4 -> 3 en el canal periodico y deja el
+       antiperiodico intacto:
+
+         bracket con 4 dof periodicos : (2, 4, 7)
+         bracket con 3 dof periodicos : (3/2, 3, 6)
+         cocientes                    : 1.3333  1.3333  1.1667
+
+     C8 PASS -- los cocientes NO son iguales (1.3333 contra 1.1667), luego ninguna
+        normalizacion global puede producir esta diferencia.  Si fuera convencion,
+        los tres se moverian juntos.  No se mueven juntos.
+
+[C9] EL ARTICULO PREVIO DEL PROPIO MARU, EN 6D Y EN EL MISMO ORBIFOLD
+     NITEP 193 KYUSHU-HET-275 Electroweak Symmetry Breaking in Two Higgs Doublet Model from 6D Gauge-Higgs Unification on T 2/Z2 Kento Akamatsua, Takuya Hiroseb, Nobuhito Marua,c and Akio Nagoa a
+
+         p.7    for fermions. N is a number of degrees of freedom of the fields running in the loop. If the
+         p.9    Finally, we obtain one-loop effective potential for an SU(4) gauge field.
+       su ec. (3.1)  :  V = ((-1)^F / 2) * N * Sum log(p^2 + M^2)
+       su ec. (3.11) :  V_gauge = (4 / 2) * Sum {...}      -> N = 4 para TODO el sector
+       secciones del capitulo 3 : SU(4) gauge fields, Fermions   (no hay seccion de A_5,6 aparte)
+       menciones de fantasma en ese articulo : 0
+
+     C9 PASS -- el mismo autor, en 6D y en T^2/Z_2, pone N = 4 para el sector gauge
+        ENTERO, que es D - 2.  En KM25 el mismo sector pesa 4 + 1 = 5.
+        HONESTIDAD: esto NO prueba por si solo que 4 sea lo correcto.  Cabe leerlo al reves
+        -- que AHMN se dejara A_5,6 y KM25 lo anadiera.  Lo que si establece es que el
+        coeficiente del grupo era 4, y que al pasar a 5 se anadio el escalar sin restar
+        nunca los fantasmas.  El ancla dura sigue siendo la formula general de HY.
+
+[C10] Y LA FORMULA GENERAL DE HY, CONTRASTADA CONTRA LA LITERATURA PREVIA
+         p.6    examples, the gauge sector contribution is −3× Eq.(3.10), which correctly reproduces the
+         p.3    is available for more than 5 dimensional gauge theories.
+
+     C10 PASS -- en 5D su coeficiente gauge es -3 = -(D-2) y dicen que reproduce
+         Refs.[7,13].  Y dicen que el metodo vale para mas de cinco dimensiones.
+         En 6D eso da 4, no 5, y lo dicen ellos.
+
+[C11] HOSOTANI-NODA-TAKENAGA: LA MISMA CUENTA, EN 6D Y EN EL MISMO ORBIFOLD T^2/Z_2
+     arXiv:hep-ph/0403106v2  28 Jun 2004 March 10, 2004 OU-HET 469/2004 hep-ph/0403106 Dynamical Gauge Symmetry Breaking and Mass Generation on the Orbifold T 2/Z2 Yutaka Hoso
+
+         p.16   The mass matrix for ghost ﬁelds is the same as that for Aµ. Contributions to the eﬀective
+         p.16   potential from Aµ and ghosts are, therefore, 4 −2 = 2 times contributions coming from
+         p.16   In six dimensions there are two extra-dimensional components AyI. Therefore, if one
+
+       su §4.1 se titula 'Gauge fields and ghosts' ; menciones de 'ghost': 8
+       su ec. (4.6) : V_{gauge+ghost} = -(i/2) tr ln D_L D^L
+       A_mu + fantasmas = 4 - 2 = 2 ; mas los DOS componentes extradimensionales = 4
+
+     C11 PASS -- en SEIS dimensiones y en el MISMO orbifold, la resta de fantasmas
+         esta escrita explicitamente y da D - 2 = 4.  Ademas dicen que la matriz de masas
+         de los fantasmas es LA MISMA que la de A_mu, que es justo la hipotesis de
+         contorno que necesitaba el determinante de una sola orbita.
+         AVISO: HNT no tiene la segunda paridad P_6 de KM, asi que fijan el TOTAL (4),
+         no el reparto entre los dos sectores.  El reparto sigue siendo nuestro.
+
+[C12] LA HIPOTESIS DEL TEOREMA 1, DICHA DE FORMA QUE NO SE PUEDA MALINTERPRETAR
+     El teorema necesita que 8D_gauge sea IMPAR.  Con n_+ = 2 y n_- = 6 pares en la fila
+     mixta, el coeficiente es 2a + 6b = 2a + 3*(2b), luego la paridad pide DOS cosas:
+        (i)  2a PAR   -- o sea, a entero
+        (ii) 2b IMPAR
+     No basta con preguntar '.sale b = 1/2?'.  b puede ser correcto y perderse igual la
+     cuantizacion, por a.  [[separate-the-group-factor-from-the-loop-coefficient]]
+
+     (a, b)                       2a par 2b impar   8D_gauge   8D mod 2   HIPOTESIS TEOREMA 1
+     (2, 1/2)                       True     True        -27          1   SATISFECHA
+     (3/2, 1/2)                    False     True        -18          0   NO SATISFECHA
+
+     control: con (2, 1/2) tiene que salir 8D_gauge = -27.  Sale -27.
+     C12 PASS
+
+     ----------------------------------------------------------------------------------------
+     THEOREM_1_HYPOTHESIS (ec. (68) publicada      ) : SATISFIED
+     THEOREM_1_HYPOTHESIS (con resta de fantasmas  ) : NOT SATISFIED
+     ----------------------------------------------------------------------------------------
+     El teorema NO esta en cuestion.  Su demostracion es correcta en los dos casos.
+     Lo que esta en cuestion es si ESTE modelo satisface su premisa.
+
+==================================================================================================
+VEREDICTO
+==================================================================================================
+
+  Lo que esta ESTABLECIDO, y sale entero de su texto:
+
+    - definen N como grados FISICOS                                   (su ec. 49)
+    - fijan el gauge de forma covariante                              (su ec. 51)
+    - no nombran al fantasma ni una vez en 42 paginas                 (C4)
+    - toman N = 4 para A_mu y N = 1 para A_5,6                        (C5)
+    - 4 + 1 = 5, y en seis dimensiones tiene que dar 4                (C6)
+    - el 1 esta contado tras quitar el Goldstone; el 4, no            (su nota al pie 3)
+    - no puede arreglarlo una normalizacion global                    (C8)
+
+  Lo que NO esta establecido, y hay que decirlo asi:
+
+    que se hayan equivocado.  Cabe una convencion o un jacobiano que no escriben.  Pero la
+    condicion que falla es NECESARIA en su propio marco, no comoda para nosotros, y la unica
+    pieza capaz de explicar exactamente la diferencia es la que no aparece nombrada.
+
+  Lo que esto le hace al Teorema 1:
+
+    no toca su demostracion, que sigue siendo correcta.  Toca su HIPOTESIS.  El teorema pasa a
+    enunciarse condicionado -- "dados los coeficientes gauge del potencial reducido tal y como
+    se imprimen en [KM25]" -- y esa condicion tiene que estar en el resumen, no en la seccion 13.
+
+==================================================================================================
+TODOS LOS CONTROLES PASAN.
+==================================================================================================

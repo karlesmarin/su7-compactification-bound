@@ -1,0 +1,56 @@
+==========================================================================================================
+THE REMAINDER AS A LINEAR FUNCTIONAL, MAXIMISED INSIDE THE CERTIFICATE'S OWN LP
+==========================================================================================================
+per-multiplet remainder at the certifying alpha = 0.016025 (exact, not bounded):
+  multiplet           |R_j| |R'_j| (d/dalpha)
+  7(+,+)          5.653e-12        1.943e-09
+  7(+,-)          1.885e-12        9.992e-10
+  28(+,+)         1.451e-10        5.407e-08
+  28(+,-)         3.750e-10        1.413e-07
+  48(+,+)         1.696e-10        6.284e-08
+  48(+,-)         3.882e-10        1.473e-07
+  84(+,+)         5.042e-09        1.887e-06
+  84(+,-)         2.987e-09        1.121e-06
+  gauge           1.442e-10        5.418e-08
+
+    8D   max A4   alpha_hat        delta  delta/alpha    1/R5 trunc 1/R5 rigorous
+     1      215    0.016025    3.999e-06     2.50e-04       10034.0       10036.5
+     3      336    0.025660    2.486e-05     9.69e-04        6266.5        6272.6
+     5      436    0.031300    5.786e-05     1.85e-03        5137.3        5146.8
+     7      533    0.035247    1.002e-04     2.84e-03        4562.1        4575.1
+     9      630    0.038207    1.501e-04     3.93e-03        4208.7        4225.3
+    11      727    0.040530    2.060e-04     5.08e-03        3967.4        3987.7
+    13      821    0.042460    2.666e-04     6.28e-03        3787.1        3811.1
+    21     1209    0.047431    5.434e-04     1.15e-02        3390.2        3429.5
+    33     1800    0.051238    1.015e-03     1.98e-02        3138.3        3201.7
+    51     2697    0.054016    1.775e-03     3.29e-02        2976.9        3078.1
+    99     5112    0.056788    3.898e-03     6.86e-02        2831.6        3040.2
+   129     6630    0.057507    5.245e-03     9.12e-02        2796.2        3076.8
+
+BEYOND THE SEVENTY: the remainder bound loosens with the rung
+    8D   alpha_hat  delta/alpha    1/R5 trunc 1/R5 rigorous
+     1    0.016025      2.5e-04       10034.0       10036.5
+   129    0.057507      9.1e-02        2796.2        3076.8
+   201    0.058396      1.5e-01        2753.6        3222.8
+   501    0.059371      3.7e-01        2708.4        4317.6
+  1201    0.059759      9.0e-01        2690.8       27774.7
+
+  delta/alpha grows by a factor 3619 from 8D = 1 to 8D = 1201
+  and the certified ceiling there is 27.8 TeV -- NOT because the ceiling rises,
+  but because the remainder bound stops saying anything.  So eq. (rigorousceiling)
+  holds over the rungs it was run on and not for arbitrary content.
+
+rungs evaluated : 70
+truncated optimum : 8D = 1, A4 = 215, 1/R5 = 10034.0 GeV = 10.034 TeV
+rigorous optimum  : 8D = 1, A4 = 215, 1/R5 <= 10036.5 GeV = 10.037 TeV
+
+maximum stays on the same rung : True
+margin over the certificate    : 2.5 GeV  (0.025 %)
+
+==========================================================================================================
+CONTROLS
+==========================================================================================================
+  rigorous >= truncated                         : True
+  every delta > 0                               : True
+  usable (within 10% of the certificate)        : True (0.025 %)
+  and it beats the (N, c_max) bound of v1        : v1 gave 52.429 TeV

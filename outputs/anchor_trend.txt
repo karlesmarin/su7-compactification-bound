@@ -1,0 +1,53 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+THE FIVE ROWS, and what the ratio is a function of
+====================================================================================================
+row           D       A4 has 48      ratio
+(1)      1.8750      258     no      1.286
+(2)      3.6250      271     no      1.025
+(3)      1.1250      189    yes      2.076
+(4)      1.3750      223    yes      1.803
+(5)      1.8750      255     no      1.286
+
+====================================================================================================
+H1 -- a global normalisation: all five ratios equal
+====================================================================================================
+    spread 1.025 - 2.076, i.e. a factor 2.02 across the five rows
+    VERDICT: *** DEAD *** -- the residual is not a constant
+
+====================================================================================================
+H2 -- the 48: then the rows WITHOUT one must agree
+====================================================================================================
+    with a 48    (n=2): 2.076, 1.803   mean 1.94
+    without      (n=3): 1.286, 1.025, 1.286   mean 1.20
+    the no-48 rows spread 1.025 - 1.286, a factor 1.25, with no 48 anywhere in them
+    VERDICT: *** DEAD *** -- the residual moves where the 48 cannot reach
+
+====================================================================================================
+H3 -- a function of the content: sort by D and by A_4 and see which one orders the ratios
+====================================================================================================
+    by D   : 1.125->2.076  1.375->1.803  1.875->1.286  1.875->1.286  3.625->1.025
+              0 violation(s) of 'decreasing, ties included'   MONOTONE
+    by A_4 : 189->2.076  223->1.803  255->1.286  258->1.286  271->1.025
+              0 violation(s) of 'decreasing, ties included'   MONOTONE
+
+====================================================================================================
+CONTROLS -- each must fail, or the test above measures nothing
+====================================================================================================
+    K1  all 120 re-pairings of the five ratios to the five D: 2 are monotone.
+        the observed pairing is one of them, so the odds of this by chance are 2/120 = 0.017
+    K2  A_4 as the explanatory moment: 0 violation(s) -- *** it orders them too, so D is not singled out ***
+
+====================================================================================================
+WHERE THE CEILING SITS RELATIVE TO THE ANCHORED RANGE
+====================================================================================================
+    the five rows anchor D in [1.125, 3.625]
+    the certified ceiling of CEILING.md sits at D = 1/8 = 0.125, which is 9.0x BELOW the
+    smallest anchored D, and the trend is still rising there.
+
+    ratio at the smallest anchored D (1.125) : 2.076
+    ratio at the largest             (3.625) : 1.025
+
+    So the ceiling is quoted at the one corner of the content space where the anchor is worst
+    and unmeasured.  That is a statement about scope, not a correction: nothing here says the
+    ceiling is wrong.  It says the band attached to it was read off the wrong statistic.

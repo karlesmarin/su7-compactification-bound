@@ -1,0 +1,107 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+====================================================================================================
+0 -- THE CHARGES, from explicit generators.  their footnote: eigenvalues n^2, (n +- 2 omega)^2
+====================================================================================================
+SU(2)   adjoint charges c = [np.int64(-2), np.int64(0), np.int64(2)]  C_2(G) = 2.0000   (textbook: 2)
+        fund    charges c = [np.int64(-1), np.int64(1)]  C_R    = 0.5000   (textbook: 1/2)
+SU(3)   adjoint charges c = [np.int64(-2), np.int64(-1), np.int64(-1), np.int64(0), np.int64(0), np.int64(1), np.int64(1), np.int64(2)]  C_2(G) = 3.0000   (textbook: 3)
+        fund    charges c = [np.int64(-1), np.int64(0), np.int64(1)]  C_R    = 0.5000   (textbook: 1/2)
+
+SU(2) adjoint gives c = -2, 0, 2 -- which IS their 'n^2, (n+2w)^2, (n-2w)^2'.  Convention fixed.
+
+====================================================================================================
+1 -- THEIR CRITERION (5.3) FROM OUR D.  all periodic (single parity) => D = A_2 = sum m c^2
+====================================================================================================
+D = -3 sum_adj c^2 + 4 N_f sum_R c^2 = 4[ 4 N_f C_R - 3 C_2(G) ],  so D > 0 (our EWSB verdict)
+is exactly their C_G/C_R < 4/(3 N_f).  The critical flavour numbers:
+
+group    fermions     N_f critical         theirs          match
+SU(2)    fund               3.0000         3.0000            YES
+SU(3)    fund               4.5000         4.5000            YES
+SU(2)    adj                0.7500         0.7500            YES
+SU(3)    adj                0.7500         0.7500            YES
+
+Control -- the same numbers straight from a numerical second derivative of THEIR potential (5.4):
+   SU(2)  fund   V''(0) changes sign at N_f = 2.999998   (theirs 3.0000)  OK
+   SU(3)  fund   V''(0) changes sign at N_f = 4.499998   (theirs 4.5000)  OK
+   SU(3)  adj    V''(0) changes sign at N_f = 0.750000   (theirs 0.7500)  OK
+
+====================================================================================================
+2 -- THE TEST THAT NEEDS NO NORMALISATION: their published MINIMUM LOCATIONS
+====================================================================================================
+For adjoint fermions q_F = q_B, so V = (4 N_f - 3) W_adj(omega) and the minimum location is a
+pure statement about the adjoint charge spectrum.  No prefactor, no g, no dof factor survives.
+
+Done in mpmath at 40 digits, not on a grid.  With  d/dtheta Re Li_5(e^{i theta}) = -Im Li_4,
+the stationarity condition is a sum of Clausen functions:  sum_c c * Sl_4(2 pi c omega) = 0.
+   SU(2)  adjoint fermions, N_f > 3/4:  minimum at omega = 0.25
+          (and 0.75 by the symmetry omega -> 1 - omega);  W'' = 284.732 > 0
+          theirs: 0.25   ->   MATCHES their two printed digits
+   SU(3)  adjoint fermions, N_f > 3/4:  minimum at omega = 0.33333333333333333333
+          (and 0.666667 by the symmetry omega -> 1 - omega);  W'' = 253.095 > 0
+          theirs: 0.29   ->   *** MISMATCH ***
+
+Both of ours are EXACT, and for reasons, not by luck:
+   SU(2): the adjoint is c = 0, +-2, so W = zeta(5) + 2 Re Li_5(e^{4 pi i omega}), minimised where
+          4 pi omega = pi:  omega = 1/4.   ours - 1/4 = 0.0
+   SU(3): the adjoint is c = 0,0,+-1,+-1,+-2, so stationarity is  Sl_4(t) + Sl_4(2t) = 0, and at
+          t = 2pi/3 the Clausen function is ODD about 2pi:  Sl_4(4pi/3) = -Sl_4(2pi/3).  Exactly
+          zero.  The stationary point sits on the Z_3 CENTRE of SU(3):  omega = 1/3.
+          control: W'(1/3) = 5.7701944e-40   (and W''(1/3) > 0, so it is the minimum)
+
+And the control that says which of the two is the physical answer: with adjoint matter the
+potential sees only the centre, so the minimum should be the CENTRE-SYMMETRIC holonomy -- the
+textbook Gross-Pisarski-Yaffe statement.  The Polyakov loop in the fundamental is
+   P(omega) = (1/N) sum_{c in fund} exp(2 pi i c omega) ,  and it must VANISH there:
+   SU(2)  ours    omega = 0.25       |P| = 1.586099e-30  <- centre-symmetric
+   SU(2)  theirs  omega = 0.25       |P| = 0.0  <- centre-symmetric
+   SU(3)  ours    omega = 0.333333   |P| = 3.0524489e-31  <- centre-symmetric
+   SU(3)  theirs  omega = 0.29       |P| = 0.16754008 
+
+   Our 1/3 makes the SU(3) Polyakov loop vanish exactly; 0.29 does not.  So the minimum we get
+   is the one the centre demands, and it is the same statement Part III makes about centre
+   charge governing the Wilson-line potential.
+
+   >>> SO SU(2) MATCHES AND SU(3) DOES NOT.  They print 0.29; we get 1/3 = 0.3333...
+
+   The gap is a factor  ours/theirs = 1.1494, and  1/(2 sqrt 3) = 0.288675  rounds to 0.29 -- i.e. their
+   number is ours times sqrt(3)/2, which is what a different normalisation of the broken
+   generator would do.  Their text fixes that normalisation for SU(2) (the KK mass eigenvalues in
+   footnote 9) and NOT for SU(3), so this stays OPEN.  It is not claimed as explained.
+
+   But the centre control above puts the evidence on OUR side, not on a shared convention: our
+   1/3 is where the Polyakov loop vanishes, and with adjoint matter that is where the minimum
+   has to be.  So the likeliest reading is that their two-digit 0.29 is a slip -- which we
+   cannot prove, so it is reported as unresolved with the evidence stated.
+
+   Either way the anchor does its job, and this is the point of the whole file:
+      - four critical flavour numbers, exact;   SU(2) minimum, exact;
+      - the entire group-theory bracket of their curvature formula, exact;
+      - and what is left over is a pure convention scalar, 2/pi^2, with no physics in it.
+   OUR F, OUR EXPANSION, OUR D AND OUR MINIMISER ARE THEREFORE VALIDATED against an independent
+   published one-loop computation, in a different group, dimension and decade.  Which relocates
+   Part VI's open question: the 1.94/1.20 residual against Komori-Maru cannot be blamed on the
+   potential or on the minimisation.  It has to live in the model-specific dictionary -- their
+   charge and parity assignment, or the alpha-to-1/R_5 relation -- and that is a much smaller
+   place to look than 'our F'.
+
+====================================================================================================
+3 -- THE PREFACTOR of their (5.2), rebuilt from their (5.4)
+====================================================================================================
+Re Li_5(e^{i t}) = zeta(5) - zeta(3) t^2/2 + ... with t = 2 pi q = 2 pi c omega, so
+   d^2/domega^2 |_0 = -(2 pi c)^2 zeta(3),  and with V = (6/128 pi^6 R^4)[Tr_F - Tr_B]:
+      d^2V/domega^2|_0 = -(6/128 pi^6 R^4)(2 pi)^2 zeta(3) [4 N_f sum_R c^2 - 3 sum_adj c^2]
+   Their (5.1) omega = h R/2 gives d^2/dh^2 = (R^2/4) d^2/domega^2, and sum c^2 = 4 C:
+      m_h^2 = 0.0189977219 * zeta(3)/(pi^4 R^2) * [3 C_2(G) - 4 C_R N_f]
+      theirs (5.2):  3/32 = 0.0937500000    * g^2 * zeta(3)/(pi^4 R^2) * [ same bracket ]
+
+   ratio ours/theirs at g = 1 :  0.20264237     and  2/pi^2 = 0.20264237  ->  the same
+
+   The bracket -- the whole group-theory content, and the 3:4 -- comes out EXACTLY.  What is left
+   over is a pure number, 2/pi^2, with no group theory and no zeta in it: it is their g^2 and
+   their A_5-to-h convention (5.1), and the pi's are what a KK reduction g_4^2 = g_5^2/(2 pi R)
+   puts there.  Our expansion neither predicts it nor needs it -- but note that it is again a
+   NORMALISATION that separates us from a published number, and never the structure.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\vgiq_anchor.json

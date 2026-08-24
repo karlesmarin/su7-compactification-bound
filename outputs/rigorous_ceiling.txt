@@ -1,0 +1,35 @@
+========================================================================================================
+THE CEILING OF THE FULL POTENTIAL:  optimum of the SHIFTED surface, not shift of the optimum
+========================================================================================================
+    8D   max A4   alpha_hat        delta  delta/alpha    1/R5 trunc 1/R5 rigorous
+     1      215    0.016025    3.437e-05     2.14e-03       10034.0       10055.6
+     3      336    0.025660    2.212e-04     8.62e-03        6266.5        6321.0
+     5      436    0.031300    5.223e-04     1.67e-02        5137.3        5224.5
+     7      533    0.035247    9.138e-04     2.59e-02        4562.1        4683.5
+     9      630    0.038207    1.378e-03     3.61e-02        4208.7        4366.2
+    11      727    0.040530    1.902e-03     4.69e-02        3967.4        4162.7
+    13      821    0.042460    2.472e-03     5.82e-02        3787.1        4021.3
+    21     1209    0.047431    5.095e-03     1.07e-01        3390.2        3798.2
+    33     1800    0.051238    9.595e-03     1.87e-01        3138.3        3861.4
+    51     2697    0.054016    1.689e-02     3.13e-01        2976.9        4331.0
+    99     5112    0.056788    3.730e-02     6.57e-01        2831.6        8251.4
+   129     6630    0.057507    5.027e-02     8.74e-01        2796.2       22233.4
+
+rungs evaluated : 70
+
+truncated optimum : 8D = 1, A4 = 215, 1/R5 = 10034.0 GeV = 10.034 TeV
+rigorous optimum  : 8D = 139, A4 = 7133, 1/R5 <= 52429.5 GeV = 52.429 TeV
+
+does the maximum move to another rung?  YES: 1 -> 139.  This is exactly why shifting the optimum is not enough.
+
+THE STATEMENT:  1/R_5  <=  52.429 TeV  for every admissible bulk content, for the FULL
+polylogarithmic potential -- not for its expansion.  The margin over the truncated
+certificate is 42395.5 GeV, i.e. 422.52 %.
+
+========================================================================================================
+CONTROLS
+========================================================================================================
+  every delta strictly positive                          : True
+  rigorous ceiling >= truncated ceiling                  : True
+  and within 10 % of it (else the bound is not usable)   : False (422.52 %)
+  u = 3 alpha < 1 at every rung kept                     : True

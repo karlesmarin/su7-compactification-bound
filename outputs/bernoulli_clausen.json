@@ -1,0 +1,10 @@
+{
+ "even_identity_checks_pass": false,
+ "ladder_indices": [
+  5,
+  3,
+  1
+ ],
+ "thermal_index": 4,
+ "compactified_index": 5
+}

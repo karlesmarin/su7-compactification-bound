@@ -1,0 +1,42 @@
+EN  su7_hierarchy.pdf: 73 páginas, 16 figuras etiquetadas
+     Fig. 1  fig:chain        pie p.7   citada en [6]          ok
+     Fig. 2  fig:parity       pie p.10  citada en [10]         ok
+     Fig. 3  fig:ladder       pie p.13  citada en [12]         ok
+     Fig. 4  fig:lambert      pie p.15  citada en [5, 14]      ok
+     Fig. 5  fig:collapse     pie p.21  citada en [20, 63]     ok
+     Fig. 6  fig:cone         pie p.22  citada en [21, 24]     ok
+     Fig. 7  fig:ceiling      pie p.24  citada en [23]         ok
+     Fig. 8  fig:kernel       pie p.26  citada en [25]         ok
+     Fig. 9  fig:lift         pie p.27  citada en [5, 22, 24, 26] ok
+     Fig. 10 fig:vacuum       pie p.28  citada en [28, 34, 63] ok
+     Fig. 11 fig:surface      pie p.36  citada en [35]         ok
+     Fig. 12 fig:tower        pie p.43  citada en [41, 42]     ok
+     Fig. 13 fig:chi2         pie p.46  citada en [45, 51, 67] ok
+     Fig. 14 fig:ghosts       pie p.47  citada en [47]         ok
+     Fig. 15 fig:coset3d      pie p.59  citada en [58]         ok
+     Fig. 16 fig:seedshift    pie p.61  citada en [61]         ok
+
+ES  su7_hierarchy_es.pdf: 74 páginas, 16 figuras etiquetadas
+     imágenes incluidas: 15, todas _es: True
+     Fig. 1  fig:chain        pie p.7   citada en [6]          ok
+     Fig. 2  fig:parity       pie p.10  citada en [10]         ok
+     Fig. 3  fig:ladder       pie p.13  citada en [13]         ok
+     Fig. 4  fig:lambert      pie p.15  citada en [5, 14]      ok
+     Fig. 5  fig:collapse     pie p.21  citada en [21, 65]     ok
+     Fig. 6  fig:cone         pie p.23  citada en [22, 24]     ok
+     Fig. 7  fig:ceiling      pie p.25  citada en [24]         ok
+     Fig. 8  fig:kernel       pie p.27  citada en [25]         ok
+     Fig. 9  fig:lift         pie p.28  citada en [5, 23, 25, 27] ok
+     Fig. 10 fig:vacuum       pie p.29  citada en [29, 35, 64] ok
+     Fig. 11 fig:surface      pie p.37  citada en [36]         ok
+     Fig. 12 fig:tower        pie p.44  citada en [42, 43]     ok
+     Fig. 13 fig:chi2         pie p.47  citada en [47, 52, 68] ok
+     Fig. 14 fig:ghosts       pie p.49  citada en [48, 49]     ok
+     Fig. 15 fig:coset3d      pie p.61  citada en [60]         ok
+     Fig. 16 fig:seedshift    pie p.63  citada en [62]         ok
+
+
+4. el directorio de compilacion: .sobra algun PDF de figura?
+   30 PDF de figura presentes, 30 incluidos por las dos ediciones
+   ni sobra ni falta ninguno
+todas las figuras en su sitio, citadas, y cada edición con sus propias imágenes

@@ -1,0 +1,63 @@
+============================================================================================
+S1  LA FIRMA POR PARRAFO EMPAREJADO -- lo que una traduccion no mueve
+============================================================================================
+  238 parrafos emparejados en 18 secciones, 0 con la firma distinta
+
+============================================================================================
+S2  LA ASIMETRIA POR COMMIT -- informativa, no hace fallar
+============================================================================================
+  commit    fecha         +EN   +ES  asunto
+  ad67191   2026-08-24     24    28  part-vii: octava lectura -- el reticulo y el c
+  018abcd   2026-08-24     34    29  part-vii: septima lectura -- el origen del log
+  83228c9   2026-08-24    117   116  part-vii: dos lecturas ajenas mas, y una de la
+  008ddba   2026-08-24     11    11  part-vii: la tercera lectura ajena, y el marca
+  b1266ee   2026-08-24     46    48  part-vii: el segundo repaso externo -- y el g_
+  0c73e85   2026-08-24     35    35  part-vii: las figuras contra sus pies -- y el 
+  1cb7ca9   2026-08-24     91    88  part-vii: el repaso externo -- las compuertas 
+  ee2fcf3   2026-08-24     20   100  part-vii: el repaso de antes de publicar -- la  <-- MIRAR
+  b065ce5   2026-08-24     16     9  part-vii: la inglesa repasada -- los pies de f  <-- MIRAR
+  f071a84   2026-08-24     78    88  part-vii: el barrido por objeto, y el ledger e
+  fd7c7d5   2026-08-23     43    47  part-vii: el objeto que manda, nombrado -- y p
+  94902cd   2026-08-23     14    13  part-vii: las 17 apariciones sin marcar, arreg
+  4a464b8   2026-08-23     31    30  part-vii: una compuerta nueva para el modo de 
+  b9207ae   2026-08-23     60    61  part-vii: el anexo de Lean, cuyo parrafo mas l
+  4fd49a7   2026-08-23     58    60  part-vii: la criba destapa que el 31/32 zeta(5
+  745ad75   2026-08-23     20    21  part-vii: la segunda revision, y un ladrillo d
+  199acbf   2026-08-23      8     7  part-vii: dos afirmaciones incondicionales que
+  0bee2ae   2026-08-23    312   288  part-vii: la condicionalidad baja del resumen 
+  a3d9ec3   2026-08-23     67    60  part-vii: el Teorema 1 cuelga de un determinan
+  d5b5f58   2026-08-23    407   408  part-vii: preguntar cuatro veces "y por que" d
+  828eee9   2026-08-23    156   155  part-vii: la covarianza publicada no era singu
+  6c1c5b2   2026-08-23     68    66  part-vii: la consulta retira la banda, y leer 
+  5df9982   2026-08-23     14    15  part-vii: la salida de CIJET sale del reposito
+  fe8de43   2026-08-23    636   636  part-vii: la rama del escape queda excluida --
+  1e74023   2026-08-22    250   255  part-vii: el 84 esta bien contado -- y la revi
+  6843e95   2026-08-22     20    20  part-vii: el techo a la masa de Higgs medida -
+  cdac74b   2026-08-22     53    55  part-vii: g_4 no era un convenio eliminable, y
+  16eab26   2026-08-22     20    22  part-vii: una figura nueva para el teorema de 
+  70edc3c   2026-08-22     59    60  part-vii: el estudio a fondo de HHK y del apen
+  b9d47fa   2026-08-22     38    42  part-vii: la compuerta recorta el teorema de c
+  127d091   2026-08-22     44    46  part-vii: el retículo levantado -- invariantes
+  cfb649b   2026-08-22     43    48  part-vii: la monotonia del techo pasa de medid
+  1ba1b64   2026-08-22     38    45  part-vii: la formula de duplicacion es de CCD2
+  8ed902e   2026-08-22     73    75  part-vii: el programa semi-infinito cierra la 
+  f6dc58f   2026-08-22     52    51  part-vii: W > 0 es NECESARIA donde se decide l
+  b4ffce9   2026-08-22     39    40  part-vii: 212 contra 215 certificado con R' y 
+  d3934f9   2026-08-22    123   126  part-vii: la revision de Carles -- tenia razon
+  d9ef445   2026-08-22     68    69  part-vii: la cota rigurosa del resto entra en 
+
+  2 commit(s) con la castellana desviada mas de un 40 % de la inglesa.
+  No es prueba: el castellano corre un 4 % mas largo y las lineas se parten distinto.
+  Es la lista de sitios donde mirar cuando algo no cuadra.
+
+============================================================================================
+FALSACION -- los dos parrafos del 24-ago, .los ve la firma?
+============================================================================================
+  la S13, el parrafo de la condicionalidad que no cruzo salta, difieren en cite
+  la S11, el gate_km_ghosts.py que se perdio       salta, difieren en tt
+
+los dos parrafos rancios saltan.
+
+============================================================================================
+cada parrafo de la castellana lleva las mismas citas, ecuaciones y numeros que su gemelo.
+============================================================================================

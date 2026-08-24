@@ -1,0 +1,16 @@
+{
+ "swept": 4096,
+ "fail_closed_form": 0,
+ "fail_three_rung": 0,
+ "fail_Nc_identification": 3872,
+ "reference": {
+  "a": "1",
+  "b": "2",
+  "W": "7",
+  "rungs": {
+   "5": "9",
+   "3": "-27",
+   "1": "-36"
+  }
+ }
+}

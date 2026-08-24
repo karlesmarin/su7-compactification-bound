@@ -1,0 +1,185 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- WHERE THE TWO VALUES SIT ON THE RUNNING CURVE
+====================================================================================================
+  running imported from running_gap.py: alpha_2^-1(M_Z) = 29.584, b_2 = -3.1666666666666665, M_Z = 91.1876 GeV
+
+           scale     alpha_2^-1          g_2    e-folds
+             M_Z         29.584      0.65175      0.000
+           1 TeV         30.791      0.63885      2.395
+           2 TeV         31.140      0.63525      3.088
+        3.97 TeV         31.485      0.63176      3.773
+        9.22 TeV         31.910      0.62754      4.616
+       10.03 TeV         31.953      0.62712      4.701
+         100 TeV         33.111      0.61605      7.000
+
+  So the two numbers the paper leaves side by side are the SAME coupling at two scales:
+     0.653  (\cite{AHMN}, the weak scale)   against  g_2(M_Z) = 0.65175
+     0.630  (this paper, 'run up to the compactification scale')
+
+  g_2 = 0.630 at 5628 GeV      g_2 = 0.653 at 91.19 GeV
+  and the ceiling itself sits at 9218-10034 GeV, where g_2 = 0.62712 to 0.62754.
+
+  ==> 0.653 is the coupling at M_Z to four digits, and 0.63 is the coupling at the ceiling
+      rounded to two.  The paper's sentence is right; what follows makes it a fixed point
+      instead of a rounding.
+
+====================================================================================================
+2 -- THE FIXED POINT
+====================================================================================================
+  Iterate  g_4 -> g_2( 2 pi m_W / x(g_4) )  at the ceiling's vertex, A_4 = 104, 8D = 1,
+  with m_h at the top of the window.  If it is a contraction the loop closes on itself.
+
+    iter         g_4 in       1/R5 (GeV)        g_4 out
+       0    0.630000000          9218.00    0.627540476
+       1    0.627540476          9247.88    0.627524439
+       2    0.627524439          9248.07    0.627524334
+       3    0.627524334          9248.08    0.627524334
+       4    0.627524334          9248.08    0.627524334
+       5    0.627524334          9248.08    0.627524334
+     ...                                               
+       6    0.627524334          9248.08    0.627524334
+
+  fixed point : g_4* = 0.627524334   reached in 7 iterations
+  starting from 0.50 and from 0.80 : 0.627524334 and 0.627524334 -- the same point
+  |d(map)/dg| at the fixed point : 6.54e-03   (a contraction needs < 1)
+
+  and the paper's 0.63 against it: 0.63000 vs 0.62752, a difference of 0.39 %
+
+====================================================================================================
+3 -- WHAT IT DOES TO THE CEILING
+====================================================================================================
+  mu ~ g_4^-2, so a smaller g_4 raises mu, and (II) then lowers x and RAISES 1/R5.  The
+  question is whether it raises it past a lattice step, because A_4 is quantised.
+
+  g_4                               value             mu    1/R5 at 104        shift
+  this paper                      0.63000        82.7280         9218.0        0.00 %
+  self-consistent                 0.62752        83.3821         9248.1        0.33 %
+  \cite{AHMN}, weak scale         0.65300        77.0030         8950.4       -2.90 %
+
+  So the self-consistent value moves the number at the SAME vertex by well under a percent.
+  Whether the VERTEX itself moves is a separate question and it is the one that matters,
+  because A_4 steps by three:
+
+  g_4                               value A_4 vertex     1/R5 (GeV)
+  this paper                      0.63000        104         9218.0
+  self-consistent                 0.62752        104         9248.1
+  \cite{AHMN}, weak scale         0.65300         98         8902.8
+
+  the vertex moves between the paper's value and the self-consistent one : False
+  the vertex moves between the self-consistent value and the weak scale  : True
+
+====================================================================================================
+4 -- CONTROLS
+====================================================================================================
+  (i) THE RUNNING MUST BE THE ONE ALREADY ARCHIVED.  running_gap.py prints alpha_2^-1 at
+      five scales; this file imports its inv() rather than retyping it, so the check is that
+      the archived table is reproduced digit for digit:
+      M_Z          alpha_2^-1 = 29.584     in the archive : True
+      1 TeV        alpha_2^-1 = 30.791     in the archive : True
+      2 TeV        alpha_2^-1 = 31.140     in the archive : True
+      3.97 TeV     alpha_2^-1 = 31.485     in the archive : True
+      10.03 TeV    alpha_2^-1 = 31.953     in the archive : True
+      CONTROL -- every value found in outputs/running_gap.txt : True
+
+  (ii) AND THE FIXED POINT MUST BE ABLE TO COME OUT SOMEWHERE ELSE.  Run the same iteration
+       with the running switched off -- g_2 frozen at M_Z -- and it must land on the weak
+       scale value instead, or the loop is not doing anything:
+       running on  : g_4* = 0.62752
+       running off : g_4* = 0.65175   (must be g_2(M_Z) = 0.65175)
+
+  (iii) THE NUMBERS AS THE PAPER WOULD PRINT THEM:
+       g_2(M_Z)                        : 0.6517
+       g_4 self-consistent at the vertex: 0.6275
+       the paper's value               : 0.63
+       1/R5 at A_4 = 104, self-consistent : 9248 GeV
+       against the paper's value          : 9218 GeV
+       shift                              : 0.33 %
+       at the weak-scale g_4, the vertex   : A_4 = 98
+       and the ceiling there              : 8903 GeV
+       contraction factor of the map      : 6.5e-03
+       scale at which g_2 = 0.63          : 5628 GeV
+
+====================================================================================================
+5 -- WHAT THE FIXED POINT DOES AND DOES NOT OPEN
+====================================================================================================
+  Carles asked whether this points at more couplings at other scales.  Two readings, and
+  both are measurable rather than matters of opinion.
+
+  (a) IS THE FIXED POINT UNIQUE IN THE PHYSICAL RANGE?  A contraction is local; the basin
+      is not.  Sweeping the starting value across everything a reader might try:
+
+       g_4 start     g_4* reached       1/R5 (GeV)
+          0.3000      0.627524334           9248.1
+          0.4000      0.627524334           9248.1
+          0.5000      0.627524334           9248.1
+          0.6000      0.627524334           9248.1
+          0.6275      0.627524334           9248.1
+          0.6300      0.627524334           9248.1
+          0.6530      0.627524334           9248.1
+          0.7500      0.627524334           9248.1
+          0.9000      0.627524334           9248.1
+          1.1000      0.627524334           9248.1
+          1.3000      0.627524334           9248.1
+
+      distinct fixed points reached : 1
+      One.  The map is g -> g_2(M_KK(g)) with g_2 monotone decreasing in the scale and M_KK
+      decreasing in g, so the composition is monotone and its slope is 6.5e-3: there is no
+      room for a second crossing.  (The formal g -> 0 solution needs M_KK -> infinity and is
+      not a physical branch.)
+
+  (b) DOES ANYTHING ELSE IN THE PAPER SIT AT A SCALE THAT IS ITSELF g_4-DEPENDENT?  Yes, one
+      thing: the gauge-coupling gap of section pred is quoted AT the ceiling, and the ceiling
+      moves with g_4.  So the same closure applies to it, and the size is worth having:
+
+      evaluated at                        scale (GeV)  a2^-1 - a3^-1          shift
+      the paper's ceiling, 10034              10034.0         18.234         0.000
+      the constrained vertex, 9218             9218.0         18.286         0.052
+      the same, self-consistent                9248.1         18.284         0.050
+
+      The gap moves by hundredths.  So the answer to the question is narrow and worth saying
+      narrowly: closing the loop removes ONE convention, it does not reveal a new coupling,
+      and the only other quantity that inherits the self-consistency barely feels it.
+
+  (c) AND THE QUESTION THAT MATTERS, WHICH IS WHETHER THE CONVENTION WAS REMOVED OR MOVED.
+      The closure fixes g_4 GIVEN that it is evaluated at 1/R_5.  But why 1/R_5?  The KK
+      masses are n/R_5, the fundamental domain has a 2 pi in it, and a matching scale is a
+      convention like any other.  If varying it moves g_4 by more than the 0.39 % the closure
+      buys, then nothing was removed -- the arbitrariness was relabelled, and saying
+      otherwise would be an overclaim.  So:
+
+      matching scale           scale (GeV)         g_4* A_4 vertex     1/R5 (GeV)    vs 1/R5 SM?
+      1/(2 R_5)                     4602.9     0.631011        104         9205.8      0.56 % si
+      1/R_5                         9248.1     0.627524        104         9248.1      0.00 % si
+      2/R_5                        18580.3     0.624095        104         9290.2     -0.55 % NO: por encima de M_KK
+      pi/R_5                       29271.7     0.621892        104         9317.5     -0.90 % NO: por encima de M_KK
+      2 pi/R_5                     58805.9     0.618554        107         9381.9     -1.43 % NO: por encima de M_KK
+
+      EL TRAMO EN EL QUE ESTE RUNNING ES EL RUNNING, de 1/(2R_5) a 1/R_5:
+        spread en g_4                                    : 0.56 %
+      lo que la vuelta de tuerca gana sobre el 0.63 del paper : 0.39 %
+
+      vertices dentro del tramo valido, g_4 en [0.6275, 0.6310] : A_4 = 104
+      vertices si se estira hasta 2 pi/R_5                  : A_4 = 104, 107
+
+      LO QUE ESTO MIDE, Y LO QUE NO.  Dentro del tramo en el que el articulo afirma que la
+      teoria es el Modelo Estandar, mover la escala de matching un factor dos cambia g_4 un
+      0.56 % y NO mueve el vertice.  Eso es todo lo que un running cuatridimensional puede
+      decir aqui.  Estirarlo hasta 2 pi/R_5 daria 0.6186 y movería el vertice a A_4 = 107, pero
+      esa escala esta por encima de seis niveles KK: el numero queda impreso como marca de lo
+      que NO esta zanjado, no como sistematico.  De modo que g_4 sigue siendo un DATO ---la
+      escala de matching es un convenio y esto no lo quita--- pero el tamanyo de esa libertad
+      no queda establecido aqui.  Establecerlo pide el matching de la torre, que es la segunda
+      condicion del final de este fichero.
+
+      Lo que la vuelta de tuerca SI establece, y merece quedarse: dada la escala de matching,
+      el valor tampoco es libre ---es un punto fijo que contrae fuerte, no un ajuste--- y los
+      dos numeros que el articulo deja uno al lado del otro son un mismo acoplo a dos escalas.
+
+      AND A SECOND CONDITION THAT WOULD BE REAL, not attempted here: g_4 is the FOUR-
+      dimensional SU(2)_L coupling and this closure runs it inside the Standard Model. Above
+      1/R_5 the theory is six-dimensional and the running is power law, so matching
+      g_4(1/R_5) to the SU(7) coupling of the bulk is an independent condition on the same
+      number -- and unlike this one it does not have five gentle e-folds to work in.
+
+archived: outputs/running_g4.json

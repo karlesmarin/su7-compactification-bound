@@ -1,0 +1,15 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+============================================================================================
+what the panels are drawn from
+============================================================================================
+  content                                  F(0)           F(1)    verdict
+  published row (2)                     -22.780         52.559       true
+  witness (212,1)                       111.437       -204.988      FALSE
+  witness (104,1)                        -1.523          3.500       true
+
+  CONTROL -- the panel must contain both crossings, and only the constrained curve may
+  cross late:
+     unconstrained crosses at A4 = 212.0
+     with W > 0        crosses at A4 = 104.0
+     the two crossings are different, which is the whole point of the panel
+  written: fig_vacuum.pdf, fig_vacuum_es.pdf (here and in paper/), plus .png

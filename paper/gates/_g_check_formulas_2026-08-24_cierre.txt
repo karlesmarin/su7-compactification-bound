@@ -1,0 +1,9 @@
+fórmulas de display: EN 70, ES 70
+  las 70 fórmulas de display son idénticas en las dos ediciones
+EN: delimitadores y $ -- ok
+ES: delimitadores y $ -- ok
+macros: 7 en EN, 7 en ES
+EN log: sin glifos caídos ni comandos inválidos en matemáticas
+ES log: sin glifos caídos ni comandos inválidos en matemáticas
+
+fórmulas: TODO EN ORDEN

@@ -1,0 +1,138 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE FORMULA, AND IT HAS TO SURVIVE THE EXACT POTENTIAL
+====================================================================================================
+  F(1) - F(0) = (31/16) zeta(5) W,  W = sum_{c odd} m (-s).  Checked term by term against the
+  exact polylogarithmic F, on the five published rows and on the ceiling's witness.
+
+  content                           W           closed            exact      agree
+  (1)                            63/2        63.284997        63.284997       True
+  (2)                            75/2        75.339282        75.339282       True
+  (3)                            75/2        75.339282        75.339282       True
+  (4)                            73/2        73.330235        73.330235       True
+  (5)                            69/2        69.312140        69.312140       True
+  witness                      -315/2      -316.424985      -316.424985       True
+
+  CONTROL -- closed and exact agree on every row : True
+
+  and the per-multiplet coefficients, which is what makes it a lattice functional:
+  multiplet           W     multiplet           W
+  7(+,+)              1     7(+,-)             -1
+  28(+,+)             3     28(+,-)            -3
+  48(+,+)             6     48(+,-)            -6
+  84(+,+)             9     84(+,-)            -9
+  gauge            -3/2   <- NOT an integer, and that is a theorem: see W_is_half_odd.py
+  CONTROL -- W really is linear in the multiplicities on every row above : True
+
+  CONTROL -- 2W MUST BE ODD FOR EVERY CONTENT (W_is_half_odd.py).  Carles asked for this one
+  after finding W = 2 printed beside a theorem saying 2W is odd: the guard belongs in every
+  script that touches W, not in the one that proves it.  Random contents, multiplicities up
+  to eight:
+     4000 random contents, 2W not odd : 0   <-- must be 0
+
+====================================================================================================
+2 -- THE SCREEN.  W > 0 means the electroweak point is the deeper one
+====================================================================================================
+  content                         W           F(0)           F(1) electroweak vacuum is
+  (1)                          63/2       -18.7619        44.5231 the true one
+  (2)                          75/2       -22.7800        52.5593 the true one
+  (3)                          75/2       -26.1500        49.1893 the true one
+  (4)                          73/2       -23.9466        49.3837 the true one
+  (5)                          69/2       -20.9006        48.4116 the true one
+  witness                    -315/2       111.4373      -204.9877 FALSE -- deeper at alpha=1
+
+  the five published rows pass and the ceiling's witness fails, which is what
+  socratic_witness.py found the slow way.
+
+====================================================================================================
+3 -- THE CEILING WITH THE CONDITION IMPOSED
+====================================================================================================
+  Same rung 8D = 1, same G <= G* condition, plus W > 0.  Four linear conditions on the
+  multiplicities now, and the feasible set is still finite for the same reason.
+
+  A4         required avail (free)      slack  avail (W>0)      slack 1/R5
+  215         681.084      681.017     -0.067      431.484   -249.600      10034
+  212         667.670      669.927     +2.257      420.394   -247.276      10013
+  209         654.266      658.836     +4.570      409.303   -244.963       9992
+  206         640.873      656.064    +15.191      406.531   -234.342       9970
+  203         627.491      644.973    +17.482      395.440   -232.051       9949
+  200         614.120      633.883    +19.763      384.350   -229.770       9928
+  197         600.761      622.793    +22.032      381.578   -219.183       9906
+  194         587.412      620.020    +32.608      378.805   -208.607       9885
+  191         574.074      608.930    +34.855      367.715   -206.360       9863
+  188         560.748      597.839    +37.091      364.942   -195.806       9842
+  185         547.433      586.749    +39.316      362.169   -185.264       9820
+  182         534.130      583.976    +49.847      359.397   -174.733       9799
+  179         520.838      572.886    +52.048      348.306   -172.532       9777
+  176         507.558      561.796    +54.238      345.534   -162.024       9755
+  173         494.289      550.705    +56.417      342.761   -151.528       9733
+  170         481.032      547.933    +66.901      339.989   -141.043       9711
+  167         467.786      536.842    +69.056      328.898   -138.888       9690
+  164         454.553      525.752    +71.199      326.126   -128.427       9668
+  161         441.332      514.662    +73.330      323.353   -117.978       9646
+  158         428.122      511.889    +83.767      320.581   -107.541       9624
+  155         414.925      500.799    +85.874      309.490   -105.434       9602
+  152         401.739      489.708    +87.969      306.718    -95.022       9579
+  149         388.567      478.618    +90.052      303.945    -84.621       9557
+  146         375.406      475.846   +100.440      301.172    -74.233       9535
+  143         362.258      464.755   +102.497      290.082    -72.176       9513
+  140         349.122      453.665   +104.543      287.310    -61.813       9490
+  137         335.999      442.574   +106.576      276.219    -59.780       9468
+  134         322.888      439.802   +116.913      273.447    -49.442       9445
+  131         309.791      428.712   +118.921      262.356    -47.435       9423
+  128         296.706      417.621   +120.915      251.266    -45.440       9400
+  125         283.634      406.531   +122.897      240.175    -43.459       9378
+  122         270.575      403.758   +133.183      229.085    -41.490       9355
+  119         257.529      392.668   +135.138      226.313    -31.217       9332
+  116         244.497      381.578   +137.081      215.222    -29.275       9310
+  113         231.478      370.487   +139.009      212.450    -19.028       9287
+  110         218.472      367.715   +149.243      209.677     -8.795       9264
+  107         205.480      356.624   +151.145      198.587     -6.893       9241
+  104         192.501      345.534   +153.033      195.814     +3.313       9218
+  101         179.536      334.444   +154.908      193.041    +13.506       9195
+  98          166.585      331.671   +165.086      190.269    +23.684       9172
+  95          153.647      320.581   +166.933      179.179    +25.531       9149
+  92          140.724      309.490   +168.766      176.406    +35.682       9125
+
+  CEILING WITH THE TRUE-VACUUM CONDITION : 1/R5 = 9218 GeV = 9.22 TeV  at A4 = 104
+     witness : 16x7(+,+) + 1x28(+,-) + 1x48(+,+) + 4x48(+,-) + 1x84(+,+)   (N = 23, W = 5/2)
+     and on the EXACT potential: global minimiser alpha = 0.017560
+     m_h = 126.00 GeV   1/R5 exact = 9157 GeV
+     m_h inside 125-127 : True
+
+====================================================================================================
+4 -- AND THIS EXPLAINS A GAP THE PAPER LEFT UNEXPLAINED
+====================================================================================================
+  Part VII reports that the enumeration to N = 14 tops out at 9156 GeV while the certificate
+  says 10034, and calls the difference 'the gap between a relaxation and its lattice'.  But
+  the enumeration used numeric_min, which is the GLOBAL minimiser, so it was screening false
+  vacua all along without saying so.  The certificate was not.  If that is the whole story,
+  the enumeration's champions must all have W > 0 and the constrained ceiling must land on
+  top of them.
+
+  row      content                                               W  true vac?   1/R5 exact
+  N=8      3x7(+,+) + 1x7(+,-) + 2x48(+,+) + 1x48(+,-) + 1x84(+,+)     31/2        yes         9139
+  N=14     4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 1x84(+,+)        5/2        yes         9157
+
+  constrained ceiling, exact : 9157 GeV
+  the paper's own enumeration  : 9156 GeV at N = 14
+
+  ==> the two agree, and the 9156-against-10034 gap was never about search depth.  It is the
+      true-vacuum condition, which the enumeration imposed silently and the certificate did
+      not impose at all.  Naming it turns a gap into a theorem.
+
+
+  THE NUMBERS AS THE PAPER PRINTS THEM (check_numbers.py greps the archive literally):
+     constrained ceiling, closed form   : 9.22 TeV
+     the same, rescaled by 2.076        : 19.14 TeV   (an extrapolation, not a bound)
+     constrained ceiling, exact         : 9157 GeV
+     its witness has W                  : 2
+     W of the five published rows       : 63/2, 75/2, 75/2, 73/2, 69/2
+     W of the (212, 1) vertex           : -315/2
+
+  AND THE CONDITION IS THE PAPER'S OWN.  Section ladder already records that
+  Cacciapaglia et al. decide orbifold stability by comparing the potential at the two
+  symmetric points, and that their eqs. (2.11)-(2.13) are the p = 5 rung with weight
+  eta(5)/zeta(5) = 15/16.  The coefficient here is 31/16 = 1 + 15/16 -- their weight plus
+  one, which is exactly what comparing the two points produces.  The criterion was in the
+  paper as a citation and never as a constraint.

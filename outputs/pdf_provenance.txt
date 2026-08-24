@@ -1,0 +1,76 @@
+==============================================================================================
+QUE SON LOS CONJUNTOS DE PARTONES QUE VAMOS A USAR
+==============================================================================================
+
+  leido de la propia cuadratura de hadronic_chi.py (8 bins de masa x 12 de chi):
+  pide como maximo  x = 2.9207   y   Q = 12881 GeV
+
+----------------------------------------------------------------------------------------------
+  CT10nlo
+----------------------------------------------------------------------------------------------
+    no esta en E:\proyectos\Curiosity\tools\lhapdf
+    CT10nlo vive dentro de la imagen cijet:1.0, no en tools/lhapdf/
+
+----------------------------------------------------------------------------------------------
+  NNPDF31_nnlo_as_0118
+----------------------------------------------------------------------------------------------
+    SetDesc      "NNPDF3.1 NNLO global fit, alphas(MZ)=0.118. mem=0 => average on replicas; mem=1-100 => PDF replicas"
+    OrderQCD     2
+    AlphaS_MZ    0.1180000
+    NumFlavors   5
+    NumMembers   101
+    XMin         1.0000000e-09
+    XMax         1.0000000e+00
+    QMin         1.6500000e+00
+    QMax         1.0000000e+05
+    Flavors      [-5, -4, -3, -2, -1, 21, 1, 2, 3, 4, 5]
+    (P4)         101 ficheros .dat en disco
+                 el .info declara 101 miembros : coinciden
+    (P2)         x fisico hasta 1.0000, la rejilla llega a 1.0000 : dentro
+                 Q hasta 12881 GeV, la rejilla llega a 100000 : dentro
+
+----------------------------------------------------------------------------------------------
+  CT14nlo
+----------------------------------------------------------------------------------------------
+    SetDesc      'CT14nlo, 2-loop PDF evolution with HOPPET and HOPPET alphas_s running solution. This set has 57 member PDFs. 
+    OrderQCD     1
+    AlphaS_MZ    0.118000
+    NumFlavors   5
+    NumMembers   57
+    XMin         1.000000e-09
+    XMax         1
+    QMin         1.295000e+00
+    QMax         100000
+    Flavors      [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 21]
+    (P4)         57 ficheros .dat en disco
+                 el .info declara 57 miembros : coinciden
+    (P2)         x fisico hasta 1.0000, la rejilla llega a 1.0000 : dentro
+                 Q hasta 12881 GeV, la rejilla llega a 100000 : dentro
+
+==============================================================================================
+P3 -- alpha_s(M_Z) Y ORDEN, LADO A LADO
+==============================================================================================
+
+  conjunto                 alpha_s(MZ)    orden        n_f
+  CT10nlo                  (en la imagen)        -          -
+  NNPDF31_nnlo_as_0118      0.1180000        2          5
+  CT14nlo                    0.118000        1          5
+
+  todos comparten alpha_s(M_Z) = 0.118000
+  de modo que el prefactor comun no distingue los conjuntos y lo que queda es la
+  MEZCLA DE SABORES, que es justo lo que la deformacion ve: toca canales de quark
+  y no los iniciados por gluon.
+
+==============================================================================================
+P5 -- FUERA DE LA REGION FISICA: CERO, O EXTRAPOLACION?
+==============================================================================================
+  CT10nlo                  x = 1.5 y 2.92 devuelven, en el peor sabor : 0.000e+00   CERO
+  NNPDF31_nnlo_as_0118     x = 1.5 y 2.92 devuelven, en el peor sabor : 0.000e+00   CERO
+  CT14nlo                  x = 1.5 y 2.92 devuelven, en el peor sabor : 0.000e+00   CERO
+
+  Asi que las esquinas no fisicas de la cuadratura pesan exactamente cero y la
+  integral es la fisica.  No es una suposicion del codigo: esta medido aqui.
+
+==============================================================================================
+los conjuntos cubren los puntos que la cuadratura pide, y estan completos
+==============================================================================================

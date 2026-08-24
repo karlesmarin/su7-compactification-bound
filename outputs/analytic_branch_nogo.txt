@@ -1,0 +1,49 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+0 -- THE TWO MOVES OF THE FREE MULTIPLET
+====================================================================================================
+  7(+,+) carries  A4 = 0,  8D = -6,  W = +1.
+  So on the branch it is the only knob, and it trades curvature for stability at a fixed rate:
+  six units of 8D bought for one unit of W.
+
+====================================================================================================
+1 -- THE ELEVEN BASE SOLUTIONS, AND WHETHER ANY WINDOW EXISTS
+====================================================================================================
+  need an integer n with   -W_base < n < 8D_base/6
+
+  base content                                    8D       W        n >        n < any n?
+  1x48(+,+)                                      -27       4      -4.50      -4.50 none
+  1x7(+,-) + 1x28(+,+)                            -3       0      -0.50      -0.50 none
+  2x7(+,-) + 2x48(+,-)                            45     -15      15.50       7.50 none
+  2x7(+,-) + 2x28(+,-) + 1x48(+,-)                21     -15      15.50       3.50 none
+  2x7(+,-) + 4x28(+,-)                            -3     -15      15.50      -0.50 none
+  6x7(+,-) + 1x28(+,-) + 1x48(+,-)                51     -16      16.50       8.50 none
+  6x7(+,-) + 3x28(+,-)                            27     -16      16.50       4.50 none
+  10x7(+,-) + 1x48(+,-)                           81     -17      17.50      13.50 none
+  10x7(+,-) + 2x28(+,-)                           57     -17      17.50       9.50 none
+  14x7(+,-) + 1x28(+,-)                           87     -18      18.50      14.50 none
+  18x7(+,-)                                      117     -19      19.50      19.50 none
+
+  base solutions admitting BOTH D > 0 and W > 0 : 0 of 11
+
+====================================================================================================
+2 -- THE CLOSEST MISS, because a no-go that misses by a mile is less interesting
+====================================================================================================
+  widest window on the branch : 18x7(+,-)
+     8D = 117, W = -19  ->  need  19.50 < n < 19.50,  width 0.00
+     the smallest n giving W > 0 is n = 20, and there 8D = 117 - 6(20) = -6
+     so it misses by 6 in 8D, i.e. by ONE step of the only knob there is.
+
+====================================================================================================
+VERDICT
+====================================================================================================
+  A4 = 0  =>  NO content has both D > 0 and W > 0.
+
+  Cancelling the branch point is possible; cancelling it, breaking the electroweak
+  symmetry, and landing in the true vacuum is not.  This is exact arithmetic on two
+  integers -- no expansion, no radius of convergence, nothing evaluated anywhere near
+  alpha = 0.89.  It replaces the m_h <= 29.6 GeV of the previous version, which was
+  computed outside the radius the same paper proves and is withdrawn.
+
+  CONTROL -- the exact potential must agree: every base family with D > 0 should have no
+  global interior minimum.  That is what analytic_branch_exact.py measures, and it does.

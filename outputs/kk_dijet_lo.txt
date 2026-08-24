@@ -1,0 +1,63 @@
+==============================================================================================
+THE KALUZA-KLEIN GLUON TOWER IN chi_dijet, AT LEADING ORDER
+independent of CIJET, and built to be compared with it
+==============================================================================================
+
+[0] CONTROLS
+   C1  tower off  =>  D(q2) = 1/q2 exactly ................... PASS
+   C2  QCD-only chi distribution is flat to 25.9% ........... PASS
+       (the Rutherford 1/t^2 behaviour; a broken matrix element loses this at once)
+   C3  tower converged: |D(200) - D(400)| / |D| = 4.12e-05 ...... PASS
+   C4  deep-EFT limit reproduces -(pi^2/3) R_5^2 ............ PASS (rel 7.2e-04)
+       this is the SAME pi^2/6 that colour_octet_recast.py and the paper carry,
+       so the two files are now tied together by a number and not by a claim.
+       NOTE the comparison is made at zero width, because that is the approximation
+       Lambda_8 is derived under.  C4b is what that approximation costs.
+   C4b width shifts the contact coefficient by +2.55% ....... PASS
+       (Gamma_n/m_n)^2 = (2 alpha_s)^2 = 0.0256, so 1/(1+r^2) predicts +2.50%.
+       So the Lambda_8 quoted in the paper is a ZERO-WIDTH number: the tower's true
+       contact coefficient is ~3% smaller, i.e. Lambda_8 is ~1.3% HIGHER.
+   F1  tower ON does change the shape (else nothing is tested)  PASS
+==============================================================================================
+[1] RATIO (QCD + tower) / QCD IN chi, AT FIXED DIJET MASS
+==============================================================================================
+
+    The tower is s-channel-like and therefore CENTRAL: it populates low chi, where
+    t-channel QCD is weakest.  That is the discriminant the angular analysis uses.
+
+    1/R_5 = 3.97 TeV
+      M_jj[TeV]      1.5     2.0     3.0     4.0     5.0     6.0     8.0    10.0    12.0    14.0    16.0
+----------------------------------------------------------------------------------------------
+      2.7          2.314   2.071   1.772   1.602   1.493   1.417   1.319   1.258   1.216   1.186   1.164
+      3.3          3.401   2.910   2.334   2.016   1.818   1.683   1.511   1.408   1.339   1.290   1.253
+      3.9          8.099   6.385   4.497   3.519   2.935   2.554   2.094   1.832   1.667   1.553   1.471
+      4.5          6.859   5.673   4.252   3.460   2.964   2.628   2.204   1.950   1.783   1.664   1.576
+      5.1          6.950   5.856   4.486   3.694   3.185   2.833   2.380   2.103   1.917   1.784   1.684
+      6.5         10.450   8.749   6.605   5.354   4.543   3.977   3.244   2.794   2.490   2.272   2.109
+      9.0         21.485  17.840  13.224  10.511   8.741   7.501   5.886   4.889   4.217   3.735   3.374
+----------------------------------------------------------------------------------------------
+
+    1/R_5 = 9.09 TeV
+      M_jj[TeV]      1.5     2.0     3.0     4.0     5.0     6.0     8.0    10.0    12.0    14.0    16.0
+----------------------------------------------------------------------------------------------
+      2.7          1.212   1.176   1.131   1.105   1.087   1.074   1.058   1.047   1.040   1.035   1.030
+      3.3          1.322   1.268   1.199   1.158   1.131   1.112   1.087   1.071   1.060   1.052   1.046
+      3.9          1.460   1.382   1.282   1.223   1.185   1.158   1.122   1.099   1.084   1.073   1.064
+      4.5          1.629   1.520   1.382   1.301   1.249   1.212   1.164   1.133   1.112   1.097   1.086
+      5.1          1.832   1.685   1.500   1.393   1.324   1.276   1.212   1.172   1.145   1.125   1.110
+      6.5          2.495   2.214   1.871   1.677   1.553   1.467   1.356   1.287   1.241   1.207   1.182
+      9.0          8.436   6.640   4.661   3.635   3.023   2.623   2.141   1.867   1.694   1.575   1.490
+----------------------------------------------------------------------------------------------
+
+    [wrote outputs/kk_dijet_lo.json -- every number above, for the paper and the gates]
+
+    Read the first column: at low chi the ratio departs from 1 by tens of percent
+    well below the resonance, and the departure grows towards it.  CMS quote a total
+    theoretical uncertainty of 3.5% in the 3.0-3.6 TeV bin and 12.2% above 7 TeV
+    (their Table 2), so an effect of this size is not something the analysis could
+    have absorbed -- which is the whole reason the recast is worth finishing.
+==============================================================================================
+VERDICT: controls pass (C1-C4), falsification control behaves (F1).
+STATUS: partonic layer only.  PDFs, NLO and the CMS covariance are still missing,
+        and until CIJET's LO agrees with this, neither number should be quoted.
+==============================================================================================

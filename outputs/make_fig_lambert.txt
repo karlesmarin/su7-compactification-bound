@@ -1,0 +1,12 @@
+  C1  the surface returns each published row's alpha_min ... PASS (worst 1.8e-14)
+  C2  at the certificate's vertex the surface solves eq.(amin) PASS (residual 0.0e+00)
+      (its height there is 9967 GeV -- its own stationary point, not the 10034 GeV the
+       certificate quotes, which is read at the top of the Higgs window instead)
+  C3  the two sheets meet at L=0, from below and above ..... PASS (0.99985859, 1.00014143)
+  drew fig_lambert.pdf
+  C1  the surface returns each published row's alpha_min ... PASS (worst 1.8e-14)
+  C2  at the certificate's vertex the surface solves eq.(amin) PASS (residual 0.0e+00)
+      (its height there is 9967 GeV -- its own stationary point, not the 10034 GeV the
+       certificate quotes, which is read at the top of the Higgs window instead)
+  C3  the two sheets meet at L=0, from below and above ..... PASS (0.99985859, 1.00014143)
+  drew fig_lambert_es.pdf

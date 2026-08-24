@@ -1,0 +1,70 @@
+====================================================================================================
+1 -- THEIR (3.20), REBUILT FROM SCRATCH
+====================================================================================================
+  their (3.20):  N_Ad^(+-) = 2(pq + rs),   N_Ad^(-+) = 2(pr + qs)
+
+  [p;q,r;s]            N^(+-)   2(pq+rs)       N^(-+)     2(pr+qs)    agree
+  (1, 1, 0, 0)              2          2            0            0     True
+  (2, 1, 1, 0)              4          4            4            4     True
+  (1, 2, 1, 1)              6          6            6            6     True
+  (3, 1, 1, 2)             10         10           10           10     True
+  (2, 2, 2, 2)             16         16           16           16     True
+  (4, 0, 3, 1)              6          6           24           24     True
+
+  CONTROL -- their (3.20) reproduced without using their paper : True
+
+====================================================================================================
+2 -- THE SUM THAT (4.7) SUBSTITUTES
+====================================================================================================
+  N_Ad^(+-) + N_Ad^(-+) = 2(pq+rs) + 2(pr+qs) = 2[p(q+r) + s(q+r)] = 2 (p+s)(q+r)
+
+  [p;q,r;s]           N^(+-)+N^(-+)      2(p+s)(q+r)     (p+s)(q+r)
+  (1, 1, 0, 0)                    2                2              1
+  (2, 1, 1, 0)                    8                8              4
+  (1, 2, 1, 1)                   12               12              6
+  (3, 1, 1, 2)                   20               20             10
+  (2, 2, 2, 2)                   32               32             16
+  (4, 0, 3, 1)                   30               30             15
+
+  the sum is 2(p+s)(q+r).  Not (p+s)(q+r).
+
+====================================================================================================
+3 -- THEIR (4.5) + (4.6), SUMMED, AGAINST THE FIRST LINE OF (4.7)
+====================================================================================================
+  (4.5), gauginos:
+     -4[ N^(++)(e0+v(b)) + N^(--)(e0+v(-b)) + N^(+-)(e0+v(b+1/2)) + N^(-+)(e0+v(-b-1/2)) ]
+  (4.6), gauge + ghost + sigma:
+     (2N^(++)+2N^(--))(e0+de) + (2N^(--)+2N^(++))(e0-de)
+       + (2N^(+-)+2N^(-+))(e0+v(1/2)) + (2N^(-+)+2N^(+-))(e0+v(1/2))
+
+  v is even and w(b) = v(1/2) + v(b) - v(b+1/2), so with S = N^(+-)+N^(-+) and
+  N^(++)+N^(--) = N^2-1-S the v-dependent part of the sum is
+
+     -4(N^2-1-S) v(b)  -  4 S v(b+1/2)  +  4 S v(1/2)
+        = -4(N^2-1) v(b)  +  4 S [ v(b) - v(b+1/2) + v(1/2) ]
+        = -4(N^2-1) v(b)  +  4 S w(b) .
+
+  which is their (4.7) FIRST line, exactly:  -4(N^2-1)v + 4(N_Ad^(+-) + N_Ad^(-+)) w.
+  The Delta-epsilon terms cancel between the two lines of (4.6), as they say.
+
+====================================================================================================
+4 -- VERDICT, WITH THEIR OWN (4.13) AS ARBITER
+====================================================================================================
+  (4.7) line 1 : -4(N^2-1)v + 4 S w        with S = 2(p+s)(q+r)  ->  + 8(p+s)(q+r) w
+  (4.7) line 2 : -4(N^2-1)v + 4 (p+s)(q+r) w                     ->  half of line 1
+
+  (4.13) collects the w-bracket as  4 { (p+s)(q+r)(2 - 2n_Ad^(+) + ...) + ... } w, so with no
+  matter at all its gauge part is  4 * (p+s)(q+r) * 2 * w = 8 (p+s)(q+r) w.
+
+  Two of their equations give 8 and one gives 4, and the two are the ones everything else
+  rests on.  So the dropped factor is in the SECOND line of (4.7), it is a slip in the
+  substitution and not in the physics, and nothing downstream is affected: the +2 offset in
+  their a is the correct one.
+
+  WHAT IT MEANS FOR US.  Their gauge sector contributes the EVEN INTEGER +2 to a and NOTHING
+  to b.  Both functionals can therefore vanish, and they treat those cases explicitly --
+  their section (i) is 'The case with a = 0', and their (4.15) lists
+  'n_F^(+) = n_F^(-) => completely degenerate'.  In the model of this paper the gauge sector
+  contributes -7/2, a half-integer, so 8D, 2U and 2W are odd for every content and the
+  degenerate case they enumerate cannot be reached.  Same architecture, opposite outcome,
+  and the difference is one number.

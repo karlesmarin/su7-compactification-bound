@@ -1,0 +1,86 @@
+================================================================================================
+CMS-EXO-24-011 FROM HEPData: THE MEASUREMENT AND ITS CORRELATION MATRIX
+================================================================================================
+
+  record index : HTTP 200, 36121 bytes
+  DOI          : 10.17182/hepdata.167852.v1
+  tables       : 19
+
+[C1] IS THIS THE RIGHT RECORD?
+      title   : Measurement of dijet angular distributions and search for beyond the standard model phys
+      inspire : 3136278
+
+      C1 PASS
+
+[1] PULLING THE TABLES
+      1912103  HTTP 200      7495 B  Fig. 2: Detector level CHI distribution (2.4 < M(JJ) < 3.0 cached
+      1912104  HTTP 200      7554 B  Fig. 2: Detector level CHI distribution (3.0 < M(JJ) < 3.6 cached
+      1912105  HTTP 200      9464 B  Fig. 2: Detector level CHI distribution (3.6 < M(JJ) < 4.2 cached
+      1912106  HTTP 200      9560 B  Fig. 2: Detector level CHI distribution (4.2 < M(JJ) < 4.8 cached
+      1912107  HTTP 200     10437 B  Fig. 2: Detector level CHI distribution (4.8 < M(JJ) < 5.4 cached
+      1912108  HTTP 200     10462 B  Fig. 2: Detector level CHI distribution (5.4 < M(JJ) < 6.0 cached
+      1912109  HTTP 200     10404 B  Fig. 2: Detector level CHI distribution (6.0 < M(JJ) < 7.0 cached
+      1912110  HTTP 200      5812 B  Fig. 2: Detector level CHI distribution (M(JJ) > 7.0 TeV)  cached
+      1912111  HTTP 200      3468 B  Fig. 3: Exclusion limit (DM mediator)                      cached
+      1912112  HTTP 200      4244 B  Fig. 4 left: Exclusion limit (ALP liniar EFT)              cached
+      1912113  HTTP 200      4908 B  Fig. 4 right: Exclusion limit (SMEFT)                      cached
+      1912114  HTTP 200      8209 B  Fig. 5: Particle level CHI distribution (3.0 < M(JJ) < 3.6 cached
+      1912115  HTTP 200      8212 B  Fig. 5: Particle level CHI distribution (3.6 < M(JJ) < 4.2 cached
+      1912116  HTTP 200      8235 B  Fig. 5: Particle level CHI distribution (4.2 < M(JJ) < 4.8 cached
+      1912117  HTTP 200      8203 B  Fig. 5: Particle level CHI distribution (4.8 < M(JJ) < 5.4 cached
+      1912118  HTTP 200      8237 B  Fig. 5: Particle level CHI distribution (5.4 < M(JJ) < 6.0 cached
+      1912119  HTTP 200      8232 B  Fig. 5: Particle level CHI distribution (6.0 < M(JJ) < 7.0 cached
+      1912120  HTTP 200      4941 B  Fig. 5: Particle level CHI distribution (M(JJ) > 7.0 TeV)  cached
+      1912121  HTTP 200    677380 B  Correlation matrix                                         cached
+
+[C2] WHAT IS ACTUALLY MEASURED, AND IN HOW MANY BINS
+      detector-level chi tables : 8
+      particle-level chi tables : 7   <- the unfolded ones, the comparable ones
+      correlation matrices      : 1
+
+      The CIJET grid was run on EIGHT mass bins because that is the detector-level binning.
+      The unfolded measurement has SEVEN: 2.4-3.0 TeV is not published at particle level.  A
+      fit that used eight would be fitting a bin that does not exist.
+
+      C2 PASS
+
+[C3] AND THE MATRIX MUST BE A CORRELATION MATRIX
+      entries               : 5929  ->  77 x 77
+      square                : True
+      unit diagonal         : True (worst |1-rho| = 0.00e+00)
+      symmetric             : True
+      max |rho|             : 1.0000
+
+      C3 PASS
+
+[C4] AND THE BINNING IT DECLARES IS NOT THE ONE OUR GRID WAS RUN ON
+      The table says so itself: "11 times the index of the m_jj
+      (3.0,3.6,4.2,4.8,5.4,6.0,7.0) bin plus the index of the CHI bin
+      (1,2,3,4,5,6,7,8,9,10,12,14)".  Read the two lists.
+
+                                         the unfolded data      our CIJET grid
+      mass bins                          7 (from 3.0 TeV)       8 (from 2.4 TeV)
+      chi bins                           11                     12
+      largest chi                        14                     16
+      fit points                         77                     96
+
+      So the fit region is 7 x 11 = 77 points, and the matrix is exactly that size.  Our grid
+      carries a 2.4-3.0 TeV mass bin the unfolding does not publish, and a 14 < chi < 16 bin
+      that stops at 14 in the data.  Neither can be fitted, and a fit that kept them would be
+      inventing thirteen points and mismatching every index into this matrix.
+
+      C4 PASS (matrix side 77, expected 77)
+
+[2] WHAT THIS UNBLOCKS, AND WHAT IT DOES NOT
+      With a 77 x 77 correlation matrix the chi^2 can carry the correlations between chi bins
+      and between mass bins, so a confidence level becomes definable.  What it does not supply
+      is the QCD scale choice as a nuisance -- CMS's own small tension below 4.8 TeV moves
+      between their two scale choices, so a fit that does not profile it is measuring the scale
+      and not the tower.  That stays an obligation of ours.
+
+    [wrote outputs/hepdata_manifest.json; 19 files in tu_limit/hepdata/]
+
+================================================================================================
+VERDICT: the measurement and its correlation matrix are on disk and are what they
+         claim to be.  The blocker is gone; the scale nuisance is not.
+================================================================================================

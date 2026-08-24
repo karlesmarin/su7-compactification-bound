@@ -1,0 +1,96 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+==============================================================================================
+THE THIRD MINIMUM AT y = 0.680868, AND THE EXACT HOLONOMY AT y = 2/3
+==============================================================================================
+
+[0] THE CONTENT, AND ITS COORDINATES IN THE PHASE BASIS
+    6x7(+,+) + 7(+,-) + 5x28(+,-) + 48(+,-) + 2x84(+,+)   [semi_infinite.py]
+    8D = 3   A_4 = 147
+
+    q                 C_q
+    1            1.500000
+    2            1.093750
+    3           -2.000000
+    4            0.500000
+    6            0.125000
+
+[1] CONTROL: DOES THE PHASE BASIS REPRODUCE F ?
+    y = 0.050000    F direct =       1.265219   via P_q =       1.265219   diff 3.85e-13
+    y = 0.200000    F direct =       1.694355   via P_q =       1.694355   diff 5.36e-13
+    y = 0.500000    F direct =      -0.651118   via P_q =      -0.651118   diff 1.49e-11
+    y = 0.680868    F direct =      -3.552361   via P_q =      -3.552361   diff 3.96e-13
+    y = 0.900000    F direct =       0.788512   via P_q =       0.788512   diff 5.07e-13
+
+   C1  the two representations agree ................. PASS (worst 1.5e-11)
+       so the Li_5(-z) identity is right and the basis is the same five functions
+       Theorem 3 counts from the moments.
+
+[2] THE EXACT VALUES AT y = 2/3
+    P_1(2/3) =   -0.512063089   expected -(40/81) zeta(5)   =   -0.512063089
+    P_2(2/3) =   -0.512063089   expected -(40/81) zeta(5)   =   -0.512063089
+    P_3(2/3) =    1.036927755   expected zeta(5)            =    1.036927755
+    P_4(2/3) =   -0.512063089   expected -(40/81) zeta(5)   =   -0.512063089
+    P_6(2/3) =    1.036927755   expected zeta(5)            =    1.036927755
+
+   C2  every P_q(2/3) is the predicted rational multiple of zeta(5)  PASS
+
+[3] THE TWO EXACT FUNCTIONALS AT y = 2/3
+
+    stationarity :  C_1 - 2 C_2 + 4 C_4  = +1.312500    (zero <=> 2/3 is an extremum)
+    depth        :  F(2/3) - F(0)        = -4.792190
+    and exactly   :  F(2/3) - F(0)        = -1331/288 zeta(5) = -4.792190424
+
+   C3a the exact rational agrees with the float ...... PASS
+
+    F'(2/3) from the formula   : -3.356754
+    F'(2/3) by finite difference: -3.356754
+
+   C3  the closed form for F'(2/3) is right ........... PASS
+   C4  and so is the one for F(2/3) - F(0) ........... PASS (-4.792190 vs -4.792190)
+
+[4] WOULD A CUT AT 2/3 HAVE DONE THE WORK OF THE CUT AT 0.680868 ?
+
+    F(0.680868) - F(0) = -4.816117   <- the numerical cut semi_infinite.py found
+    F(2/3)      - F(0) = -4.792190   <- the exact rational point
+    the two differ by    0.4968%
+
+    Theta is per vertex.  Against semi_infinite.py's archived table on 8D = 1:
+       A_4 = 215   Theta = 7.9787e-04   archived 7.9790e-04   ok
+       A_4 = 212   Theta = 8.0262e-04   archived 8.0260e-04   ok
+       A_4 = 104   Theta = 1.0159e-03   archived 1.0160e-03   ok
+       A_4 = 92    Theta = 1.0460e-03   archived 1.0460e-03   ok
+
+   C5a the copied closed form reproduces that table ... PASS
+
+    and at the vertex this cut was forced at, (A_4, 8D) = (147, 3):
+       Theta = 8.2782e-03   -- eight times the 1.016e-03 of the deciding vertex
+       the depth at 2/3 is 579 times it
+
+   C5  the EXACT point at 2/3 already violates -Theta . PASS
+       so the cut does not need the numerical minimum: the rational holonomy suffices.
+
+[5] AND THE SAME GAME AT y = 1/2
+
+    At y = 1/2 the phases are q pi / 2, so the even charges q = 2, 4, 6 land on multiples of pi
+    and drop out, while S_4(3pi/2) = -S_4(pi/2) = -beta(4), the Dirichlet beta at four.  Hence
+        F'(1/2) = -pi beta(4) [ C_1 - 3 C_3 ],     beta(4) = 0.988944552
+
+    C_1 - 3 C_3 = +7.500000
+    F'(1/2) from the formula    : -23.301457
+    F'(1/2) by finite difference: -23.301457
+
+   C6  the closed form for F'(1/2) is right .......... PASS
+
+    So there are at least two exact rational holonomies with exact linear stationarity criteria:
+
+        y = 2/3   is an extremum  <=>  C_1 - 2 C_2 + 4 C_4 = 0
+        y = 1/2   is an extremum  <=>  C_1 - 3 C_3         = 0
+
+    and y = 0, 1 are the two symmetric points the ceiling already uses.  With the charge alphabet
+    c <= 3 the candidates are the rationals whose denominators divide a charge, which is the
+    finite set {0, 1/3, 1/2, 2/3, 1}.  Whether the semi-infinite programme's cuts always sit near
+    one of them is NOT shown here -- one content is one data point.
+==============================================================================================
+VERDICT: the numerical cut at 0.680868 is a deformation of the exact rational
+         holonomy y = 2/3, and the exact point already carries the cut.
+==============================================================================================

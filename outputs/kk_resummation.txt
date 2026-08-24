@@ -1,0 +1,161 @@
+==============================================================================================
+THE COLOURED TOWER RESUMMED: A FORM FACTOR, AND WHAT THAT SETTLES ABOUT THE WIDTH
+==============================================================================================
+
+[1] THE CLOSED FORM AGAINST THE SUM ITSELF,  1/R_5 = 3.97 TeV
+
+    The comparison is against the INFINITE sum evaluated to thirty digits, not against a
+    truncation: a truncated tower leaves a tail of size 2 R_5^2 / N, which at N = 20000 is
+    6.3e-06 -- constant in t, and therefore a growing RELATIVE error exactly where the closed
+    form is smallest.  The first draft of this control compared against the truncation and
+    read that tail as a failure of the resummation.  The truncated column is kept below so the
+    size of what truncation costs is visible.
+
+    -t [TeV^2]        a exact sum (30 dps)  pi a coth(pi a)/t      N=20000        rel
+----------------------------------------------------------------------------------------------
+          0.01   0.0791  -100.208648968274  -100.208648968274  -100.208643    0.0e+00
+          0.10   0.2502   -10.207869807664   -10.207869807664   -10.207863    1.7e-16
+          1.00   0.7913    -1.200511003084    -1.200511003084    -1.200505    0.0e+00
+          4.00   1.5827    -0.430532255988    -0.430532255988    -0.430526    1.3e-16
+          9.00   2.3740    -0.268391105464    -0.268391105464    -0.268385    0.0e+00
+         25.00   3.9567    -0.158382473346    -0.158382473346    -0.158376    0.0e+00
+        100.00   7.9133    -0.079133337393    -0.079133337393    -0.079127    0.0e+00
+        400.00  15.8267    -0.039566658106    -0.039566658106    -0.039560    0.0e+00
+----------------------------------------------------------------------------------------------
+
+   C1  the resummation IS the sum                      PASS (worst 1.7e-16)
+
+    F1  THE CONTROL THAT MUST FAIL: the same test with cot in place of coth,
+        worst relative difference : 1.78e+01   (must be large)  ok
+
+[2] THE EFT LIMIT IS THE PAPER'S OWN COEFFICIENT
+    pi a coth(pi a) = 1 + (pi a)^2/3 - (pi a)^4/45 + ... , so D - 1/t -> -pi^2 R_5^2/3
+
+      -t [TeV^2]         D(t) - 1/t      -pi^2 R_5^2/3        rel
+----------------------------------------------------------------------------------------------
+           1e-04      -0.2087351864      -0.2087360578    4.2e-06
+           1e-03      -0.2087273442      -0.2087360578    4.2e-05
+           1e-02      -0.2086489683      -0.2087360578    4.2e-04
+----------------------------------------------------------------------------------------------
+
+   C2  and it is the pi^2/6 of eq. (tower)                PASS (worst 4.2e-04)
+
+[3] THE WIDTH AT SPACELIKE MOMENTUM IS A PRESCRIPTION, NOT A CORRECTION
+
+    A Kaluza-Klein gluon at t < 0 sits below its two-parton threshold, so its self-energy has
+    no absorptive part and the propagator is REAL.  A genuine correction of that kind must
+    therefore switch off as the momentum leaves the resonance.  A constant i m_n Gamma_n does
+    not.  Measured, rather than argued:
+
+      -t [TeV^2] with width / no width  1/(1+(2 alpha_s)^2)
+----------------------------------------------------------------------------------------------
+           1e-06             0.975704             0.975704
+           1e-04             0.975704             0.975704
+           1e-02             0.975724             0.975704
+           1e+00             0.977494             0.975704
+----------------------------------------------------------------------------------------------
+
+    at t -> 0 the prescription still shifts the coefficient by -2.43 %, and an
+    absorptive part that survives below threshold is not one.
+
+   C3  the shift persists to t = 0, so it is an artefact   PASS
+
+    CONSEQUENCE, and it is a correction to this paper.  The 'second correction' of
+    \S collider -- Lambda_8 low by about 1.3 %, from restoring Gamma_n -- is withdrawn.  In the
+    channel Lambda_8 describes there is no width to restore, and the zero-width coefficient
+    pi^2/6 is the right one, not an approximation to something else.
+
+[3b] AND THE TIMELIKE SIDE IS THE SAME FUNCTION
+
+    Nothing about the sum required t < 0; that was only where the width could be dropped.  For
+    q^2 > 0 and away from the poles the same Euler expansion gives, by coth(i x) = -i cot x,
+
+        1/s + sum_n 2/(s - n^2/R_5^2)  =  (1/s) pi b cot(pi b) ,   b = R_5 sqrt(s) ,
+
+    so ONE analytic function covers both:  F(q^2) = pi a coth(pi a) for q^2 < 0 and
+    pi b cot(pi b) for q^2 > 0.  The cotangent's poles at b = 1, 2, 3, ... ARE the Kaluza-Klein
+    resonances -- they are not put in, they are where the closed form diverges -- and it is
+    exactly there, and only there, that a width has to replace the pole.
+
+    Which makes the three statements of the collider section one statement: the contact
+    operator is the small-b expansion, the angular distortion is the spacelike branch, and the
+    resonances are the poles of the timelike branch.
+
+       s [TeV^2]          b  truncated (N=20000)     pi b cot(pi b)/s        rel
+----------------------------------------------------------------------------------------------
+            0.25     0.1259          3.789058752          3.789052407    1.7e-06
+            1.00     0.2519          0.782001694          0.781995350    8.1e-06
+            4.00     0.5038         -0.004690437         -0.004696782    1.4e-03
+            9.00     0.7557         -0.273335804         -0.273342149    2.3e-05
+           30.00     1.3797          0.057390687          0.057384342    1.1e-04
+           60.00     1.9511         -0.660103489         -0.660109834    9.6e-06
+----------------------------------------------------------------------------------------------
+
+   C3b the cotangent branch reproduces the tower too  PASS (worst 1.4e-03)
+
+    and the poles are the tower, not an input:
+       n = 1 :  sqrt(s) = 3.97 TeV = 1/R_5, |F/s| just below it = 1.269e+03
+       n = 2 :  sqrt(s) = 7.94 TeV = 2/R_5, |F/s| just below it = 3.172e+02
+       n = 3 :  sqrt(s) = 11.91 TeV = 3/R_5, |F/s| just below it = 1.410e+02
+
+[3c] THE SECOND CIRCLE IS UV-SENSITIVE, AND THE HONEST STATEMENT IS ITS COEFFICIENT
+
+    An earlier version of the collider section said the logarithmic divergence a codimension-two
+    brane would give "never switches on".  That is too strong and a reader who knows
+    brane-to-brane propagators would object: a two-dimensional tower IS logarithmically
+    sensitive to the cut-off, and no hierarchy makes a divergence go away.  What a hierarchy
+    does is suppress its COEFFICIENT, and that is computable.
+
+    Summing n at fixed m first, with the same Euler identity,
+
+        sum_{n in Z} 1/(n^2/R_5^2 + m^2/R_6^2) = pi R_5 (R_6/m) coth(pi m R_5/R_6)
+                                               -> pi R_5 R_6 / m      for R_5 >> R_6,
+
+    so the m >= 1 modes contribute pi R_5 R_6 sum_{m<=Lambda R_6} 1/m = pi R_5 R_6 ln(Lambda R_6),
+    against the m = 0 tower's pi^2 R_5^2/6.  Hence
+
+        Delta C(m>=1) / C(m=0)  =  (6/pi) (R_6/R_5) ln(Lambda R_6) ,
+
+    logarithmically UV-sensitive, with a coefficient carrying one power of R_6/R_5.
+
+       R5/R6    ln(L R_6)     2D sum, direct   (6/pi)(R6/R5)lnL        rel
+----------------------------------------------------------------------------------------------
+          20       5.9915       6.273821e-01       6.272628e-01    1.9e-04
+          50       5.9915       2.509528e-01       2.509051e-01    1.9e-04
+         200       5.9915       6.273821e-02       6.272628e-02    1.9e-04
+        1000       5.9915       1.254764e-02       1.254526e-02    1.9e-04
+----------------------------------------------------------------------------------------------
+
+   C3c the suppression is (6/pi)(R_6/R_5) ln, not zero  PASS (worst 1.9e-04)
+
+    At [KM25]'s own hierarchy the number is small -- the table above gives 1.3 % at
+    R_5/R_6 = 10^3, and their p. 3 contemplates 1/R_6 at the Planck scale, where it is far
+    smaller still -- but it is small BECAUSE of the hierarchy, and that is what the paper should
+    say.  A divergence that is suppressed is not a divergence that is absent.
+
+[4] THE OBSERVABLE, IN CLOSED FORM
+
+    For massless jets |t| = M_jj^2/(1+chi), so on the pure t-channel subprocess q q' -> q q'
+
+        dsigma(QCD+tower)/dsigma(QCD)  =  F^2 ,   F = pi M_jj / (M_KK sqrt(1+chi))  coth( same ).
+
+    Independent of BR(G_n -> jj): nothing is produced and decayed.  Quoted at chi = 1.5, the
+    centre of the first angular bin of the CMS measurement.
+
+    M_jj [TeV]      M_KK=9.09      M_KK=3.97
+----------------------------------------------------------------------------------------------
+           3.3          1.364          3.160
+           3.9          1.516          4.130
+           4.5          1.699          5.302
+           5.1          1.914          6.675
+           6.5          2.550         10.646
+----------------------------------------------------------------------------------------------
+
+    These are ONE subprocess at parton level.  The inclusive CMS sample also carries q g and
+    g g, which do not see the tower at all, and every distribution is normalised per mass bin.
+    Both dilute these numbers.  They say where to look; they are not a prediction of the
+    measured ratio, and nothing here is a limit.
+==============================================================================================
+VERDICT: the tower resums exactly in the spacelike channels; the EFT coefficient is
+         recovered; and the width correction the paper carried there is withdrawn.
+==============================================================================================

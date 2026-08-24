@@ -1,0 +1,169 @@
+\section{Qué estado acota una búsqueda}\label{sec:collider}
+
+Una cota sobre $1/R_5$ es una cota sobre una escala de compactificación, no sobre la masa de
+ninguna partícula concreta. Un colisionador no mide escalas de compactificación; mide resonancias,
+cada una con su ritmo de producción y su anchura. Pasar de lo uno a lo otro parece exigir un
+estudio fenomenológico, y no lo exige: queda fijado por las tres matrices de paridad de \cite{KM25}
+y por los desarrollos en modos que se siguen de ellas, todo ello ya publicado. Esta sección los
+lee.
+
+\paragraph{La paridad que separa el color.} De las tres matrices $\ZZ_2$, la que actúa en $x_6$ es
+\begin{equation}\label{eq:P6}
+  P_6=\mathrm{diag}(+,+,+,-,-,-,-),
+\end{equation}
+la (11) de \cite{KM25}, que parte el índice heptadimensional en el triplete de color y todo lo
+demás. Una componente gauge a lo largo de $E_{ij}$ lleva el \emph{producto} $P_6^{(i)}P_6^{(j)}$,
+de modo que \eqref{eq:P6} tiene una consecuencia inmediata, aritmética y no dinámica:
+\begin{equation}\label{eq:colourparity}
+  P_6(i,j)=-1
+  \quad\Longleftrightarrow\quad
+  \text{exactamente uno de } i,j \text{ es un índice de color,}
+\end{equation}
+esto es, precisamente cuando el generador cambia el color. Hay $24$ componentes así, y no hay
+ninguna componente que cambie el color con $P_6=+1$.
+
+\begin{theorem}[el color vive en el círculo pequeño]\label{thm:colourparity}
+Todo bosón gauge de \cite{KM25} que cambie el color tiene $P_6=-1$. Por sus (21)--(24) cada una de
+esas componentes se desarrolla en $\sin(m x_6/R_6)$ con $m\ge1$. Por tanto su nivel más ligero está
+al menos en $1/R_6$, y su función de onda \emph{se anula} en $x_6=0$.
+\end{theorem}
+\begin{proof}
+\eqref{eq:colourparity} dice que $P_6^{(i)}P_6^{(j)}=-1$ si y sólo si uno de los índices cae en el
+bloque de color, lo cual es inmediato desde \eqref{eq:P6}. Los cuatro desarrollos $P_6$-impares de
+\cite{KM25}, sus (21)--(24), llevan todos $\sin(m x_6/R_6)$ y todos empiezan en $m=1$; el seno se
+anula en el origen y el nivel está acotado inferiormente por el término $m=1$.
+\end{proof}
+
+\noindent Esto importa porque la p.~3 de \cite{KM25} fija $R_5\gg R_6$ y llama a $1/R_6$ ``an
+arbitrary parameter, which is the Planck scale for instance''. El teorema~\ref{thm:colourparity}
+dice entonces que los exóticos coloreados no sólo son pesados, sino inobservables en principio en
+un colisionador hadrónico, y lo dice sin más hipótesis que el orbifold.
+
+\paragraph{Así que los quarks de la brana ven exactamente dos torres.} La p.~22 de \cite{KM25}
+introduce ``quarks $q_L,u_R,d_R$ as the 4D fermions on the brane at the origin in a compactified
+space $(0,0)$''. Un campo 4D allí acopla sólo a componentes cuya función de modo no se anule en ese
+punto ---esto es, a componentes cuyos factores en $x_5$ \emph{y} en $x_6$ sean ambos cosenos---. De
+las ocho clases de paridad sólo dos cumplen, y ambas son diagonales en color:
+
+\begin{center}\small
+\rowcolors{2}{white}{softgrey}
+\begin{tabular}{llllll}
+\toprule
+\rowcolor{hdrblue!10} paridad & ec. & modo $x_5$ & modo $x_6$ & en $(0,0)$ & nivel más bajo\\
+\midrule
+$(+,+,+)$ & (17) & $\cos(nx_5/R_5)$ & $\cos(mx_6/R_6)$ & \textbf{no nulo} & $0$, luego $1/R_5$\\
+$(+,+,-)$ & (18) & $\cos((n{+}\tfrac12)x_5/R_5)$ & $\cos(mx_6/R_6)$ & \textbf{no nulo} & $1/(2R_5)$\\
+$(+,-,+)$ & (19) & $\sin((n{+}\tfrac12)x_5/R_5)$ & $\cos(mx_6/R_6)$ & nulo & $1/(2R_5)$\\
+$(+,-,-)$ & (20) & $\sin(nx_5/R_5)$ & $\cos(mx_6/R_6)$ & nulo & $1/R_5$\\
+$(-,\cdot,\cdot)$ & (21)--(24) & --- & $\sin(mx_6/R_6)$ & nulo & $\ge 1/R_6$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent La clase $(+,+,-)$ son exactamente las dos posiciones $(6,7)$ y $(7,6)$ ---un singlete de
+color---. De modo que la torre semientera, cuyo estado más ligero está en $1/(2R_5)$ y que la
+\S\ref{sec:pred} señalaba con razón como el nivel más bajo del modelo, \emph{no} es algo que una
+búsqueda de dijets pueda ver; y tampoco es una predicción limpia, porque el $\langle W\rangle$ de
+la (77) de \cite{KM25} actúa en el bloque $(5,7)$ y la desplaza con $\alpha$. El único objeto
+coloreado por debajo de la escala de Planck es la torre del gluón.
+
+\paragraph{Y eso responde una pregunta que \cite{KM25} dejó abierta.} Sus conclusiones dicen:
+``Since the mass of $X$, $Y$ gauge bosons is small in our model, this causes rapid proton decay
+\emph{if they can couple to quarks and leptons}'', y dejan la cuestión para trabajo futuro. Por el
+teorema~\ref{thm:colourparity} no pueden: los bosones $X$ e $Y$ son precisamente las componentes
+que cambian el color, y su función de onda es cero en el punto fijo donde ese mismo artículo pone
+los quarks. El canal de intercambio gauge lo cierra la propia asignación de paridades.
+
+\noindent\textbf{El alcance de eso es estrecho y conviene decirlo.} Es un enunciado a nivel árbol
+sobre intercambio gauge, para los quarks localizados como en la p.~22 de \cite{KM25}. No dice nada
+sobre las masas de Dirac de brana que ese mismo artículo introduce en su p.~16 para levantar sus
+modos cero no deseados, y \emph{no} es el escape de la Parte~VI \cite{PartVI}, que es una carga
+dependiente de familia alojada en un $\rep{84}^{(+,+)}$ donado ---otro mecanismo, que ataca otro
+operador---. En particular la \eqref{eq:escapeceiling} queda intacta.
+
+\paragraph{El colorón, sin parámetros libres.} Lo fijan tres hechos. La masa: la p.~16 de
+\cite{KM25} afirma que los generadores de $\su3_C$ ``are commutable with $\langle W\rangle$
+irrespective of the VEV $\alpha_{\min}$'', de modo que la torre de color no recibe desplazamiento
+de línea de Wilson y se sitúa exactamente en $n/R_5$. El acoplo: su (17) lleva $\sqrt2$ delante de
+cada modo $(n,0)$ donde el modo cero lleva $1$, y $\cos(0)=1$, así que en la brana la razón es
+$\sqrt2$ ---y es universal en sabor, porque $q_L$, $u_R$ y $d_R$ están en el mismo punto y ven la
+misma función de modo---. La anchura sale entonces del resultado estándar para un octete de color,
+$\Gamma(C\to q\bar q)=n_f\,\alpha_s\cot^2\theta\,M/6$, con $\cot^2\theta=2$ y $n_f=6$:
+
+\begin{keyeq}
+\begin{equation}\label{eq:coloron}
+  M_n=\frac{n}{R_5},
+  \qquad
+  \frac{g_{G^{(n)}q\bar q}}{g_{gq\bar q}}=\sqrt2,
+  \qquad
+  \frac{\Gamma}{M}=2\alpha_s(M)\simeq0.16 .
+\end{equation}
+\end{keyeq}
+
+\noindent Arrastrado por las filas de la \S\ref{sec:pred}:
+
+\begin{center}\small
+\rowcolors{2}{white}{softgrey}
+\begin{tabular}{lrrrr}
+\toprule
+\rowcolor{hdrblue!10} & $1/R_5$ & $\alpha_s$ & $\Gamma/M$ & $\Gamma$\\
+\midrule
+\rowcolor{amber!14}techo a la masa del Higgs medida & $9.09$~TeV & $0.0735$ & $0.147$ & $1337$~GeV\\
+techo una vez el vacío debe ser el verdadero & $9.22$~TeV & $0.0734$ & $0.147$ & $1354$~GeV\\
+techo sobre \emph{todos} los contenidos & $10.03$~TeV & $0.0729$ & $0.146$ & $1463$~GeV\\
+contenidos que pueden pagar el escape & $3.97$~TeV & $0.0789$ & $0.158$ & $626$~GeV\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Lo cual cambia qué puede citarse en su contra.} Una anchura de un sexto de la masa no es
+una resonancia estrecha, así que el patrón estrecho de una búsqueda de dijets no acota este objeto:
+los $6.6$~TeV de CMS para un axigluón o colorón estrecho con $137\,\mathrm{fb}^{-1}$
+\cite{CMSdijet} son una cota sobre otra partícula. Lo que sí aplica es la cota
+independiente de modelo sobre $\sigma\,B\,A$ que ese mismo análisis publica en función de la masa
+\emph{y} de la anchura, leída en $\Gamma/M\simeq0.16$. La versión anterior de esta sección comparaba
+la \eqref{eq:escapeceiling} con una exclusión genérica de gluón de Kaluza-Klein; la
+\eqref{eq:coloron} es lo que convierte esa comparación en un enunciado sobre este modelo y no sobre
+un patrón de referencia, y es la razón por la que la comparación merece hacerse.
+
+\paragraph{Una corrección a cómo se enunciaba el alcance.} Una versión anterior de este artículo
+escribía que una máquina que alcanzase $10$--$20$~TeV zanja la clase. Eso confunde la energía de un
+colisionador con su alcance en masa de resonancia, y no son lo mismo: producir una resonancia de
+$9$~TeV a $\sqrt s=13$~TeV exige partones con valores de $x$ donde las densidades partónicas son
+despreciables. El enunciado correcto es sobre alcance en masa en el canal pertinente, y hace la
+rama del escape mucho más interesante que el techo: $3.97$~TeV cae donde el Run~2 tiene
+sensibilidad real, y $9.09$~TeV no.
+
+\paragraph{La torre actúa también por debajo de la primera resonancia.} Como todo modo $(n,0)$
+lleva el mismo $\sqrt2$ en $x_5=0$, integrar la torre entera da un operador de cuatro quarks en
+octete de color con un coeficiente que es un número puro:
+\begin{equation}\label{eq:tower}
+  \sum_{n\ge1}\frac{g_n^2}{2M_n^2}
+  \;=\;g_s^2R_5^2\sum_{n\ge1}\frac{1}{n^2}
+  \;=\;\frac{\pi^2}{6}\,g_s^2R_5^2 ,
+  \qquad\text{es decir}\qquad
+  \Lambda_8=\frac{\sqrt3}{\pi\sqrt{\alpha_s}}\,\frac{1}{R_5},
+\end{equation}
+que vale $7.8$~TeV en la rama del escape y $18.5$~TeV en el techo a la masa medida. Los modos
+$m\ge1$ no estropean la suma: cuestan $1/R_6$, y su parte queda suprimida por $R_6/R_5$, que la
+p.~3 de \cite{KM25} toma como minúsculo ---de modo que la divergencia logarítmica que uno temería
+de una brana de codimensión dos nunca se enciende a las escalas en juego---. Ésta es una predicción
+colectiva de la torre y no exige resolver ninguna resonancia; no puede, en cambio, compararse
+directamente con las escalas de composición publicadas, cuyo operador tiene otra estructura de
+color y de quiralidad.
+
+\paragraph{Y un número que el modelo no suministra.} La p.~16 de \cite{KM25} levanta sus modos cero
+no deseados introduciendo ``4D fermion conjugate to the representations and charges of the massless
+fermions and their Dirac mass terms on the fixed points'', y no fija esas masas. Si algún exótico
+coloreado queda por debajo de $M/2$, se abre $G^{(1)}\to\Psi\bar\Psi$, la anchura crece y
+$\mathrm{BR}(G^{(1)}\to jj)$ baja en una cantidad que nada de aquí determina. Así que
+\begin{equation}\label{eq:brhole}
+  \mathrm{BR}(G^{(1)}\to jj)=1 \quad\text{si todo exótico coloreado está por encima de } M/2,
+\end{equation}
+y menos en caso contrario. Esa única incógnita es lo que se interpone entre el techo aritmético y
+una exclusión propia del modelo, y una cota citada sin ella sería independiente de modelo sólo en
+apariencia. Se enuncia aquí en vez de absorberse.
+
+\bridge{El diccionario está derivado, el único parámetro libre tiene nombre y la comparación es ya
+un enunciado sobre este modelo ---lo que deja sólo el instrumento aritmético por contrastar contra
+la tabla de otros.}

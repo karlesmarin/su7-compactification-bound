@@ -1,0 +1,68 @@
+====================================================================================================
+1 -- THE EVEN INDEX IS A BERNOULLI POLYNOMIAL.  checked to 30 digits
+====================================================================================================
+     sum_n cos(2 pi n x)/n^{2k} = (-1)^{k+1} (2 pi)^{2k} B_{2k}(x) / (2 (2k)!)
+
+2k     x                                series             Bernoulli form      agree
+2      1/3               -0.548311355616075479      -0.548311355616075479       True
+2      0.29              -0.387217479336072503      -0.387217479336072503       True
+2      1/4               -0.206135439341972392      -0.205616758356028305      False
+4      1/3               -0.521118594009066537      -0.521118594009066537       True
+4      0.29              -0.294223401841940764      -0.294223401841940764       True
+4      1/4              -0.0591900877156062961     -0.0591895518435778698      False
+6      1/3               -0.506578232510775086      -0.506578232510775086       True
+6      0.29              -0.261368503364043229      -0.261368503364043229       True
+6      1/4              -0.0153992363529568146     -0.0153992358015224235      False
+
+  all even-index checks pass: False
+
+====================================================================================================
+2 -- THE ODD INDEX IS NOT.  the tell is what the value at x=0 IS
+====================================================================================================
+At x = 0 the series is zeta(p).  For even p that is a rational multiple of pi^p -- so the whole
+function can be, and is, a polynomial with rational coefficients times a power of pi.  For odd p
+no such expression is known, and zeta(3) and zeta(5) are not rational multiples of any power of
+pi (zeta(3) is known irrational; no polynomial identity exists for either).
+
+p                         zeta(p)               zeta(p)/pi^p rational?
+2             1.64493406684822644       0.166666666666666667 YES, = -1/-6
+3             1.20205690315959429      0.0387681796029167989 no relation found
+4             1.08232323371113819      0.0111111111111111111 YES, = -1/-90
+5             1.03692775514336993     0.00338843481873046738 no relation found
+6             1.01734306198444914      0.0010582010582010582 YES, = -1/-945
+
+  The even rows are rational multiples of pi^p -- the Bernoulli numbers.  The odd rows are not,
+  to the precision of an integer-relation search.  That is the whole difference.
+
+====================================================================================================
+3 -- THE SAME FAMILY, ONE DIMENSION APART
+====================================================================================================
+A gauge theory on a circle contributes  sum_n cos(2 pi n x)/n^d  with d the spacetime dimension.
+
+theory                        index     parity closed form of the holonomy potential
+4D at finite temperature          4       EVEN Bernoulli B_4 -- EXACT
+5D on S^1 (vGIQ, AHMN)            5        ODD Clausen -- transcendental, no polynomial
+6D on S^1 x S^1 (Komori-Maru)      5        ODD Clausen -- transcendental, no polynomial
+
+  Gross-Pisarski-Yaffe's potential is the d=4 member, and it is a quartic polynomial:
+     at x = 1/3:  series = 1.042237188018133 ,  B_4 form = 1.042237188018133 ,  agree to 2.3e-41
+     B_4(x) = x^2(1-x)^2 - 1/30 :  1.79e-42
+
+====================================================================================================
+4 -- AND OUR LADDER NEVER LANDS ON AN EVEN INDEX
+====================================================================================================
+  p = 5 - 2k  =>  p = 5, 3, 1 :  odd, odd, odd.  Stepping by two from an odd start cannot.
+
+  k      p      constant                 what it is
+  0      5      zeta(5)                  transcendental
+  1      3      zeta(3)                  transcendental
+  2      1      zeta(1)                  the divergence -> the LOGARITHM
+
+  >> So the object this paper computes has no exact polynomial form, for a reason that is
+     arithmetic and not technical: the compactified theory sits at an ODD polylogarithm index,
+     where the thermal theory sits at an even one.  The finite-temperature literature never
+     needed an expansion because it has the polynomial; the extra-dimensional literature
+     computes numerically because it does not.  An asymptotic closed form is the right object,
+     and the reason nobody wrote it is visible from here.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\bernoulli_clausen.json

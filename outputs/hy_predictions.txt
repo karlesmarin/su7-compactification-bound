@@ -1,0 +1,51 @@
+============================================================================================
+CONTROLS -- their own statements, before any prediction
+============================================================================================
+  pure gauge (no bulk matter): their eq. (3.20) gives (m,s,c) = [(-1.5, 1, 2), (0.0, -1, 2), (-3.0, 1, 1), (0.0, -1, 1)]
+     -> D = -9.000  NEGATIVE: no electroweak symmetry breaking, as it must be
+  their eq. (3.10), one adjoint with eta*eta' = + and no gauge sector, is
+     (C/2)[cos(2 pi n a) + 2 cos(pi n a)] -- our table for it: [(1, 1, 2), (2, 1, 1)]
+     their (3.20) at Na+ = 1, gauge part removed, gives 2*Na+ = 2 and 4*Na+ = 4,
+     which is 4x the single-d.o.f. values 1 and 2 of (3.10) -- their own text says the
+     adjoint Dirac fermion enters with coefficient 4, so the two readings agree.
+
+  BLIND DIRECTION, exact and free: the potential sees Nf and Ns only through 2Nf - Ns,
+     (Nf,Ns) -> (Nf+1, Ns+2) at either parity leaves the table IDENTICAL: True / True
+     -- Part V's blind class, in a second model, straight off their counting rule.
+
+============================================================================================
+PREDICTIONS -- alpha_min for every content of their SU(3) model up to 4 of each species
+============================================================================================
+contents with D > 0 and a genuine interior minimum: 1277
+
+ alpha_min        D       A4    F''(min)   (Na+,Na-,Nf+,Nf-,Ns+,Ns-)
+  -- the ten smallest alpha_min: the large-hierarchy corner --
+   0.02278     0.25    118.0      4.9381   (4, 4, 1, 3, 1, 1)
+   0.02278     0.25    118.0      4.9381   (4, 4, 1, 4, 1, 3)
+   0.02278     0.25    118.0      4.9381   (4, 4, 2, 3, 3, 1)
+   0.02278     0.25    118.0      4.9381   (4, 4, 2, 4, 3, 3)
+   0.02320     0.25    115.0      4.9270   (4, 4, 0, 1, 2, 1)
+   0.02320     0.25    115.0      4.9270   (4, 4, 0, 2, 2, 3)
+   0.02320     0.25    115.0      4.9270   (4, 4, 1, 1, 4, 1)
+   0.02320     0.25    115.0      4.9270   (4, 4, 1, 2, 4, 3)
+   0.02791     0.25     85.0      4.8568   (3, 3, 2, 3, 0, 1)
+   0.02791     0.25     85.0      4.8568   (3, 3, 2, 4, 0, 3)
+  -- the ten largest, where the closed form degrades (alpha not small) --
+   0.46503     9.50     44.0     70.9372   (2, 0, 0, 3, 1, 0)
+   0.46503     9.50     44.0     70.9372   (2, 0, 0, 4, 1, 2)
+   0.46503     9.50     44.0     70.9372   (2, 0, 1, 3, 3, 0)
+   0.46503     9.50     44.0     70.9372   (2, 0, 1, 4, 3, 2)
+   0.46692     9.75     45.0     72.0711   (2, 0, 0, 4, 0, 1)
+   0.46692     9.75     45.0     72.0711   (2, 0, 1, 4, 2, 1)
+   0.46692     9.75     45.0     72.0711   (2, 0, 2, 4, 4, 1)
+   0.46874    10.00     46.0     73.1905   (2, 0, 1, 4, 1, 0)
+   0.46874    10.00     46.0     73.1905   (2, 0, 2, 4, 3, 0)
+   0.47745    17.00     77.0    118.4001   (3, 0, 0, 4, 4, 0)
+
+inside the regime where the expansion is good (alpha <= 0.12): 391 of 1277 contents
+smallest alpha_min = 0.02278  ->  if m_W = 80.4 GeV then 1/R5 = 7060 GeV
+
+D is quantised here too: the realised values are
+   [0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5]
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\hy_predictions.json

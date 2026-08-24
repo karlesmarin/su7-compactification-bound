@@ -1,0 +1,117 @@
+====================================================================================================
+1 -- EVERY FOREIGN EQUATION THE PAPER CITES
+====================================================================================================
+  equation citations in the body : 62      entries in the declared table : 62
+  every citation is accounted for, in order, with the number the table expects.
+
+  AHMN      4.4
+  CCD24     2.7, 2.11, 2.12, 2.13, 3.14, 3.15, 3.25, 3.26, 3.27, 3.44
+  CIJET     2
+  Cac25     3.3
+  GHBQ05    3.18
+  HHK03     3.20, 4.5, 4.6, 4.7, 4.13, 4.14
+  HY04      3.8, 3.10, 3.20, 5.9
+  KM25      3, 4, 7, 10, 11, 13, 18, 19, 57, 62, 63, 67, 68, 78, 79, 80, 82
+  KTY17     3.10, 3.12
+  PP01      13
+  vGIQ      5.2, 5.3
+
+====================================================================================================
+2 -- COVERAGE: is the source on our disk?
+====================================================================================================
+  AHMN      archived    AHMN_2312.08608.txt                
+  CCD24     archived    ccd24_2409.16137.txt               
+  CIJET     archived    cijet_manual_1301.7263.pdf         
+  Cac25     archived    cac25_2501.13118.pdf               
+  GHBQ05    archived    ghbq05_hep-th_0506164.pdf          
+  HHK03     archived    hhk_0309088.txt                    
+  HY04      archived    hy04_hep-ph_0401185.txt            
+  KM25      archived    SU7_GGHU_2503.04090.txt            
+  KTY17     archived    1704.04840.pdf                     
+  PP01      archived    pp01_hep-ph_0105021.pdf            
+  vGIQ      archived    hep-th_0204223.pdf                 
+
+  Every key is either archived or declared with its reason.
+
+====================================================================================================
+3 -- PRESENCE: does the cited number occur in their text?  (a floor, not a proof)
+====================================================================================================
+  AHMN      eq. 4.4       found
+  CCD24     eq. 2.11      found
+  CCD24     eq. 2.12      found
+  CCD24     eq. 2.13      found
+  CCD24     eq. 2.7       found
+  CCD24     eq. 3.14      found
+  CCD24     eq. 3.15      found
+  CCD24     eq. 3.25      found
+  CCD24     eq. 3.26      found
+  CCD24     eq. 3.27      found
+  CCD24     eq. 3.44      found
+  CIJET     eq. 2         found
+  Cac25     eq. 3.3       found
+  GHBQ05    eq. 3.18      found
+  HHK03     eq. 3.20      found
+  HHK03     eq. 4.13      found
+  HHK03     eq. 4.14      found
+  HHK03     eq. 4.5       found
+  HHK03     eq. 4.6       found
+  HHK03     eq. 4.7       found
+  HY04      eq. 3.10      found
+  HY04      eq. 3.20      found
+  HY04      eq. 3.8       found
+  HY04      eq. 5.9       found
+  KM25      eq. 10        found
+  KM25      eq. 11        found
+  KM25      eq. 13        found
+  KM25      eq. 18        found
+  KM25      eq. 19        found
+  KM25      eq. 3         found
+  KM25      eq. 4         found
+  KM25      eq. 57        found
+  KM25      eq. 62        found
+  KM25      eq. 63        found
+  KM25      eq. 67        found
+  KM25      eq. 68        found
+  KM25      eq. 7         found
+  KM25      eq. 78        found
+  KM25      eq. 79        found
+  KM25      eq. 80        found
+  KM25      eq. 82        found
+  KTY17     eq. 3.10      found
+  KTY17     eq. 3.12      found
+  PP01      eq. 13        found
+  vGIQ      eq. 5.2       found
+  vGIQ      eq. 5.3       found
+
+  found = the string occurs; it does NOT mean the equation says what the paper says it says.
+  That reading is in the GATE_*.md notes and no script performs it.
+
+====================================================================================================
+4 -- THE QUOTED WORDS ARE THEIR WORDS
+====================================================================================================
+  HY04      "applicable in general"                        verbatim
+  HY04      "we can know whether the color is conserved"   verbatim
+  CCD24     "accidentally the same"                        verbatim
+  CCD24     "which configuration gives the smallest value" verbatim
+  KM25      "we do not consider the potential"             verbatim
+
+  Every string the paper puts in quotation marks occurs in the paper it attributes it to.
+
+====================================================================================================
+5 -- AND WHAT WE SAY A SOURCE DOES NOT CONTAIN, IT MUST NOT CONTAIN
+====================================================================================================
+  Over-crediting is an attribution error too, and it is the one that feels safe.  Each row is
+  a claim about the presence OR ABSENCE of a string in someone else's paper.
+
+  PP01      '15'       expected True     got True     ok   eq.~(13) must state the -15/16 weight
+  GHBQ05    '15\n16'   expected False    got False    ok   must NOT carry the 15/16 weight -- we claim only the split
+  GHBQ05    '15/16'    expected False    got False    ok   same, written inline
+  GHBQ05    '31/32'    expected False    got False    ok   nor the value-bound weight
+  GHBQ05    'ζ(5)'     expected False    got False    ok   nor zeta(5) at all
+
+  \cite{PP01} eq.~(13) does carry the -15/16; \cite{GHBQ05} carries the split and not the
+  weight, and the paper's sentence and bibitem now say exactly that.
+
+====================================================================================================
+ATTRIBUTION: TODO EN ORDEN
+====================================================================================================

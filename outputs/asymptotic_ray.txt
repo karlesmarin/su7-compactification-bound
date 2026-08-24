@@ -1,0 +1,177 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE DUAL HAS TWO VERTICES, AND ONE OF THEM IS ACTIVE AT EVERY RUNG
+====================================================================================================
+  the feasible dual is { (lam,nu) : lam a_j + nu (8D)_j <= g_j } over the five generators.
+
+  v            lambda             nu   tight on
+  0      -0.920304449    0.115524530   7(+,+), 28(+,-)
+  1      -1.058933885    0.392783402   7(+,-), 28(+,-)
+
+  gauge sector: A_4 = -18, 8D = -27, G = -23.983629979
+
+      8D    A_4 max     r = t*/k   active v     1/R5 (GeV)
+       1        215     215.0000          0        10034.0
+       3        336     112.0000          0         6266.5
+       5        436      87.2000          0         5137.3
+       7        533      76.1429          0         4562.1
+       9        630      70.0000          0         4208.7
+      11        727      66.0909          0         3967.4
+      15        918      61.2000          0         3653.1
+      21       1209      57.5714          0         3390.2
+      33       1800      54.5455          0         3138.3
+      45       2397      53.2667          0         3016.6
+      65       3400      52.3077          0         2912.7
+      99       5112      51.6364          0         2831.6
+     129       6630      51.3953          0         2796.2
+     201      10272      51.1045          0         2753.6
+     301      15335      50.9468          0         2728.4
+     501      25470      50.8383          0         2708.4
+
+  vertices ever active over the sweep : [0]
+  ==> ONE chamber.  The 'check the finitely many chamber boundaries' step is empty, because
+      there are no boundaries: vertex 0 decides every rung.
+
+====================================================================================================
+2 -- r_infinity IN CLOSED FORM, AND IT IS A LAMBERT W
+====================================================================================================
+  Put t = r k.  Then x^2 = 12 zeta3 k / (8(6 mu + r k)) = (3 zeta3/2)/(r + 6 mu/k), so as k
+  grows x depends on r ALONE.  The vertex condition lam(t - A0) + nu(k - K0) + G0 <= G*(t,k),
+  divided by k, becomes  r(A - (1/2) ln r) >= nu  with A = (1/2)ln(3 zeta3/2) + 3/4 - lam.
+  Substituting r = e^u turns that into a Lambert equation whose two real branches are the two
+  ends of the feasible interval of slopes:
+
+  v                 A          lower end          upper end max residual
+  0       1.965054091       0.0312388888      50.6809086439      5.3e-40
+  1       2.103683527       0.1249462325      66.3891940397      2.1e-39
+
+  Feasibility needs EVERY vertex satisfied, so the feasible slopes are the intersection of
+  those intervals and the ceiling is its upper end:
+
+     r_infinity = 50.6809086439     (set by vertex 0)
+     M_infinity = sqrt(141532.3 * r_inf) = 2678.24 GeV = 2.678 TeV
+
+  and the sweep approaches it FROM ABOVE, which is the first thing a limit has to do:
+     r at the largest rung swept : 50.8383      r_infinity : 50.6809    difference 0.1574
+
+====================================================================================================
+3 -- AND THE MONOTONICITY IS A SIGN, NOT A SCAN
+====================================================================================================
+  At finite k the condition for the active vertex is
+
+     Phi(r,k) = r ( A - (1/2) ln(r + 6 mu/k) ) - nu - C/k >= 0 ,
+     C = G_gauge - lam A_gauge - nu (8D)_gauge - 3 mu ,
+
+  and differentiating in k at fixed r,
+
+     k^2 dPhi/dk = 3 mu r / (r + 6 mu/k)  +  C .
+
+  The first term is positive and STRICTLY BELOW 3 mu, so dPhi/dk < 0 whenever C <= -3 mu --
+  that is, whenever the gauge sector alone satisfies
+
+     G_gauge - lam A_gauge - nu (8D)_gauge <= 0 .
+
+  Exactly, in rationals, for the active vertex:
+
+     G_gauge          = -23.983629979
+     - lam A_gauge    = -16.565480084      (lam = -0.920304449, A_gauge = -18)
+     - nu (8D)_gauge  = 3.119162313      (nu  = 0.115524530, 8D_gauge = -27)
+     SUM              = -37.429947750   <= 0 : True
+
+     so C = -285.6141 <= -3 mu = -248.1841 : True
+
+  It remains that dPhi/dr < 0 at the UPPER root, which is what makes it the upper root; at
+  the root Phi = 0 gives A - (1/2)ln(r+s) = (nu + C/k)/r, so
+
+     dPhi/dr = (nu + C/k)/r - r/(2(r+s)) ,      s = 6 mu / k .
+
+      8D     r*(k) (real)      k^2 dPhi/dk          dPhi/dr     M(k) (GeV)
+       1       216.368417        -210.2718        -1.471289        10043.7
+       3       112.131562        -185.3601        -1.049989         6268.0
+       9        70.191302        -146.6329        -0.730470         4211.9
+      33        54.577521         -91.0511        -0.548438         3139.0
+     129        51.396676         -54.7161        -0.506005         2796.2
+     501        50.840336         -42.1740        -0.499383         2708.5
+    2001        50.719084         -38.6379        -0.498103         2685.8
+   10001        50.688452         -37.6727        -0.497795         2679.8
+  100001        50.681661         -37.4543        -0.497728         2678.4
+
+  CONTROL -- r*(k) and M(k) both strictly decreasing over those rungs : True
+
+  dPhi/dk < 0 and dPhi/dr < 0 give  dr*/dk = -(dPhi/dk)/(dPhi/dr) < 0.  So r*(k) STRICTLY
+  DECREASES, 6 mu/k strictly decreases, and therefore
+
+     M(k)^2 = PREF ( r*(k) + 6 mu / k )   STRICTLY DECREASES IN k.
+
+  The maximum over rungs sits on 8D = 1 because it has to, not because seventy rungs were
+  looked at.  And the integer ceiling is below the real one on every rung, so the same
+  conclusion carries to the lattice:
+
+      8D    M_int (GeV)   M_real (GeV) int <= real
+       1        10034.0        10043.7       True
+       3         6266.5         6268.0       True
+       5         5137.3         5143.7       True
+       7         4562.1         4568.1       True
+       9         4208.7         4211.9       True
+      11         3967.4         3968.2       True
+
+  CONTROL -- the integer ceiling never exceeds the real relaxation : True
+
+  ==> for every k >= 3,  M_int(k) <= M_real(k) <= M_real(3) = 6268.0 GeV, which is below the
+      10034.0 GeV of the rung 8D = 1.  THE WORD 'GLOBAL' IS NOW EARNED.
+
+====================================================================================================
+4 -- CONTROLS
+====================================================================================================
+  (i) THE SUFFICIENT CONDITION MUST BE ABLE TO FAIL.  It is a statement about the gauge
+      sector, so move the gauge sector and it should stop holding.  Scanning a fake gauge
+      G over a range, the sign flips exactly where the algebra says it does:
+
+        fake G_gauge G - lam A - nu K    dPhi/dk < 0
+              -60.00         -73.4463           True
+              -40.00         -53.4463           True
+              -23.98         -37.4263           True
+              -10.00         -23.4463           True
+                0.00         -13.4463           True
+               20.00           6.5537          False
+               40.00          26.5537          False
+      the condition holds for 5 of 7 and fails for 2 : a real test
+
+  (ii) THE CLOSED FORM MUST REPRODUCE THE SWEEP.  r*(k) from the Lambert/bisection route
+       against t*(k)/k from the integer scan -- they are different objects (real relaxation
+       against lattice) so they must be CLOSE and ordered, not equal:
+
+           8D t*/k (integer)   r*(k) (real)          gap
+            1       215.0000     216.368417     1.368417
+            3       112.0000     112.131562     0.131562
+            5        87.2000      87.659993     0.459993
+            7        76.1429      76.528576     0.385719
+            9        70.0000      70.191302     0.191302
+           11        66.0909      66.133068     0.042159
+
+  (iii) AND r_infinity IS NOT REACHED BY ANY RUNG, which is what makes it a limit and not a
+        value: r*(k) - r_inf stays positive and shrinks like 1/k.
+
+             8D    r*(k) - r_inf     k * (diff)
+              1     165.68750843       165.6875
+             33       3.89661272       128.5882
+            501       0.15942736        79.8731
+          10001       0.00754335        75.4411
+        1000001       0.00007521        75.2051
+
+====================================================================================================
+THE NUMBERS AS THE PAPER PRINTS THEM
+====================================================================================================
+  check_numbers.py greps this archive literally, so the rounded forms the prose uses have to
+  appear here rounded the same way -- a number quoted to fewer digits than the run prints is
+  a number with no run behind it.
+
+     r_infinity                          : 50.6809086439
+     M_infinity, GeV                     : 2678
+     M_infinity, TeV                     : 2.678
+     M_real(3), GeV                      : 6268
+     M_int(1), GeV                       : 10034
+     gauge test G - lam A - nu K         : -37.43
+     dual vertices                       : 2
+
+archived: outputs/asymptotic_ray.json

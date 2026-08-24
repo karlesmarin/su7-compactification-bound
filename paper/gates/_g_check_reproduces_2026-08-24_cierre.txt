@@ -1,0 +1,81 @@
+guiones citados por el articulo: 72
+
+  W_is_half_odd.py                   reproduce su archivo
+  amin_closed_form.py                reproduce su archivo
+  analytic_branch_exact.py           reproduce su archivo
+  analytic_branch_nogo.py            reproduce su archivo
+  anchor_delta.py                    reproduce su archivo
+  anchor_trend.py                    reproduce su archivo
+  asymptotic_ray.py                  reproduce su archivo
+  bernoulli_clausen.py               reproduce su archivo
+  canonical_five.py                  reproduce su archivo
+  ceiling_ilp.py                     reproduce su archivo
+  certify_212_215.py                 reproduce su archivo
+  cijet_control.py                   reproduce su archivo
+  cms_ci_closure.py                  reproduce su archivo
+  colour_octet_recast.py             reproduce su archivo
+  congruences.py                     reproduce su archivo
+  content_scope.py                   reproduce su archivo
+  crossed_equations.py               reproduce su archivo
+  fetch_hepdata.py                   reproduce su archivo
+  fissures.py                        reproduce su archivo
+  formula_map.py                     reproduce su archivo
+  gate_km_ghosts.py                  reproduce su archivo
+  gauge_weight_origin.py             reproduce su archivo
+  hadronic_chi.py                    reproduce su archivo
+  hhk_gauge_offset.py                reproduce su archivo
+  higgs_window.py                    reproduce su archivo
+  holonomy_skeleton.py               reproduce su archivo (control rojo, codigo 1: es su veredicto)
+  hy_predictions.py                  reproduce su archivo
+  inverse_map.py                     reproduce su archivo
+  kk_dijet_lo.py                     reproduce su archivo
+  kk_resummation.py                  reproduce su archivo
+  ladder_closed_form.py              reproduce su archivo
+  ladder_obstruction.py              reproduce su archivo
+  lambert_amin.py                    reproduce su archivo
+  lambert_criticality.py             reproduce su archivo
+  lattice_lift.py                    reproduce su archivo
+  lattice_rank.py                    reproduce su archivo
+  make_fig_chi2.py                   reproduce su archivo
+  make_fig_kernel.py                 reproduce su archivo
+  make_fig_lambert.py                reproduce su archivo
+  make_fig_lift.py                   reproduce su archivo
+  make_fig_seedshift.py              reproduce su archivo
+  make_fig_tower.py                  reproduce su archivo
+  make_fig_vacuum.py                 reproduce su archivo
+  make_figures_vii.py                reproduce su archivo
+  mechanism.py                       reproduce su archivo
+  mh_closed_form.py                  reproduce su archivo
+  moduli_space.py                    reproduce su archivo
+  moment_ladder.py                   reproduce su archivo
+  moment_split.py                    reproduce su archivo
+  necessity_of_W.py                  reproduce su archivo
+  parity_mod4.py                     reproduce su archivo
+  pdf_provenance.py                  reproduce su archivo
+  prediction.py                      reproduce su archivo
+  rational_holonomies.py             reproduce su archivo
+  remainder_theorem.py               reproduce su archivo
+  rigorous_ceiling.py                reproduce su archivo
+  rigorous_ceiling2.py               reproduce su archivo
+  running_g4.py                      reproduce su archivo
+  running_gap.py                     reproduce su archivo
+  s_channel_width.py                 reproduce su archivo
+  scan_mkk.py                        reproduce su archivo
+  seed_shift_character.py            reproduce su archivo
+  semi_infinite.py                   reproduce su archivo
+  semigroup.py                       reproduce su archivo
+  socratic_witness.py                reproduce su archivo
+  vacuum_constraint.py               reproduce su archivo
+  vgiq_anchor.py                     reproduce su archivo
+
+  no comprobado  cone_moments.sage              Sage: necesita el contenedor, fuera del alcance de esta compuerta
+  no comprobado  dimension_five.sage            Sage: necesita el contenedor, fuera del alcance de esta compuerta
+  no comprobado  lattice_lift.sage              Sage: necesita el contenedor, fuera del alcance de esta compuerta
+  no comprobado  lattice_rank.sage              Sage: necesita el contenedor, fuera del alcance de esta compuerta
+  no comprobado  vgiq_charges.sage              Sage: necesita el contenedor, fuera del alcance de esta compuerta
+
+  reproducen 67 | difieren 0 | revientan 0 | no comprobados 5
+
+todo guion citado que puede ejecutarse aqui vuelve a dar su salida archivada, byte a byte
+
+--- codigo de salida: 0 ---

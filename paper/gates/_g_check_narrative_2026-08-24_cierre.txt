@@ -1,0 +1,24 @@
+
+su7_hierarchy.tex
+  N1 abstract    48 distinct numbers, 0 absent from the rest of the paper
+  N2 intro       32 distinct numbers, 0 absent from the rest of the paper
+  N3 sections    every section the summaries point at exists
+  N4 labels      99 labels, none defined twice
+  N4b build log  clean
+
+su7_hierarchy_es.tex
+  N1 abstract    48 distinct numbers, 0 absent from the rest of the paper
+  N2 intro       32 distinct numbers, 0 absent from the rest of the paper
+  N3 sections    every section the summaries point at exists
+  N4 labels      99 labels, none defined twice
+  N4b build log  clean
+
+N5  las dos ediciones, numero a numero
+  271 numeros decimales distintos; 0 con conteo distinto entre ediciones
+
+N6  los numeros con letra: mismo parrafo, mismo objeto, .mismo valor?
+  238 parrafos emparejados, 110 objetos contados en las dos, 0 con valor distinto
+  falsacion: la frase de la S13 del 24-ago salta, EN {2} contra ES {3}
+
+OK -- the abstract and the introduction say what the body says,
+     and the two editions quote the same numbers, in digits and in words.

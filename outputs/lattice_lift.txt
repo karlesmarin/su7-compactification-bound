@@ -1,0 +1,114 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+0 -- THE LIFTED LATTICE, AND EVERY ENTRY IS AN INTEGER
+====================================================================================================
+  multiplet       A_4       8D       2U        V       2W
+  7(+,+)            0       -6        2        0        2
+  7(+,-)            1        8        0        0       -2
+  28(+,+)          17       16       40        0        6
+  28(+,-)           4        2       34        0       -6
+  48(+,+)          18        0       48        0       12
+  48(+,-)           8       28       36        0      -12
+  84(+,+)          68       10      346        0       18
+  84(+,-)         109       80      168       81      -18
+  gauge           -18      -27      -39        0       -3
+
+  U and W are half-integers -- the gauge sector alone makes them so, with -39/2 and -3/2 --
+  so the lattice is written in 2U and 2W.  Every row above is then integral, gauge included.
+
+====================================================================================================
+1 -- THE COORDINATES ARE COMPLETE: same five  <=>  same potential
+====================================================================================================
+  rank of the 8x5 matrix           : 5
+  kernel of content -> five coords : dimension 3
+  kernel of content -> POTENTIAL   : dimension 3   (dimension_five.sage's, by another route)
+
+  Both kernels, as integer generators in Hermite form -- they must be the SAME sublattice:
+     five-coordinate kernel : [[-20, -17, 1, 0, 0, 0, 0, 0], [-24, -18, 0, 0, 1, 0, 0, 0], [-1, -4, 0, -1, 0, 1, 0, 0]]
+     potential kernel       : [[-20, -17, 1, 0, 0, 0, 0, 0], [-24, -18, 0, 0, 1, 0, 0, 0], [-1, -4, 0, -1, 0, 1, 0, 0]]
+
+  CONTROL -- the two kernels are the same subspace : True
+
+  So a content is invisible to the five coordinates exactly when it is invisible to the
+  potential.  The lattice of section arith and the function space of section closed are the
+  SAME OBJECT, and (A_4, 8D, 2U, V, 2W) are coordinates on it.
+
+  Checked directly on the exact polylogarithmic potential -- the three kernel generators must
+  give F identically zero, and they do:
+     -20 7(+,+) + -17 7(+,-) + +1 28(+,+)   five coords [0, 0, 0, 0, 0]   max|F| = 2.9e-11
+     -24 7(+,+) + -18 7(+,-) + +1 48(+,+)   five coords [0, 0, 0, 0, 0]   max|F| = 2.9e-11
+     -1 7(+,+) + -4 7(+,-) + -1 28(+,-) + +1 48(+,-)   five coords [0, 0, 0, 0, 0]   max|F| = 0.0e+00
+
+====================================================================================================
+2 -- AND THE PARITY IS ONE CHARACTER ON THREE COORDINATES, NOT TWO THEOREMS
+====================================================================================================
+  Carles asked whether the -7/2 driving Theorem 1 and the 2W theorem is one character of the
+  lifted lattice.  It is -- and the lift shows it runs on THREE of the five coordinates, not
+  the two the paper knew about.  Look at the parity columns:
+
+  multiplet        8D       2U       2W   mod 2
+  7(+,+)           -6        2        2   0 0 0
+  7(+,-)            8        0       -2   0 0 0
+  28(+,+)          16       40        6   0 0 0
+  28(+,-)           2       34       -6   0 0 0
+  48(+,+)           0       48       12   0 0 0
+  48(+,-)          28       36      -12   0 0 0
+  84(+,+)          10      346       18   0 0 0
+  84(+,-)          80      168      -18   0 0 0
+  gauge           -27      -39       -3   1 1 1
+
+  every MATTER multiplet is even in all three : True
+  the GAUGE sector is odd in all three        : True
+
+  Therefore, for EVERY bulk content,   8D  ==  2U  ==  2W  ==  1   (mod 2).
+
+  AND THE THREE ARE THE SAME -7/2, not three coincidences.  The gauge sector's only
+  half-integer coefficient is the antiperiodic charge-one term, u_(-,1) = -7/2, and each of
+  the three coordinates picks it up once:
+
+     8D = 8A_2 - 6B_2 :  B_2 gets u_(-,1) = -7/2,  so -6 B_2 contributes  +21   odd
+     2U = 2(16u_(+,2) + B_4) :  B_4 gets the same -7/2,  contributing      -7   odd
+     2W = 2( -(u_(+,1)+u_(+,3)) + (u_(-,1)+u_(-,3)) ) : directly            -7   odd
+
+  and the matter multiplets have integer coefficients throughout, so they can only ever
+  contribute even amounts to all three.  One half-integer in one gauge coefficient makes all
+  three coordinates odd, permanently.
+
+  What that buys, stated once instead of twice:  Theorem 1 (8D odd, so D never vanishes and
+  electroweak breaking is never marginal) and the 2W theorem (2W odd, so
+  |F(1)-F(0)| >= (31/32) zeta(5) and the two symmetric points are never degenerate) are the
+  SAME congruence read on two coordinates.  The third, 2U odd, is new here and has no
+  physical reading yet -- U is the coefficient of -ln2 in G, and what an odd 2U forbids a
+  content from doing is not known.  It is written down because the character says it, not
+  because we have a use for it.
+
+  Verified on random contents:
+     20000 random contents, multiplicities to nine, violations : 0   <-- must be 0
+
+  CONTROL -- and it must be able to fail.  The other two coordinates, A_4 and V, are NOT
+  forced odd, so the character is a statement about which three and not about all five:
+     A_4  takes parities [0, 1] over a handful of contents -- not fixed
+     V    takes parities [0, 1] over a handful of contents -- not fixed
+
+====================================================================================================
+3 -- THE SMITH NORMAL FORM OF THE LIFT
+====================================================================================================
+  invariant factors of the sublattice the eight multiplets generate in Z^5 :
+     [1, 1, 2, 72, 2592]
+     Z^5 / L  ~=  Z_2 x Z_72 x Z_2592
+     index    =  373248
+
+  Against the projections already in the paper:
+     (A_4, 8D)            : Z_6                     -- Theorem mod6
+     (A_4, 8D, 2U, V)     : Z_18 x Z_648            -- eq. snf, two congruences
+     (A_4, 8D, 2U, V, 2W) : Z_2 x Z_72 x Z_2592   -- 3 congruences
+
+  Adding 2W multiplies the two previous orders by four and contributes a Z_2 of its own; the
+  index goes up by 32.  The Z_2 is the congruence of section 2 -- the one both parity theorems
+  are reading.  Naming the other two as explicit conditions on the multiplicities is the same
+  question the paper already has open one dimension down, now posed where it belongs.
+
+  The transformation matrices, and with them the congruences written out, are computed
+  independently in Sage: lattice_lift.sage.
+
+archived: outputs/lattice_lift.json

@@ -1,0 +1,178 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE LIFTED LATTICE (A4, 8D, 2U, V), AND A CONTROL THAT TIES IT TO G
+====================================================================================================
+  multiplet      A4     8D       2U      V      G rebuilt        G float
+  7(+,+)          0     -6        2      0      -0.693147      -0.693147
+  7(+,-)          1      8        0      0       2.083333       2.083333
+  28(+,+)        17     16       40      0      21.553723      21.553723
+  28(+,-)         4      2       34      0      -3.450169      -3.450169
+  48(+,+)        18      0       48      0      20.864468      20.864468
+  48(+,-)         8     28       36      0       4.190017       4.190017
+  84(+,+)        68     10      346      0      21.752204      21.752204
+  84(+,-)       109     80      168     81      79.871375      79.871375
+  gauge         -18    -27      -39      0     -23.983630     -23.983630
+
+  CONTROL -- G rebuilt from the integers must equal the float G on all eight : True
+
+  AND THE LIFT IS SMALLER THAN FOUR-DIMENSIONAL: ln3 enters through 1 generator(s), 84(+,-),
+  so V = 81 n_{84(+,-)} exactly -- a marker for one multiplicity, not a free direction.
+  The working lift is therefore (A4, 8D, 2U), and 2U because the gauge U is -39/2: the same
+  half-integer that Theorem 1 hangs on shows up again here, in a different coordinate.
+
+====================================================================================================
+2 -- HOW MANY CONGRUENCES ARE THERE?  the index of the sublattice, dimension by dimension
+====================================================================================================
+  the eight generators span a sublattice of Z^d.  Its INDEX is the number of residue classes,
+  i.e. how many congruences the content has to satisfy.  The paper computes it in 2D and gets
+  six -- 'one integer point in six'.  Lift and ask again.
+
+  coordinates                     index what it means
+  (A4)                                1 one point in 1
+  (A4, 8D)                            6 one point in 6
+  (A4, 8D, 2U)                      144 one point in 144
+  (A4, 8D, 2U, V)                 11664 one point in 11664
+
+  the 2D index must be 6, which is Theorem 2 restated as a lattice index : True
+
+====================================================================================================
+3 -- THE HOLES.  admissible by cone AND congruence, and still not manufacturable
+====================================================================================================
+  the cone of the eight generators is  {A4 >= 0, 8D <= 8 A4}  (extreme rays (0,-1) and (1,8),
+  which is the paper's own Sage computation).  Sbar = cone AND lattice; S = what the
+  non-negative integer combinations actually reach.  Everything below is measured relative to
+  the gauge offset, i.e. on real contents.
+
+  lattice membership test, derived from the generators: (A4, 8D) in L  iff  8D = 8 A4 (mod 6)
+  CONTROL -- all eight generators must satisfy it : True   (violations: 0)
+
+  holes with 0 <= A4 <= 420 and 8D >= -60 : 0
+
+  the first twenty, in real content coordinates (gauge offset applied):
+  A4                 8D      A4                 8D
+
+  largest A4 carrying a hole : none
+  so the semigroup is normal
+
+====================================================================================================
+4 -- THE TWO POINTS CARLES NAMED
+====================================================================================================
+  (A4, 8D) = (215,   1)  cone True  lattice True  reachable True   -> in S               the certifying vertex of the ceiling
+  (A4, 8D) = (  0,   3)  cone True  lattice True  reachable True   -> in S               the smallest 8D the congruence allows with A4 = 0
+  (A4, 8D) = (  0,   9)  cone True  lattice True  reachable True   -> in S               the next one
+  (A4, 8D) = (  0,  15)  cone True  lattice True  reachable True   -> in S               the smallest actually realised on that branch
+  (A4, 8D) = (104,   1)  cone True  lattice True  reachable True   -> in S               the best realised on rung 8D = 1
+
+  ==> the analytic branch's missing rungs ARE holes, and the ceiling's vertex is NOT one.
+      Two different phenomena, and telling them apart is the point of doing this exactly.
+
+====================================================================================================
+5 -- THE ROW 8D = 1, WHICH IS THE ROW THE CEILING LIVES ON
+====================================================================================================
+  S_1 = { A4 : (A4, 1) is a real content }.  If it is eventually all admissible values, it has
+  a conductor, and past it the question 'does A4 exist?' is answered once and for all.
+
+  admissible A4 on this row are those with A4 + 1 = 0 (mod 3).
+  realisable A4 on 8D = 1, up to 402 : 134 of 134 admissible
+  gaps : none in the window -- the row is already saturated here
+
+  and 215 is on it : True
+
+====================================================================================================
+6 -- THE DECISIVE ONE: IS THE CERTIFYING VERTEX REACHABLE *CHEAPLY ENOUGH IN G*?
+====================================================================================================
+  The vertex is reachable in (A4, 8D) -- section 4 settled that -- so the ceiling's fate is
+  decided entirely by the third condition, G <= G*.  In the lifted coordinates that condition
+  stops being transcendental and becomes an integer program:
+
+     G = (25/12) A4 - U ln2 - V ln3 ,   so at fixed A4,   G <= G*   <=>   U ln2 + V ln3 >= T
+     with   T = (25/12) A4 - G* .
+
+  and U, V are TOTALS: the gauge sector carries U = -39/2 of its own, worth -13.516 in ln2, which
+  is the same order as the slack -- forgetting it flips verdicts, so it is carried explicitly
+  and the witness is rebuilt against moments() at the end.
+
+  A4       8D           T needed max U ln2+V ln3        slack verdict
+  215      1              681.08       681.02        -0.07  impossible
+  212      1              667.67       669.93         2.26  REACHABLE
+  209      1              654.27       658.84         4.57  REACHABLE
+  206      1              640.87       656.06        15.19  REACHABLE
+  203      1              627.49       644.97        17.48  REACHABLE
+  200      1              614.12       633.88        19.76  REACHABLE
+  150      1              392.96           --           --  no content at all
+  104      1              192.50       345.53       153.03  REACHABLE
+  101      1              179.54       334.44       154.91  REACHABLE
+
+  the maximum is over EVERY content with those two moments, so a negative slack is not a
+  failed search: it is a proof that no content of any size can pay for that vertex.
+
+  highest reachable rung-1 vertex found here : A4 = 212  ->  1/R5 = 10013 GeV
+     witness : 17x7(+,+) + 2x7(+,-) + 57x28(+,-)   (76 multiplets)
+     its log budget 669.927 against the 667.670 required
+
+  CONTROL, and it is the one that catches an offset: rebuild the witness through the
+  ordinary moments() route, which knows nothing about U and V, and compare.
+     moments() : A4 = 212   8D = 1   G = -228.2601
+     wanted    : A4 = 212   8D = 1   G <= -226.0032
+     the witness really is one : True
+
+====================================================================================================
+7 -- THE 0.07 IS TOO SMALL TO BELIEVE IN DOUBLE PRECISION.  Two checks it has to survive.
+====================================================================================================
+  (a) ARITHMETIC.  Redo the (215, 1) comparison at 50 digits, and round every constant in
+      the direction that FAVOURS reachability -- ln2 and ln3 up, so the budget is as large
+      as it can be; ln x up, so G* is as large as it can be and T as small.  If the vertex
+      still fails under a rounding that is trying to save it, it fails.
+
+      U = 982.5 , V = 0.0
+      budget  = 681.0171049001462665
+      required= 681.08432474326662503
+      shortfall = -0.0672198431204
+      verdict at 50 digits : IMPOSSIBLE
+      relative size of the shortfall : 9.86953e-5
+
+  (b) THE HIGGS WINDOW HAS TWO ENDS.  G* was evaluated at the top, 127 GeV, which is the
+      most permissive point for the ceiling.  A content is viable somewhere in the window
+      if its G lands in the band swept by G*(mu) as m_h runs 125 to 127.  Check the 212
+      witness against the whole band, and check that 215 fails at BOTH ends:
+
+  A4       8D            G*(125)      G*(127)   max budget viable?
+  215      1            -238.553     -233.168      681.017  no   (its smallest G = -233.100)
+  212      1            -231.412     -226.003      669.927  yes   (its smallest G = -228.260)
+
+  and the consequence for the headline number, stated plainly:
+     A4 = 215 on rung 8D = 1  ->  1/R5 = 10034 GeV  =  10.03 TeV
+     A4 = 212 on rung 8D = 1  ->  1/R5 = 10013 GeV  =  10.01 TeV
+
+  THE NUMBERS AS THE PAPER PRINTS THEM (check_numbers.py greps the archive literally):
+     the sharpened ceiling                  : 10.01 TeV
+     A4 = 215 : required 681.084  available 681.017  slack -0.067
+     A4 = 212 : required 667.670  available 669.927  slack +2.257
+     lattice index, projected / lifted       : 6 / 144
+
+====================================================================================================
+8 -- THE LIFT AND THE CHARGE-TWO FLIP ARE THE SAME OBJECT
+====================================================================================================
+  Two results found on different days and in different sections:
+     the charge-two parity flip is the only log-free one, with signature (-7, -16, -100/3);
+     G = (25/12) A4 - U ln2 - V ln3, and the content lives on (A4, 8D, 2U).
+  They are one.  Move one unit of multiplicity at charge c from periodic to antiperiodic and
+  read off (A4, U, V) directly:
+
+  c    tower                A4        U        V              G
+  1    periodic              1        0        0       2.083333
+  1    antiperiodic          0        1        0      -0.693147
+  2    periodic             16       16        0      22.242978
+  2    antiperiodic          0       16        0     -11.090355
+  3    periodic             81        0       81      79.762405
+  3    antiperiodic          0       81        0     -56.144922
+
+  the flip's change in (U, V), per unit of multiplicity:
+     c = 1 :  dU =    +1   dV =    +0   
+     c = 2 :  dU =    +0   dV =    +0   <- INVISIBLE to the lift
+     c = 3 :  dU =   +81   dV =   -81   
+
+  So the charge-two flip is exactly the move that leaves the lifted coordinates fixed, and
+  that is WHY its G-shift is rational: dG = (25/12) dA4 = (25/12)(-16) = -100/3, with no
+  logarithm left to carry.  'The only log-free charge' and 'the kernel direction of the lift'
+  are one sentence said twice.  CONTROL: dG matches -100/3 exactly : True

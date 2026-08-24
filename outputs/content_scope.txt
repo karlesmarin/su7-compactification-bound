@@ -1,0 +1,79 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+1 -- THE CHARGE CEILING IS THE BOX COUNT, CHECKED AGAINST THE TERM TABLES
+====================================================================================================
+  Part VI's charge assignment gives q = 7 -> -/+1/2, 28 -> -/+1, 84 -> -/+3/2, 48 -> 0, and
+  the potential's integer charge is c = 2|q|.  If that reading is right, the largest c in a
+  multiplet's term table must equal its number of boxes.  The term tables are the arbiter:
+
+  multiplet     boxes max c in table      agree charges present
+  7(+,+)            1              1       True [1]
+  7(+,-)            1              1       True [1]
+  28(+,+)           2              2       True [1, 2]
+  28(+,-)           2              2       True [1, 2]
+  48(+,+)           2              2       True [1, 2]
+  48(+,-)           2              2       True [1, 2]
+  84(+,+)           3              3       True [1, 2, 3]
+  84(+,-)           3              3       True [1, 2, 3]
+
+  CONTROL -- max c equals the box count on all eight : True
+
+  So c <= 3 holds because the largest representation in \cite{KM25}'s Table 1 has three
+  boxes.  It is a property of THEIR LIST, not of the model: SU(7) has representations with
+  four boxes and more, and nothing in the orbifold, the potential or the ceiling forbids a
+  bulk field in one.
+
+====================================================================================================
+2 -- WHAT A FOURTH BOX WOULD COST, AND IT IS NOT ONLY THE CEILING
+====================================================================================================
+  (a) THE CEILING.  A_4 collects m c^4 and 8D collects 8 m c^2, so the value of one periodic
+      state to the optimisation is c^4 against 8 c^2:
+
+         c        c^4      8 c^2     A_4 per 8D
+         1          1          8          0.125
+         2         16         32          0.500
+         3         81         72          1.125
+         4        256        128          2.000
+         5        625        200          3.125
+
+      The ratio is c^2/8, so it grows without bound in the charge.  The ceiling is a maximum
+      of A_4 at fixed 8D, so admitting a higher charge admits a strictly better direction and
+      the certificate is over a different cone.  How much better is not computed here: it
+      needs the parity decomposition of a representation \cite{KM25} do not use, and that is
+      their assignment to make, not ours.
+
+  (b) THE DIMENSION, which is the part that would be missed.  With charges {1,2,3} the six
+      functions g(s,c) span five, because Li_s(z)+Li_s(-z) = 2^{1-s} Li_s(z^2) relates
+      g(+,1)+g(-,1) to g(+,2) and the chain then STOPS -- continuing it would need c = 4.
+      Admit c = 4 and it does not stop.  Counting, with the relation available whenever 2c is
+      also a charge:
+
+  charge alphabet         functions  relations    dimension this paper
+  c in {1..3}                     6          1            5        yes
+  c in {1..4}                     8          2            6           
+  c in {1..5}                    10          2            8           
+  c in {1..6}                    12          3            9           
+
+      Each doubling that lands back inside the alphabet costs one dimension, and the count is
+      the number of charges c with 2c also a charge.  For {1,2,3} that is one, c = 1, hence
+      six functions and five dimensions.  For {1,2,3,4} it is two, c = 1 and c = 2, hence
+      eight functions and six dimensions.
+
+      So the complete-invariants theorem is a statement about THIS charge alphabet.  Its five
+      coordinates are five because the alphabet stops at three, and a fourth box would make
+      them six.  That is scope, not error -- but unstated it would read as a general law.
+
+====================================================================================================
+3 -- AND THE ASYMMETRY THAT MADE THIS WORTH CHECKING
+====================================================================================================
+  The paper corrected one cap on the content and left another standing:
+
+     the cap on SIZE  : 'at most six multiplets' -- CORRECTED, and by a factor 2.5 in the
+                        answer.  Nothing in the model caps how MANY multiplets there are.
+     the cap on TYPE  : 'the eight (rep, parity) pairs of their Table 1' -- NOT STATED.
+                        Nothing in the model caps WHICH representations there are either.
+
+  Both are properties of \cite{KM25}'s table rather than of the theory, and the first was
+  worth a section.  The second is worth a sentence, and it now has one.
+
+archived: outputs/content_scope.json

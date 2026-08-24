@@ -1,0 +1,67 @@
+================================================================================================
+TODA AFIRMACION QUE DEPENDE DE LA SEMILLA GAUGE, .LO DICE DONDE SE DICE?
+================================================================================================
+
+su7_hierarchy.tex
+  8D impar                    14 aparicion(es)   todas marcadas
+  |D| >= 1/8                   3 aparicion(es)   todas marcadas
+  cota del valor zeta(5)/32    1 aparicion(es)   todas marcadas
+  el techo en TeV             18 aparicion(es)   todas marcadas
+  los colores impares          1 aparicion(es)   todas marcadas
+  un solo semientero           4 aparicion(es)   todas marcadas
+  efecto de la sexta dimension   0 aparicion(es)   todas marcadas
+  ambas columnas de su Tabla 1   4 aparicion(es)   todas marcadas
+  ley mod 6                    1 aparicion(es)   robusta, no necesita marca
+  2W impar                     8 aparicion(es)   robusta, no necesita marca
+
+su7_hierarchy_es.tex
+  8D impar                    17 aparicion(es)   todas marcadas
+  |D| >= 1/8                   3 aparicion(es)   todas marcadas
+  cota del valor zeta(5)/32    1 aparicion(es)   todas marcadas
+  el techo en TeV             17 aparicion(es)   todas marcadas
+  los colores impares          1 aparicion(es)   todas marcadas
+  un solo semientero           2 aparicion(es)   todas marcadas
+  efecto de la sexta dimension   0 aparicion(es)   todas marcadas
+  ambas columnas de su Tabla 1   4 aparicion(es)   todas marcadas
+  ley mod 6                    1 aparicion(es)   robusta, no necesita marca
+  2W impar                     4 aparicion(es)   robusta, no necesita marca
+
+================================================================================================
+cada afirmacion condicionada lleva su marca cerca, en las dos ediciones.
+================================================================================================
+
+================================================================================================
+EL TEXTO DIBUJADO DENTRO DE LAS FIGURAS -- donde el lector mira antes que al pie
+================================================================================================
+  30 figuras leidas, 0 afirmacion(es) de rama sin marca dentro del dibujo
+
+  el numero con que las figuras citan a Komori-Maru, contra el .aux de cada edicion:
+    su7_hierarchy.tex        \cite{KM25} -> [2]   ok, es el que dibujan las figuras
+    su7_hierarchy_es.tex     \cite{KM25} -> [2]   ok, es el que dibujan las figuras
+
+================================================================================================
+FALSACION -- los rotulos que las figuras llevaban dibujados, .los ve?
+================================================================================================
+  el eje de fig_ceiling y fig_cone     caza sin absolver
+  la leyenda de fig_lift               caza sin absolver
+  la anotacion de fig_chi2             caza sin absolver
+
+los tres rotulos rancios saltan.
+
+================================================================================================
+FALSACION -- las frases que se colaron el 23-ago, .las caza ahora?
+================================================================================================
+  los colores impares            caza sin absolver   \emph{$D\neq0$ because the number of colours is odd}, an
+  los colores impares            caza sin absolver   \emph{$D\neq0$ porque el número de colores es impar}, y 
+  un solo semientero             caza sin absolver   The mechanism is a single half-integer in the gauge tabl
+  un solo semientero             caza sin absolver   la imparidad del sector gauge la carga \emph{un solo med
+  efecto de la sexta dimension   caza sin absolver   Both are effects of the \emph{sixth} dimension --- the s
+  efecto de la sexta dimension   caza sin absolver   el peso gauge semientero lo prohíbe, y ese peso es un ef
+  ambas columnas de su Tabla 1   caza sin absolver   the same expansion gives the Higgs mass, so \emph{both} 
+  ambas columnas de su Tabla 1   caza sin absolver   así que \emph{las dos} columnas de su Tabla~1 se siguen 
+  8D impar                       caza sin absolver   Electroweak breaking needs $D>0$, and $8D$ is odd by The
+  8D impar                       caza sin absolver   Right: why one in six --- $8D$ must be odd and $8D+A_4\e
+  8D impar                       caza sin absolver   A la derecha, por qué uno de cada seis: $8D$ ha de ser i
+  el techo en TeV                caza sin absolver   el techo por peldaño cae \emph{demostradamente}, de los 
+
+las 12 frases rancias saltan, y ninguna se absuelve sola.

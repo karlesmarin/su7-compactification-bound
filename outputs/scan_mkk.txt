@@ -1,0 +1,391 @@
+
+##############################################################################################
+# LEADING ORDER, all seven mass bins
+##############################################################################################
+==============================================================================================
+AN SM-REFERENCED SENSITIVITY ON 1/R_5 FROM THE SPACELIKE CHANNELS ALONE
+==============================================================================================
+
+  parton densities : CT10nlo
+
+  quadrature points : 46080   PDF requests : 15360
+
+[C1] THE QUADRATIC ANSATZ, CHECKED ON A PAIR IT NEVER SAW
+      condition number of the 6x6 solve : 557.0
+      worst relative error at (F_t, F_u) = (1.45, 1.22) : 1.2e-14
+
+      C1 PASS -- the weight really is quadratic in the two form factors, so the
+         scan costs six numbers a point and not one evaluation per mass.
+
+[1] THE SCAN, SCALE PROFILED AT EVERY POINT
+      Standard Model chi2 = 62.6 for 77 points
+
+      1/R_5 [TeV]          chi2   Delta chi2
+----------------------------------------------------------------------------------------------
+      3.0                3132.6       3070.1
+      4.0                1471.7       1409.1
+      5.0                 746.5        683.9
+      6.0                 414.1        351.5
+      7.0                 251.5        188.9
+      8.0                 167.2        104.6
+      9.0                 121.4         58.8
+      10.0                 95.5         33.0
+      11.0                 80.5         17.9
+      12.0                 71.6          9.0
+      16.0                 59.9         -2.7
+      20.0                 59.0         -3.6
+      24.0                 59.4         -3.2
+      28.0                 59.9         -2.6
+      32.0                 60.4         -2.2
+      36.0                 60.8         -1.8
+      40.0                 61.1         -1.5
+----------------------------------------------------------------------------------------------
+
+[C3] IS THE STANDARD MODEL THE BEST FIT, OR IS THERE A FINITE PREFERRED M_KK?
+      chi2 at the Standard Model (M -> infinity)   : 62.57
+      lowest chi2 anywhere on the scanned grid     : 58.92 at 1/R_5 = 19.0 TeV
+      the data prefer a FINITE tower by Delta chi2 = 3.66  (1.9 sigma, 1 dof)
+      so Wilks is referenced to the minimum
+
+      criterion                                            1/R_5 [TeV]
+      Delta chi2 = 3.84 against the SM (what we quote)          12.95
+      Delta chi2 = 3.84 against the minimum (Wilks, 2-sided)      14.08
+      Delta chi2 = 2.71 against the minimum (1-sided, theta >= 0)      14.63
+      scale profiled DISCRETELY over CMS's two choices          12.94
+      covariance PROJECTED through the normalisation            13.07
+
+      The last row is the answer to the sharpest objection there is to this fit.  HEPData calls
+      the matrix "the correlation matrix of the maximum likelihood estimators of the SIGNAL
+      STRENGTH MODIFIERS ... after the fit to the data", not the covariance of the normalised
+      unfolded points.  If the unit-area normalisation happens AFTER that fit, the right object is
+      J C J^T and not C.  That row computes it that way.  The other rows assume the parametrisations
+      already agree; this one assumes they do not.
+
+      spread across the 5 criteria : 12.94 to 14.63 TeV (13.1 %)
+      all 5 above the measured-m_h ceiling of 9.09 TeV : True
+      all 5 above the window ceiling of 10.03 TeV      : True
+
+[C2] THE CHI^2 BOTH WAYS -- 70 points with one bin per block dropped, and all 77
+      70 points (one dropped per mass block) : SM chi2 = 62.6, limit = 12.95 TeV
+      77 points (the full published matrix)  : SM chi2 = 69.6, limit = 12.48 TeV
+      they differ by 3.8 %, and what is quoted below is the WEAKER of the two
+      and the quoted 12.48 TeV is the weakest of ALL 5 variations : True
+      (the Wilks-referenced readings of C3 are stronger still, so they do not bind)
+
+[2] THE LIMIT
+
+      chi2 - chi2_SM falls through 3.84 -- an SM-REFERENCED criterion, not Wilks' 95 % point,
+      which C3 above measures and varies -- at
+
+          1/R_5  =  12.48 TeV .
+
+      Below that the tower deforms chi_dijet more than the data allow.
+
+                                                            TeV
+      this limit, spacelike channels only, SM-referenced      12.48
+      the paper's ceiling at the measured m_h              9.09
+      the paper's ceiling over all contents               10.03
+      the branch that can pay for the escape               3.97
+
+[2b] AND THE BAND THIS INSTRUMENT IS ENTITLED TO
+      cms_ci_closure.py returned CMS's own contact-interaction limits as 20.5 against 17 TeV
+      and 25.5 against 37 TeV -- ratios 1.21 and 0.69.  That is what this chi^2 is worth
+      against a full likelihood, and it must be carried onto our own number rather than left
+      in the other file.  [[a-number-i-hand-over-carries-my-instrument]]
+
+      central                        12.48 TeV
+      scaled by the closure ratios    8.61  to  15.10 TeV
+
+      the proton-decay escape branch (3.97 TeV) is excluded across the whole band
+      the limit clears the ceiling at the measured m_h (9.09 TeV) centrally, but the low end of the band does not
+      the limit clears the ceiling over all contents (10.03 TeV) centrally, but the low end of the band does not
+
+[3] WHAT THIS IS AND IS NOT
+      It IS an SM-referenced Delta chi^2 = 3.84 sensitivity from the published covariance
+      with the QCD scale profiled -- NOT a 95 %% CL, because C3 measures that the Standard
+      Model is not the best fit and because theta = 1/M^2 >= 0 puts the null on a boundary --
+      on a
+      machinery that reproduces CMS's own contact-interaction limit to 21 %% and 31 %%
+      (cms_ci_closure.py).  It is NOT the full statement: only the spacelike channels are
+      dressed, so it is the part that survives knowing nothing about BR(G_n -> jj).
+
+      AND THE SIGN OF THAT OMISSION IS NOT UNIFORM, which an earlier version of this paragraph
+      got wrong by asserting the s-channel "would only strengthen it".  channel_breakdown.py
+      measures the pure s-channel piece, q qbar -> q' qbar', at -2.4 % of the interference in
+      the contact limit: dressing it there would WEAKEN this limit by about a per cent in M.
+      Near the tower it is the other way and strongly so, the cotangent branch of eq. (resum)
+      having poles the spacelike form factor cannot see.  So the omission is conservative where
+      the escape branch sits and mildly anti-conservative at the ceiling, and neither is worth
+      more than a per cent or two against the closure band.
+
+      And it is a chi^2, not CMS's likelihood: the closure test says how much that is worth,
+      and no more.
+
+    [wrote outputs/scan_mkk.json, key 'lo_all']
+
+==============================================================================================
+VERDICT: 1/R_5 > 12.48 TeV, SM-referenced Delta chi^2 = 3.84, spacelike only.
+==============================================================================================
+
+##############################################################################################
+# NLO, all seven mass bins
+##############################################################################################
+==============================================================================================
+AN SM-REFERENCED SENSITIVITY ON 1/R_5 FROM THE SPACELIKE CHANNELS ALONE
+==============================================================================================
+
+  parton densities : CT10nlo
+
+  quadrature points : 46080   PDF requests : 15360
+
+[C1] THE QUADRATIC ANSATZ, CHECKED ON A PAIR IT NEVER SAW
+      condition number of the 6x6 solve : 557.0
+      worst relative error at (F_t, F_u) = (1.45, 1.22) : 1.2e-14
+
+      C1 PASS -- the weight really is quadratic in the two form factors, so the
+         scan costs six numbers a point and not one evaluation per mass.
+
+  NLO mode: K^SM shape in 0.930-1.203, K^int recomputed at every Lambda
+
+[1] THE SCAN, SCALE PROFILED AT EVERY POINT
+      Standard Model chi2 = 62.6 for 77 points
+
+      1/R_5 [TeV]          chi2   Delta chi2
+----------------------------------------------------------------------------------------------
+      3.0                3315.9       3253.3
+      4.0                1355.5       1292.9
+      5.0                 621.1        558.6
+      6.0                 321.2        258.6
+      7.0                 188.0        125.4
+      8.0                 124.6         62.0
+      9.0                  92.8         30.3
+      10.0                 76.3         13.7
+      11.0                 67.5          5.0
+      12.0                 62.8          0.2
+      16.0                 58.5         -4.1
+      20.0                 59.1         -3.5
+      24.0                 59.9         -2.7
+      28.0                 60.5         -2.1
+      32.0                 60.9         -1.6
+      36.0                 61.3         -1.3
+      40.0                 61.5         -1.1
+----------------------------------------------------------------------------------------------
+
+[C3] IS THE STANDARD MODEL THE BEST FIT, OR IS THERE A FINITE PREFERRED M_KK?
+      chi2 at the Standard Model (M -> infinity)   : 62.57
+      lowest chi2 anywhere on the scanned grid     : 58.46 at 1/R_5 = 16.0 TeV
+      the data prefer a FINITE tower by Delta chi2 = 4.12  (2.0 sigma, 1 dof)
+      so Wilks is referenced to the minimum
+
+      criterion                                            1/R_5 [TeV]
+      Delta chi2 = 3.84 against the SM (what we quote)          11.20
+      Delta chi2 = 3.84 against the minimum (Wilks, 2-sided)      12.18
+      Delta chi2 = 2.71 against the minimum (1-sided, theta >= 0)      12.60
+      scale profiled DISCRETELY over CMS's two choices          11.19
+      covariance PROJECTED through the normalisation            11.29
+
+      The last row is the answer to the sharpest objection there is to this fit.  HEPData calls
+      the matrix "the correlation matrix of the maximum likelihood estimators of the SIGNAL
+      STRENGTH MODIFIERS ... after the fit to the data", not the covariance of the normalised
+      unfolded points.  If the unit-area normalisation happens AFTER that fit, the right object is
+      J C J^T and not C.  That row computes it that way.  The other rows assume the parametrisations
+      already agree; this one assumes they do not.
+
+      spread across the 5 criteria : 11.19 to 12.60 TeV (12.6 %)
+      all 5 above the measured-m_h ceiling of 9.09 TeV : True
+      all 5 above the window ceiling of 10.03 TeV      : True
+
+[C2] THE CHI^2 BOTH WAYS -- 70 points with one bin per block dropped, and all 77
+      70 points (one dropped per mass block) : SM chi2 = 62.6, limit = 11.20 TeV
+      77 points (the full published matrix)  : SM chi2 = 69.6, limit = 10.86 TeV
+      they differ by 3.2 %, and what is quoted below is the WEAKER of the two
+      and the quoted 10.86 TeV is the weakest of ALL 5 variations : True
+      (the Wilks-referenced readings of C3 are stronger still, so they do not bind)
+
+[2] THE LIMIT
+
+      chi2 - chi2_SM falls through 3.84 -- an SM-REFERENCED criterion, not Wilks' 95 % point,
+      which C3 above measures and varies -- at
+
+          1/R_5  =  10.86 TeV .
+
+      Below that the tower deforms chi_dijet more than the data allow.
+
+                                                            TeV
+      this limit, spacelike channels only, SM-referenced      10.86
+      the paper's ceiling at the measured m_h              9.09
+      the paper's ceiling over all contents               10.03
+      the branch that can pay for the escape               3.97
+
+[2b] AND THE BAND THIS INSTRUMENT IS ENTITLED TO
+      cms_ci_closure.py returned CMS's own contact-interaction limits as 20.5 against 17 TeV
+      and 25.5 against 37 TeV -- ratios 1.21 and 0.69.  That is what this chi^2 is worth
+      against a full likelihood, and it must be carried onto our own number rather than left
+      in the other file.  [[a-number-i-hand-over-carries-my-instrument]]
+
+      central                        10.86 TeV
+      scaled by the closure ratios    7.50  to  13.14 TeV
+
+      the proton-decay escape branch (3.97 TeV) is excluded across the whole band
+      the limit clears the ceiling at the measured m_h (9.09 TeV) centrally, but the low end of the band does not
+      the limit clears the ceiling over all contents (10.03 TeV) centrally, but the low end of the band does not
+
+[3] WHAT THIS IS AND IS NOT
+      It IS an SM-referenced Delta chi^2 = 3.84 sensitivity from the published covariance
+      with the QCD scale profiled -- NOT a 95 %% CL, because C3 measures that the Standard
+      Model is not the best fit and because theta = 1/M^2 >= 0 puts the null on a boundary --
+      on a
+      machinery that reproduces CMS's own contact-interaction limit to 21 %% and 31 %%
+      (cms_ci_closure.py).  It is NOT the full statement: only the spacelike channels are
+      dressed, so it is the part that survives knowing nothing about BR(G_n -> jj).
+
+      AND THE SIGN OF THAT OMISSION IS NOT UNIFORM, which an earlier version of this paragraph
+      got wrong by asserting the s-channel "would only strengthen it".  channel_breakdown.py
+      measures the pure s-channel piece, q qbar -> q' qbar', at -2.4 % of the interference in
+      the contact limit: dressing it there would WEAKEN this limit by about a per cent in M.
+      Near the tower it is the other way and strongly so, the cotangent branch of eq. (resum)
+      having poles the spacelike form factor cannot see.  So the omission is conservative where
+      the escape branch sits and mildly anti-conservative at the ceiling, and neither is worth
+      more than a per cent or two against the closure band.
+
+      And it is a chi^2, not CMS's likelihood: the closure test says how much that is worth,
+      and no more.
+
+    [wrote outputs/scan_mkk.json, key 'nlo_all']
+
+==============================================================================================
+VERDICT: 1/R_5 > 10.86 TeV, SM-referenced Delta chi^2 = 3.84, spacelike only.
+==============================================================================================
+
+##############################################################################################
+# NLO, on CMS's own contact-interaction range M_jj > 3.6 TeV
+##############################################################################################
+==============================================================================================
+AN SM-REFERENCED SENSITIVITY ON 1/R_5 FROM THE SPACELIKE CHANNELS ALONE
+==============================================================================================
+
+  parton densities : CT10nlo
+
+  quadrature points : 46080   PDF requests : 15360
+
+[C1] THE QUADRATIC ANSATZ, CHECKED ON A PAIR IT NEVER SAW
+      condition number of the 6x6 solve : 557.0
+      worst relative error at (F_t, F_u) = (1.45, 1.22) : 1.2e-14
+
+      C1 PASS -- the weight really is quadratic in the two form factors, so the
+         scan costs six numbers a point and not one evaluation per mass.
+
+  CI SELECTION: dropping 3.0-3.6 TeV, as CMS do for their CI limit
+  correlation matrix sub-blocked to 65 x 65
+
+  NLO mode: K^SM shape in 0.938-1.184, K^int recomputed at every Lambda
+
+[1] THE SCAN, SCALE PROFILED AT EVERY POINT
+      Standard Model chi2 = 32.3 for 65 points
+
+      1/R_5 [TeV]          chi2   Delta chi2
+----------------------------------------------------------------------------------------------
+      3.0                2017.1       1984.8
+      4.0                 953.9        921.6
+      5.0                 471.8        439.5
+      6.0                 252.7        220.4
+      7.0                 148.5        116.2
+      8.0                  96.3         64.0
+      9.0                  69.0         36.6
+      10.0                 54.0         21.7
+      11.0                 45.5         13.2
+      12.0                 40.6          8.3
+      16.0                 34.3          2.0
+      20.0                 32.8          0.5
+      24.0                 32.2         -0.1
+      28.0                 32.0         -0.3
+      32.0                 32.0         -0.3
+      36.0                 32.0         -0.3
+      40.0                 32.1         -0.3
+----------------------------------------------------------------------------------------------
+
+[C3] IS THE STANDARD MODEL THE BEST FIT, OR IS THERE A FINITE PREFERRED M_KK?
+      chi2 at the Standard Model (M -> infinity)   : 32.31
+      lowest chi2 anywhere on the scanned grid     : 32.01 at 1/R_5 = 32.0 TeV
+      the data prefer a FINITE tower by Delta chi2 = 0.29  (0.5 sigma, 1 dof)
+      so Wilks is referenced to the minimum
+
+      criterion                                            1/R_5 [TeV]
+      Delta chi2 = 3.84 against the SM (what we quote)          13.95
+      Delta chi2 = 3.84 against the minimum (Wilks, 2-sided)      14.20
+      Delta chi2 = 2.71 against the minimum (1-sided, theta >= 0)      15.42
+      scale profiled DISCRETELY over CMS's two choices          13.95
+      covariance PROJECTED through the normalisation            13.75
+
+      The last row is the answer to the sharpest objection there is to this fit.  HEPData calls
+      the matrix "the correlation matrix of the maximum likelihood estimators of the SIGNAL
+      STRENGTH MODIFIERS ... after the fit to the data", not the covariance of the normalised
+      unfolded points.  If the unit-area normalisation happens AFTER that fit, the right object is
+      J C J^T and not C.  That row computes it that way.  The other rows assume the parametrisations
+      already agree; this one assumes they do not.
+
+      spread across the 5 criteria : 13.75 to 15.42 TeV (12.2 %)
+      all 5 above the measured-m_h ceiling of 9.09 TeV : True
+      all 5 above the window ceiling of 10.03 TeV      : True
+
+[C2] THE CHI^2 BOTH WAYS -- 70 points with one bin per block dropped, and all 77
+      70 points (one dropped per mass block) : SM chi2 = 32.3, limit = 13.95 TeV
+      77 points (the full published matrix)  : SM chi2 = 36.4, limit = 14.10 TeV
+      they differ by 1.1 %, and what is quoted below is the WEAKER of the two
+      and the quoted 13.75 TeV is the weakest of ALL 5 variations : True
+      (the Wilks-referenced readings of C3 are stronger still, so they do not bind)
+
+[2] THE LIMIT
+
+      chi2 - chi2_SM falls through 3.84 -- an SM-REFERENCED criterion, not Wilks' 95 % point,
+      which C3 above measures and varies -- at
+
+          1/R_5  =  13.75 TeV .
+
+      Below that the tower deforms chi_dijet more than the data allow.
+
+                                                            TeV
+      this limit, spacelike channels only, SM-referenced      13.75
+      the paper's ceiling at the measured m_h              9.09
+      the paper's ceiling over all contents               10.03
+      the branch that can pay for the escape               3.97
+
+[2b] AND THE BAND THIS INSTRUMENT IS ENTITLED TO
+      cms_ci_closure.py returned CMS's own contact-interaction limits as 20.5 against 17 TeV
+      and 25.5 against 37 TeV -- ratios 1.21 and 0.69.  That is what this chi^2 is worth
+      against a full likelihood, and it must be carried onto our own number rather than left
+      in the other file.  [[a-number-i-hand-over-carries-my-instrument]]
+
+      central                        13.75 TeV
+      scaled by the closure ratios    9.49  to  16.64 TeV
+
+      the proton-decay escape branch (3.97 TeV) is excluded across the whole band
+      the limit clears the ceiling at the measured m_h (9.09 TeV) across the whole band
+      the limit clears the ceiling over all contents (10.03 TeV) centrally, but the low end of the band does not
+
+[3] WHAT THIS IS AND IS NOT
+      It IS an SM-referenced Delta chi^2 = 3.84 sensitivity from the published covariance
+      with the QCD scale profiled -- NOT a 95 %% CL, because C3 measures that the Standard
+      Model is not the best fit and because theta = 1/M^2 >= 0 puts the null on a boundary --
+      on a
+      machinery that reproduces CMS's own contact-interaction limit to 21 %% and 31 %%
+      (cms_ci_closure.py).  It is NOT the full statement: only the spacelike channels are
+      dressed, so it is the part that survives knowing nothing about BR(G_n -> jj).
+
+      AND THE SIGN OF THAT OMISSION IS NOT UNIFORM, which an earlier version of this paragraph
+      got wrong by asserting the s-channel "would only strengthen it".  channel_breakdown.py
+      measures the pure s-channel piece, q qbar -> q' qbar', at -2.4 % of the interference in
+      the contact limit: dressing it there would WEAKEN this limit by about a per cent in M.
+      Near the tower it is the other way and strongly so, the cotangent branch of eq. (resum)
+      having poles the spacelike form factor cannot see.  So the omission is conservative where
+      the escape branch sits and mildly anti-conservative at the ceiling, and neither is worth
+      more than a per cent or two against the closure band.
+
+      And it is a chi^2, not CMS's likelihood: the closure test says how much that is worth,
+      and no more.
+
+    [wrote outputs/scan_mkk.json, key 'nlo_ci']
+
+==============================================================================================
+VERDICT: 1/R_5 > 13.75 TeV, SM-referenced Delta chi^2 = 3.84, spacelike only.
+==============================================================================================

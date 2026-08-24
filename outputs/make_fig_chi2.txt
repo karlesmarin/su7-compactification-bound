@@ -1,0 +1,42 @@
+  el peine contra la verosimilitud:
+        8D       A4   1/R5 [TeV]   Delta chi2
+         1      215       10.034         12.0
+         3      336        6.266        244.2
+         5      436        5.137        583.6
+         7      533        4.562        930.3
+         9      630        4.209       1278.8
+        15      918        3.653       2097.2
+        21     1209        3.390       2674.8
+        33     1800        3.138       3394.3
+        45     2397        3.017       3741.7
+    el minimo Delta chi2 sobre TODO el peine : 12.0, en 8D = 1
+
+  DE QUE DEPENDE: si el cuanto de 8D no fuera 1
+    cuanto de 8D     1/R5 [TeV]     Delta chi2
+    1 (el real)          10.034           12.0
+    1/2                  14.190           -6.0
+    1/4                  20.068           -4.9
+    umbral: 3.84.  Con el cuanto a la mitad la conclusion no se debilita: CAMBIA DE
+    SIGNO, porque 14.19 TeV cae en la region que los datos levemente prefieren.
+  fig_chi2.pdf   minimo 16.0 TeV, preferencia 4.12  |  CI: 32.0 TeV, 0.29
+  el peine contra la verosimilitud:
+        8D       A4   1/R5 [TeV]   Delta chi2
+         1      215       10.034         12.0
+         3      336        6.266        244.2
+         5      436        5.137        583.6
+         7      533        4.562        930.3
+         9      630        4.209       1278.8
+        15      918        3.653       2097.2
+        21     1209        3.390       2674.8
+        33     1800        3.138       3394.3
+        45     2397        3.017       3741.7
+    el minimo Delta chi2 sobre TODO el peine : 12.0, en 8D = 1
+
+  DE QUE DEPENDE: si el cuanto de 8D no fuera 1
+    cuanto de 8D     1/R5 [TeV]     Delta chi2
+    1 (el real)          10.034           12.0
+    1/2                  14.190           -6.0
+    1/4                  20.068           -4.9
+    umbral: 3.84.  Con el cuanto a la mitad la conclusion no se debilita: CAMBIA DE
+    SIGNO, porque 14.19 TeV cae en la region que los datos levemente prefieren.
+  fig_chi2_es.pdf   minimo 16.0 TeV, preferencia 4.12  |  CI: 32.0 TeV, 0.29

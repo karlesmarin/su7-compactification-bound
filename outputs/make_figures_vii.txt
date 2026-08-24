@@ -1,0 +1,12 @@
+drew fig_ladder.pdf
+drew fig_ceiling.pdf
+drew fig_parity.pdf
+drew fig_surface.pdf
+drew fig_cone.pdf
+figures written to E:\proyectos\Curiosity\research\smeft_formalization\part_vii\paper
+drew fig_ladder_es.pdf
+drew fig_ceiling_es.pdf
+drew fig_parity_es.pdf
+drew fig_surface_es.pdf
+drew fig_cone_es.pdf
+figures written to E:\proyectos\Curiosity\research\smeft_formalization\part_vii\paper

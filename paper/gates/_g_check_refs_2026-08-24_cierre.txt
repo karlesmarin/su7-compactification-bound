@@ -1,0 +1,12 @@
+su7_hierarchy.tex: labels 99, refs 89, bibitems 52, keys cited 52
+  refs with no label       : none
+  labels never referenced  : app:lean, eq:corrected, eq:expansion, eq:g4star, eq:hier, eq:mod6law, eq:oddeighths, eq:rung, eq:stu, sec:intro
+  cites with no bibitem    : none
+  bibitems never cited     : none
+su7_hierarchy_es.tex: labels 99, refs 89, bibitems 52, keys cited 52
+  refs with no label       : none
+  labels never referenced  : app:lean, eq:corrected, eq:expansion, eq:g4star, eq:hier, eq:mod6law, eq:oddeighths, eq:rung, eq:stu, sec:intro
+  cites with no bibitem    : none
+  bibitems never cited     : none
+
+both editions clean

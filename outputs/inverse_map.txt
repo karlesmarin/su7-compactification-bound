@@ -1,0 +1,51 @@
+================================================================================================
+THE TEN EQUATIONS -- built from their published alpha_min and m_h, no minimisation
+================================================================================================
+  (1)   alpha=0.0430  m_h=126.8   species: 1x28(+,-), 4x84(+,+)
+  (2)   alpha=0.0810  m_h=125.5   species: 1x28(+,+), 4x84(+,+)
+  (3)   alpha=0.0210  m_h=125.1   species: 1x28(+,+), 3x48(+,+), 2x84(+,+)
+  (4)   alpha=0.0260  m_h=126.4   species: 1x7(+,-), 2x48(+,+), 3x84(+,+)
+  (5)   alpha=0.0430  m_h=126.2   species: 1x7(+,+), 1x7(+,-), 4x84(+,+)
+
+  unknowns: w[28(+,-)], w[28(+,+)], w[48(+,+)], w[7(+,-)], w[7(+,+)], w[84(+,+)]  and 1/g4^2
+
+================================================================================================
+THE SOLUTION -- exact linear least squares, 10 equations, 7 unknowns, rank 7
+================================================================================================
+   w[28(+,-)  ] =   14.5030      <- their own normalisation is 1
+   w[28(+,+)  ] =    1.8856      <- their own normalisation is 1
+   w[48(+,+)  ] =    1.6906      <- their own normalisation is 1
+   w[7(+,-)   ] =    3.7591      <- their own normalisation is 1
+   w[7(+,+)   ] =    0.3037      <- their own normalisation is 1
+   w[84(+,+)  ] =   -0.0727      <- their own normalisation is 1
+   1/g4^2       =   -0.0053   ->  g4 = nan   (Standard-Model su(2)_L: 0.63)
+   relative residual = 0.0035
+
+================================================================================================
+CONTROL -- re-solve on every permutation of their alpha_min column
+================================================================================================
+   119 scrambles: best 0.0007, worst 0.0035, against the real 0.0035
+   ratio best-scramble / real = 0.20   *** A SCRAMBLE DOES AS WELL: the fit measures nothing ***
+
+================================================================================================
+SECTION 7's PROTOCOL, RESTORED -- per-row normalisation, and ONE scramble (reversal)
+================================================================================================
+   w(48) = 2.828    g4 = 0.705
+   residual real = 0.1814   reversed-alpha = 0.4105   ratio = 2.26
+   section 7, by numerical minimisation: residual 0.1628, ratio 2.54
+   -> two instruments sharing no arithmetic, same magnitude and same direction.
+
+================================================================================================
+AND THE STRICTER TEST -- best of all 119 scrambles, equations unnormalised
+================================================================================================
+  alpha column ALONE (this is where section 7 got w(48) = 5.59)
+     w[7]=  1.222  w[28]=  1.066  w[48]=  5.362  w[84]=  0.828   1/g4^2 = 0.0000  -> g4 IMAGINARY
+     relative residual = 0.0040
+     119 scrambles: best 0.0010 -> ratio 0.25   *** a scramble does as well ***
+
+  both columns together
+     w[7]=  1.210  w[28]=  1.063  w[48]=  5.283  w[84]=  0.828   1/g4^2 = 2.4115  -> g4 = 0.644
+     relative residual = 0.0108
+     119 scrambles: best 0.0029 -> ratio 0.27   *** a scramble does as well ***
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\inverse_map.json

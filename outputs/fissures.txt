@@ -1,0 +1,174 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+F1 -- THE ANALYTIC BRANCH A4 = 0, SETTLED EXACTLY INSTEAD OF COUNTED
+====================================================================================================
+  the lattice, per multiplet:
+  multiplet      A4     8D            G     G / A4
+  7(+,+)          0     -6     -0.69315         --
+  7(+,-)          1      8      2.08333      2.083
+  28(+,+)        17     16     21.55372      1.268
+  28(+,-)         4      2     -3.45017     -0.863
+  48(+,+)        18      0     20.86447      1.159
+  48(+,-)         8     28      4.19002      0.524
+  84(+,+)        68     10     21.75220      0.320
+  84(+,-)       109     80     79.87137      0.733
+  gauge : A4 = -18,  8D = -27,  G = -23.98363
+
+  TWO STRUCTURAL FACTS, and together they make the question finite:
+     (a) the ONLY multiplet with A4 = 0 is 7(+,+) -- it can be added freely without leaving
+         the branch, and it carries 8D = -6 and G = -0.69315, so it lowers BOTH.
+     (b) every other A4 is strictly positive, so A4 = 0 forces  sum m_j A_j = 18  exactly,
+         and only multiplets with A4 <= 18 can appear at all.
+         usable : 7(+,-) (A4=1), 28(+,+) (A4=17), 28(+,-) (A4=4), 48(+,+) (A4=18), 48(+,-) (A4=8)
+
+  So max G on the branch is attained with NO 7(+,+), and it is a finite enumeration.
+
+  contents with A4 = 0 and no 7(+,+) : 11, and that is ALL of them
+  maximum of G over the whole branch : +13.51637   at 8D = 117
+     18x7(+,-)   (18 multiplets)
+
+  ==> G > 0 IS REACHABLE ON THE ANALYTIC BRANCH.  The paragraph I wrote this morning --
+      'within the closed form the analytic branch admits no Higgs mass at all' -- is
+      FALSE.  What is true is the capped statement, and the cap is the whole content of it.
+
+  what the branch actually looks like, by content size:
+  N       count      max G   8D there        m_h GeV  alpha_min    1/R5 GeV
+  4           1   -11.4369         45             --         --      G <= 0
+  5           1   -22.5273         21             --         --      G <= 0
+  8           1   -10.7438         51             --         --      G <= 0
+  9           1   -21.8341         27             --         --      G <= 0
+  11          1     1.0397         81            8.2    2.66764        60.3 
+  12          1   -10.0506         57             --         --      G <= 0
+  15          1     1.7329         87           10.6    2.14151        75.1 
+  18          1    13.5164        117           29.6    0.88921       180.8 
+
+  the branch opens at N = 11 multiplets : 10x7(+,-) + 1x48(+,-)
+     A4 = 0, 8D = 81, G = 1.0397  ->  m_h = 8.2 GeV, 1/R5 = 60 GeV
+  and every content of at most six multiplets has G <= 0, which is why a capped count
+  looked like a theorem.  THE CAP WAS THE CLAIM.
+
+  what survives, and it is still worth stating: on the analytic branch the Higgs mass is not
+  a free parameter.  (I) degenerates to the EQUALITY G = 3 mu, so m_h is fixed by the content
+  with no window left -- a one-parameter family collapses to a point.  Contents on the branch
+  whose forced m_h lands in 125-127 GeV:
+     0 of 11
+
+
+  AND HERE IS THE STATEMENT THAT REPLACES THE FALSE ONE, and it is a theorem over the WHOLE
+  branch, infinite family included.  Adding a 7(+,+) changes nothing in A4 and lowers G by
+  0.69315, and m_h = K pi^2 sqrt(G/3) is increasing in G.  So the largest Higgs mass anywhere on
+  the branch is the largest over the 11 contents with no 7(+,+):
+
+     max m_h on the analytic branch = 29.6 GeV      at 18x7(+,-)
+     against the measured 125.25 GeV -- short by a factor of 4.2.
+     (and its 1/R5 would be 181 GeV, below m_W)
+
+  ==> THE ANALYTIC BRANCH IS NOT EMPTY, IT IS UNPHYSICAL, AND THE BOUND IS EXACT.
+      Cancelling the x^4 log x branch point is possible; doing it and keeping a
+      Standard-Model Higgs is not.  That is a stronger statement than the one I wrote
+      this morning AND it is true, which the other was not.
+
+  AND THE CONGRUENCE STANDS UNTOUCHED, because it is arithmetic and not a count:
+     8D = 3 (mod 6) on all 11 : violations = 0
+     8D = 1 anywhere on the branch : 0
+     -> 'cancelling the branch point forbids the quantum' is a THEOREM. 'the branch is empty'
+        was a miscount.  The first is the result; the second was mine and it is withdrawn.
+
+====================================================================================================
+F2 -- DOES THE COMB CONTAIN ITS OWN TARGET CASE?
+====================================================================================================
+  M^2 = C (6 mu + A4)/k with C = 8 pi^2 m_W^2 / 3 zeta(3), and the admissible A4 at fixed k
+  step by three.  If the five published rows do not sit on teeth of their own comb, the law
+  is decoration.  Tooth index  n = (A4 - A4_ref)/3  must come out an integer for each row,
+  with A4_ref the smallest admissible A4 on that row's rung.
+
+  row       8D     A4      A4+8D          mod 3      tooth n integer?
+  (1)       15    258        273              0           86 yes
+  (2)       29    271        300              0           90 yes
+  (3)        9    189        198              0           63 yes
+  (4)       11    223        234              0           74 yes
+  (5)       15    255        270              0           85 yes
+
+  every published row lands on a tooth : True
+
+  and the spacing, evaluated where it would be measured:
+  8D=k       dM^2 (TeV^2)        at 10 TeV at 3 TeV
+  1                0.4246          21.2 GeV        70.8 GeV
+  3                0.1415           7.1 GeV        23.6 GeV
+  9                0.0472           2.4 GeV         7.9 GeV
+  11               0.0386           1.9 GeV         6.4 GeV
+  15               0.0283           1.4 GeV         4.7 GeV
+
+  CONTROL that can fail -- a decoy spacing.  If the step in A4 were 1 instead of 3, the
+  teeth would be three times denser and the published rows would still land on them, so
+  'the rows land on teeth' alone proves nothing.  What carries content is that A4 + 8D = 0
+  (mod 3) on every row, which the column above shows and which a step of 1 does not use.
+
+====================================================================================================
+F3 -- IS THE PER-D CEILING MONOTONE, OR IS IT FORTY RUNGS OF SCAN?
+====================================================================================================
+  1/R5 = 2 m_W/alpha and x^2 = 12 z3 (k/8)/(6 mu + t), so
+     (1/R5)^2  proportional to  (6 mu + t*(k)) / k
+  where t*(k) is the largest admissible A4 on rung k.  A SUFFICIENT condition for the
+  ceiling to be monotone decreasing is that t*(k)/k be non-increasing -- then both terms
+  fall.  The paper asserts monotonicity from a scan of forty rungs.  Here is the ratio it
+  actually rests on, read off the certificate table:
+
+  8D=k        t*(k)        t*(k)/k       falling?
+  1             215        215.000               
+  3             336        112.000            yes
+  5             436         87.200            yes
+  7             533         76.143            yes
+  9             630         70.000            yes
+  15            918         61.200            yes
+  21           1209         57.571            yes
+  33           1800         54.545            yes
+  45           2397         53.267            yes
+  65           3400         52.308            yes
+  99           5112         51.636            yes
+  129          6630         51.395            yes
+  201         10272         51.104            yes
+  301         15335         50.947            yes
+  501         25470         50.838            yes
+
+  t*(k)/k is non-increasing across the certificate rungs : True
+  ...which is exactly the sufficient condition, so the monotonicity the ceiling rests on is
+  NOT an accident of the scan -- it follows from one measured property of t*.  What is still
+  missing, and it is missing on purpose: t* is the optimum of a program whose constraint
+  G <= G*(t,k) carries a logarithm, so t*(k)/k non-increasing is MEASURED here and not
+  proved.  Stating it as the sufficient condition is the improvement; proving it is open.
+
+====================================================================================================
+F4 -- HOW FAR IS THE MISSING WITNESS?
+====================================================================================================
+  the certifying vertex is (A4, 8D) = (215, 1) and it demands G <= G* = -233.1677.
+  Two integer conditions and one inequality.  Ask each separately -- a claim that fails on
+  the FIRST is a different problem from one that fails on the third.
+
+  over every content of at most 16 multiplets:
+     with A4 = 215 exactly                    : 1367
+     of those, also 8D = 1                    : 14
+     of those, also G <= G*                   : 0
+     smallest G among the (215, 1) contents    : 16.4325   against G* = -233.1677  (short by 249.6002)
+        4x7(+,+) + 1x7(+,-) + 7x28(+,-) + 3x84(+,+)   (15 multiplets)
+
+  ==> the vertex IS reachable in the two integer moments; what fails is the third
+      condition, the one carrying the logarithm.  That relocates the open question:
+      it is not 'can the lattice reach (215,1)' but 'can it reach it cheaply enough in G'.
+
+  and this is a search, not a proof: absence up to N = 16 is absence up to N = 16.
+
+====================================================================================================
+THE NUMBERS THIS FILE PUTS IN THE PAPER, AT THE PRECISION THE PAPER PRINTS THEM
+====================================================================================================
+  (check_numbers.py greps the archive literally, so a figure rounded in the prose has to
+   exist rounded here too -- otherwise the gate cannot tell a rounding from an invention.)
+
+     max m_h on the analytic branch          : 29.6 GeV
+     short of the measured value by a factor : 4.2
+     G* at the certifying vertex             : -233.2
+     smallest G among the (215,1) contents   : 16.4
+     the gap                                 : 250
+     t*(k)/k at k = 1, 9, 501                : 215, 70, 50.8
+     contents with A4 = 215                  : 1367
+     of those with 8D = 1                    : 14

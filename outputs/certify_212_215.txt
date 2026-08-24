@@ -1,0 +1,84 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+A -- THE REMAINDER-CORRECTED IDENTITY, AND HOW FAR IT MOVES G*
+====================================================================================================
+  at the vertex (215, 1) with m_h at the top of the window:
+     x* = 0.050346   (alpha = 0.016025)   G*(truncated) = -233.1677
+     the two vertices are separated by 0.067 in the log budget, which is the same units as G.
+
+  dG* = -3 [ x R''(x) - R'(x) ] / x^3,  evaluated on the contents that actually sit there.
+
+  contents at (215, 1) : 26933
+  ordered by log budget; the ones that come closest to paying are at the top.
+
+  content                                               N       R'(x*)      R''(x*)          dG*
+  16x7(+,+) + 1x7(+,-) + 58x28(+,-)                    75    2.597e-06    4.032e-04     -0.41612
+  20x7(+,+) + 1x7(+,-) + 56x28(+,-) + 1x48(+,-)        78    2.557e-06    4.032e-04     -0.41707
+  21x7(+,+) + 5x7(+,-) + 57x28(+,-)                    83    2.557e-06    4.320e-04     -0.45114
+  24x7(+,+) + 1x7(+,-) + 54x28(+,-) + 2x48(+,-)        81    2.516e-06    3.744e-04     -0.38394
+  25x7(+,+) + 5x7(+,-) + 55x28(+,-) + 1x48(+,-)        86    2.517e-06    3.600e-04     -0.36689
+  26x7(+,+) + 9x7(+,-) + 56x28(+,-)                    91    2.516e-06    4.320e-04     -0.45211
+  28x7(+,+) + 1x7(+,-) + 52x28(+,-) + 3x48(+,-)        84    2.476e-06    4.176e-04     -0.43601
+  29x7(+,+) + 5x7(+,-) + 53x28(+,-) + 2x48(+,-)        89    2.475e-06    3.744e-04     -0.38490
+
+  largest |dG*| among them : 0.45211   against the 0.067 that separates 215 from 212
+  the ordering survives the truncation : False
+  -> IT DOES NOT.  The correction is the same size as the gap, so route (A) cannot
+     decide this vertex and route (B) is the one that has to.
+
+====================================================================================================
+B -- WITHOUT ANY BOUND AT ALL: the vertex is finite, so evaluate it
+====================================================================================================
+  m_h is monotone in G at fixed (A_4, 8D):  dG/dmu = 18 mu /(6 mu + A_4) > 0.
+  So the content of smallest G has the smallest m_h, and if even that one is above the
+  window then every content at the vertex is.
+
+  the window in G at (215, 1) : [-238.553, -233.168]
+  G actually available there   : [-233.100, 249.330]
+  smallest available G is above the window's top : True
+
+  and the exact potential, on the extreme contents:
+  content                                                 G  alpha exact  m_h exact in window
+  16x7(+,+) + 1x7(+,-) + 58x28(+,-)                -233.100           --         -- no global min
+  74x7(+,+) + 43x7(+,-) + 8x28(+,+) + 3x48(+,+)     249.330     0.009842     233.03 False
+
+====================================================================================================
+AND THE VERTEX BELOW, WHICH HAS TO BEHAVE THE OTHER WAY
+====================================================================================================
+  contents at (212, 1) : 25502
+  window in G : [-231.412, -226.003]      available : [-228.260, 245.853]
+  contents whose G lands inside the window : 1
+     e.g. 17x7(+,+) + 2x7(+,-) + 57x28(+,-)
+     exact: no global minimum -- it is a false vacuum, which is section 8's point
+
+====================================================================================================
+THE COMPARISON THAT ACTUALLY DECIDES IT
+====================================================================================================
+  Comparing dG* against the 0.067 that separates the two vertices was the wrong test, and it
+  is worth saying why: dG* is COMMON MODE.  It shifts G* at both vertices by nearly the same
+  amount -- the contents there differ by a few multiplets out of eighty -- so it cannot
+  decide between them.  What it can do is eat into each vertex's OWN slack, and that is the
+  test:
+
+  vertex      slack (trunc)            dG*   slack (corr) verdict
+  215                -0.067         -0.452         -0.519  still fails
+  212                 2.257         -0.332          1.925  still holds
+
+  ==> BOTH VERDICTS SURVIVE THE REMAINDER.  (215, 1) fails by more once the truncation is
+      carried, not less, and (212, 1) keeps 1.93 of slack.  So the ordering is no longer a
+      statement about the algebraic surface only: it holds with the remainder included.
+
+  What is NOT claimed: dG* here is computed from the exact potential at those contents, not
+  from the uniform bound of the remainder theorem.  It is an evaluation of the correction,
+  which is legitimate because the contents are finitely many and named, but it is not the
+  uniform statement.  Turning it into one is the interval-arithmetic step.
+
+====================================================================================================
+VERDICT
+====================================================================================================
+  (A) with the remainder carried, 215 fails by -0.519 and 212 holds by 1.925.
+  (B) and independently of any correction: at (215, 1) the smallest G available is -233.100 while
+      the Higgs window tops out at -233.168, so every one of the 26933 contents there sits above the
+      window.  That is an evaluation over a finite set, not an estimate.
+
+  data written: outputs/certify_212_215.json

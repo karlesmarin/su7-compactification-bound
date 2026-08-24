@@ -1,0 +1,45 @@
+================================================================================================
+THE TOWER IN chi_dijet, FROM THE CLOSED FORM -- the figure and the numbers in it
+================================================================================================
+
+  C1  DOES EVERYTHING COLLAPSE ONTO ONE VARIABLE?
+      the same a reached from different (M_jj, chi, M_KK) must give the same F^2
+      M_jj= 3.3 chi= 1.5 M_KK=3.97 -> a=0.525719  F^2=3.160124
+      M_jj= 5.1 chi= 1.5 M_KK=9.09 -> a=0.354843  F^2=1.914165
+      M_jj= 3.9 chi= 6.0 M_KK=3.97 -> a=0.371300  F^2=2.008187
+      M_jj= 6.5 chi= 6.0 M_KK=9.09 -> a=0.270272  F^2=1.511679
+
+      C1 PASS (worst 5.6e-16)
+
+  C2  AND FAR BELOW THE TOWER IT MUST AGREE WITH kk_dijet_lo.py
+      (M_jj, chi, M_KK)            closed F^2   full ratio        rel
+      ( 3.3, 14.0, 9.09)                1.0583       1.0518      0.006
+      ( 5.1, 14.0, 9.09)                1.1408       1.1254      0.014
+      ( 3.3, 10.0, 9.09)                1.0797       1.0708      0.008
+
+      C2 PASS (worst 0.014, against the 0.035 CMS band and a 0.12 bar)
+
+  1/R_5 = 3.97 TeV  (escape) -- F^2, the exact t-channel ratio
+      M_jj [TeV]        chi=1      chi=6     chi=16
+      3.3               3.767      1.707      1.278
+      3.9               5.011      2.012      1.393
+      5.1               8.253      2.819      1.692
+
+  1/R_5 = 9.09 TeV  (ceiling) -- F^2, the exact t-channel ratio
+      M_jj [TeV]        chi=1      chi=6     chi=16
+      3.3               1.459      1.127      1.051
+      5.1               2.164      1.309      1.124
+      6.5               2.982      1.514      1.204
+
+  CMS quotes 3.5% total theoretical uncertainty in its 3.0-3.6 TeV bin, drawn as
+  the grey band.  It is a scale, not a threshold: the curves are one subprocess at
+  parton level, and the gluon channels the tower does not touch dilute them.
+
+  written: fig_tower.pdf (here and in paper/)
+
+  written: fig_tower_es.pdf (here and in paper/)
+
+  written: fig_tower.png
+================================================================================================
+VERDICT: the collapse holds and the closed form meets the old calculation off the tower.
+================================================================================================

@@ -1,0 +1,259 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+====================================================================================================
+0 -- THE SPACE IS FIVE-DIMENSIONAL, AND THE EIGHT MULTIPLETS ARE FIVE DIRECTIONS
+====================================================================================================
+  the term tables collapse onto  F(a) = sum_j u_j g_j(a),  g_j(a) = Re Li_5(s e^{i c pi a}):
+
+  multiplet     +,c=1    +,c=2    +,c=3    -,c=1    -,c=2    -,c=3
+  7(+,+)            0        0        0        1        0        0
+  7(+,-)            1        0        0        0        0        0
+  28(+,+)           1        1        0        4        0        0
+  28(+,-)           4        0        0        1        1        0
+  48(+,+)           2        1        0        8        0        0
+  48(+,-)           8        0        0        2        1        0
+  84(+,+)           4        4        0       12        1        1
+  84(+,-)          12        1        1        4        4        0
+  gauge            -2       -1        0     -7/2        0        0
+
+
+  BUT THE SIX ARE NOT INDEPENDENT.  Li_s(z) + Li_s(-z) = 2^{1-s} Li_s(z^2) at s = 5 is
+  g(+,1) + g(-,1) = g(+,2)/16 -- the same 2^p that runs the whole ladder, arriving among the
+  FUNCTIONS.  There is no second one of its kind: g(+,2)+g(-,2) would need the charge c = 4
+  and g(+,3)+g(-,3) the charge c = 6, and this model has neither.
+
+     max |g(+,1) + g(-,1) - g(+,2)/16| over 1201 points : 1.80e-12
+     the same combination at c = 2 (would need c = 4)   : 0.0648
+     the same combination at c = 3 (would need c = 6)   : 0.0648
+     singular values of the six functions : 3.48e+01 3.47e+01 3.46e+01 1.09e+00 1.08e+00 2.85e-12
+     ==> the potential lives in a space of dimension 5, not six.
+
+  So write the potential in the five INDEPENDENT coordinates, eliminating g(+,2):
+
+  multiplet     g(+,1)    g(+,3)    g(-,1)    g(-,2)    g(-,3)
+  7(+,+)             0         0         1         0         0
+  7(+,-)             1         0         0         0         0
+  28(+,+)           17         0        20         0         0
+  28(+,-)            4         0         1         1         0
+  48(+,+)           18         0        24         0         0
+  48(+,-)            8         0         2         1         0
+  84(+,+)           68         0        76         1         1
+  84(+,-)           28         1        20         4         0
+  gauge            -18         0     -39/2         0         0
+
+  rank of the 8x5 matrix : 5   ==> the kernel has dimension 3
+
+  and all three kernel vectors have NON-NEGATIVE coefficients, so they are substitutions:
+     28(+,+)    = 20x7(+,+) + 17x7(+,-)                     coefficients equal: True    max |dF| : 2.87e-11
+     48(+,+)    = 24x7(+,+) + 18x7(+,-)                     coefficients equal: True    max |dF| : 2.87e-11
+     48(+,-)    = 7(+,+) + 4x7(+,-) + 28(+,-)               coefficients equal: True    max |dF| : 2.66e-15
+
+  CONTROL -- the three relations hold on the EXACT polylogarithmic potential : True
+
+  THE THIRD IS PART VI'S, in the form it found it: su7_twoloop_weight.py has
+  48(+,+) = 4x7(+,+) + 7(+,-) + 28(+,+), which is the first two combined, and used it for
+  the opposite purpose -- the two sides have different sum C_2, 7 against 24.857, so the
+  degeneracy dies at two loops.  THE OTHER TWO NEED 37 AND 42 MULTIPLETS, and Part VI's
+  search was capped at six.  That cap has now hidden something four times.
+
+  What it buys here: the reachable set of potentials is the monoid on FIVE generators, so
+  the fibre over (A_4, 8D) is small and the enumeration is exhaustive.  It is a statement
+  about F alone -- a 28(+,+) is a different field content, with its own anomaly and spectrum
+  bookkeeping, and Part VI already showed the degeneracy does not survive two loops.
+
+  multiplet        A4       8D          W   G = q*25/12 - r ln3 - s ln2
+  7(+,+)            0       -6          1   q=0     r=0    s=1
+  7(+,-)            1        8         -1   q=1     r=0    s=0
+  28(+,-)           4        2         -3   q=4     r=0    s=17
+  84(+,+)          68       10          9   q=68    r=0    s=173
+  84(+,-)         109       80         -9   q=109   r=81   s=84
+  gauge           -18      -27       -3/2   q=-18   r=0    s=-39/2
+
+  CONTROL -- (A_4, 8D) rebuilt from u match moments() on all eight multiplets : True
+
+====================================================================================================
+1 -- THE CUT AT A FIXED y, AND y = 1 IS THE SCREEN
+====================================================================================================
+  For fixed y, F(y) - F(0) = sum_j u_j [g_j(y) - g_j(0)] is LINEAR in u, hence in the
+  multiplicities.  Its coefficients are just six numbers.
+
+  y                 +,c=1        +,c=2        +,c=3        -,c=1        -,c=2        -,c=3
+  1             -2.009048     0.000000    -2.009048     2.009048     0.000000     2.009048
+
+  Those six numbers are  Li_5(s(-1)^c) - Li_5(s):  zero on the even charges, and
+  -/+ (zeta5 + eta5) = -/+ (31/16) zeta5 on the odd ones.  So the y = 1 cut IS
+  (31/16) zeta(5) W >= 0, which is the screen of vacuum_constraint.py.  Check:
+     an arbitrary content, cut value 9.0407138651  vs  (31/16) zeta5 W = 9.0407138652   agree: True
+
+====================================================================================================
+2 -- THE CUTTING PLANE ON THE RUNG 8D = 1
+====================================================================================================
+  Start from the empty cut set, walk the rung down, and let the oracle say where to cut.
+  The allowance at each vertex is the well-depth bound Theta, ten times the closed form:
+
+     A4                   x*            Theta Theta / 1.0045
+     215            0.050346        7.979e-04       7.94e-04
+     212            0.050452        8.026e-04       7.99e-04
+     104            0.054802        1.016e-03       1.01e-03
+     92             0.055358        1.046e-03       1.04e-03
+
+  so at y = 1 the cut says (31/16) zeta5 W >= -Theta with Theta ~ 1e-3 against a quantised
+  jump of 1.0045: 2W odd then leaves W >= 1/2.  The screen is a corollary of the program.
+
+  cuts the oracle generated, in order : y = 1.000000
+
+  LARGEST A_4 ON THE RUNG WHOSE OPTIMUM SURVIVES EVERY CUT : A_4 = 104
+     1/R5 (closed form)      : 9218 GeV = 9.22 TeV
+     witness, fewest pieces  : 4x7(+,+) + 2x28(+,+) + 5x28(+,-) + 84(+,+)   (N = 12)
+     W = 5/2   (2W odd: True)
+     the oracle's worst y    : 0.017560, where F(y) - F(0) = -1.043e-04, against -Theta = -1.016e-03
+
+  AND ONLY ONE CUT WAS EVER NEEDED, AT y = 1, WHICH IS THE SCREEN.  So on the rung where
+  the bound is decided, W > 0 is not merely necessary -- it is the WHOLE of the
+  true-vacuum condition: no third minimum anywhere in [0,1] binds before it does.  That
+  is the half of open question 3 that was left unsettled, and the answer is that the
+  half nobody could see was empty.
+
+====================================================================================================
+2b -- DO THE FOUR MOMENTS DETERMINE THE POTENTIAL AT THE DECIDING VERTEX?
+====================================================================================================
+  A_4, 8D, G and W are four linear functionals on a FIVE-dimensional space, so in general two
+  contents can agree on all four and still have different potentials -- in which case the
+  cutting plane would be a strictly finer instrument than the dual it sits on.  Whether that
+  actually happens is a question about the fibre, not about dimensions, so it is asked and
+  not assumed.  Scanning the fibre at (A_4, 8D) = (104, 1), comparing in the five independent
+  coordinates so the duplication relation is not mistaken for a degeneracy:
+
+     NO SUCH PAIR.  At this vertex the four moments do determine the potential: the fibre
+     meets their common kernel in a single point.  So here -- and only here, it is a fact
+     about one vertex -- the cutting plane could not have seen anything the moments miss,
+     which is a second reason why one cut sufficed in section 2.
+
+====================================================================================================
+3 -- EVERY RUNG, WITH THE TRUE VACUUM IMPOSED THROUGHOUT
+====================================================================================================
+  Section 2 is ONE rung, and the ceiling is a statement about all of them.  Two halves.
+
+  THE HALF THAT IS FREE.  Adding the cuts can only remove contents, so the constrained
+  ceiling on a rung is at most the unconstrained one, and that is already certified by the
+  two-variable rational dual over the moment cone.  Rebuilt here on the six generators:
+
+      8D max A4 (free)  1/R5 free (GeV) beats 9.22 TeV?
+       1          215          10034.0            yes
+       3          336           6266.5             no
+       5          436           5137.3             no
+       7          533           4562.1             no
+       9          630           4208.7             no
+      11          727           3967.4             no
+      15          918           3653.1             no
+      21         1209           3390.2             no
+      33         1800           3138.3             no
+      45         2397           3016.6             no
+      65         3400           2912.7             no
+      99         5112           2831.6             no
+     129         6630           2796.2             no
+     201        10272           2753.6             no
+     301        15335           2728.4             no
+     501        25470           2708.4             no
+
+  no rung above 8D = 1 reaches 9218 GeV even UNCONSTRAINED : True
+  so the maximum over rungs of the CONSTRAINED ceiling is the rung-1 value, and the sweep
+  above is a proof of that and not an illustration.
+
+  THE HALF THAT IS NOT.  What the program actually does on the low rungs, run in full --
+  and whether any rung needs a cut that y = 1 does not supply:
+
+      8D     max A4    alpha_min     1/R5 (GeV)        TeV     cuts
+       1        104     0.017444         9218.0       9.22        1
+       3        141     0.029324         5483.6       5.48        2
+       5        157     0.037391         4300.5       4.30        2
+       7        176     0.043612         3687.1       3.69        2
+       9        186     0.049087         3275.8       3.28        2
+
+  EVERY CUT THE ORACLE EVER GENERATED, and what forced it:
+
+    rung     A_4           y    F(y) - F(0)   the content that forced it
+       1     212    1.000000      -316.4250   17x7(+,+) + 2x7(+,-) + 57x28(+,-)
+       3     147    0.680868        -4.8161   6x7(+,+) + 7(+,-) + 5x28(+,-) + 48(+,-) + 2x84(+,+)
+
+  THE THIRD MINIMUM IS REAL, AND HERE IT IS.  The cut at y = 0.680868 was forced by a content
+  with W = 1/2 -- it PASSES the screen, its electroweak point is below the other symmetric
+  point -- and yet F is 4.8161 below the origin at y = 0.680868, deeper than its own well.
+  That is exactly the object open question 3 says neither symmetric point can see.  It
+  exists, it binds, and it binds on the rung 8D = 3 and not on the rung that decides the
+  ceiling.  So the answer to the open question is not 'the worry was empty' but 'the
+  worry is real and it does not reach'.
+
+  cut locations in the shared pool, over every rung run: 1.000000, 0.680868
+  vertices left UNRESOLVED (neither emptied by the cuts nor certified) : none
+  monotone decreasing in D across those rungs : True
+
+  CEILING WITH THE TRUE VACUUM REQUIRED, OVER EVERY RUNG : 1/R5 <= 9218 GeV = 9.22 TeV
+     at 8D = 1, A_4 = 104.  Not a screened family: a bound over every bulk content whose
+     electroweak point is its vacuum.
+
+====================================================================================================
+4 -- THE CONTINUUM, CERTIFIED
+====================================================================================================
+  Everything above asks the oracle on a grid.  A grid cannot prove that nothing hides between
+  its points, so the winning witness gets a real certificate: F has a unique minimum on
+  [0,1] and it is the electroweak one.  Three ingredients, all of them explicit.
+
+  the truncated sum keeps 5000 windings; the tails are bounded, not estimated:
+     |F^(0) tail|  <=  2.98e-14        |F^(0)| Lipschitz constant  <=  304.3
+     |F^(1) tail|  <=  7.50e-10        |F^(1)| Lipschitz constant  <=  1441
+     |F^(2) tail|  <=  2.40e-05        |F^(2)| Lipschitz constant  <=  9767
+     float64 round-off allowance  1.0e-09  (measured in section 5)
+
+  the electroweak minimiser sits at alpha = 0.017560268; F there is at most -1.523091934467
+
+  (a)  F'' < 0 on [0, 0.009658]           sup F'' = -0.002507   and F'(0) = 0 exactly,
+       so F' <= 0 there and F is non-increasing.
+  (b)  F' < 0 on [0.009658, 0.015804]    sup F' = -0.002309   so F keeps falling.
+  (c)  F'' > 0 on [0.015804, 0.200000]    inf F'' = +1.812899   so F is strictly convex there,
+       and F'(0.015804) <= -3.751e-03 < 0 < +6.142e+00 <= F'(0.200000), so the minimum it holds is unique
+       and interior.  Chaining (a)-(c): F(y) >= F(alpha_EW) for every y in [0, 0.200000].
+  (d)  on [0.200000, 1]:  inf F >= -1.106374285  >  -1.523091934 >= F(alpha_EW),  margin 0.4167
+       (grid of 4001 points, Lipschitz 304.3, so nothing hides between them)
+
+  ==> THE ELECTROWEAK POINT IS THE GLOBAL MINIMUM OF F ON [0,1], and the 9.22 TeV of section 3
+      is a bound over every content, not over a screened family.  The screen has been
+      replaced by the thing it was standing in for.
+
+====================================================================================================
+5 -- CONTROLS
+====================================================================================================
+  (i) THE ORACLE MUST BE ABLE TO FIND A VIOLATION IT WAS NOT GIVEN.  The content that attains
+      10.01 TeV is a false vacuum; started with NO cuts, the oracle has to say so and name y.
+      17x7(+,+) + 2x7(+,-) + 57x28(+,-)
+      worst y = 1.000000, F(y) - F(0) = -316.4250  against -Theta = -8.026e-04   -> CUT: True
+
+  (ii) AND IT MUST NOT CUT THE CONTENTS THAT ARE FINE.  The five published rows:
+      (1)   worst y = 0.055304 (its own minimum 0.055304), F(y) - F(0) = -1.458e-02 = its depth: True
+      (2)   worst y = 0.083062 (its own minimum 0.083062), F(y) - F(0) = -6.129e-02 = its depth: True
+      (3)   worst y = 0.043593 (its own minimum 0.043593), F(y) - F(0) = -5.650e-03 = its depth: True
+      (4)   worst y = 0.046879 (its own minimum 0.046879), F(y) - F(0) = -7.874e-03 = its depth: True
+      (5)   worst y = 0.055277 (its own minimum 0.055277), F(y) - F(0) = -1.459e-02 = its depth: True
+      CONTROL -- none of the five is cut : True
+
+  (iii) THE ROUND-OFF ALLOWANCE, MEASURED RATHER THAN ASSUMED.  float64 against 50 digits,
+        on the witness, at ten points of [0,1]:
+        largest float64 - mpmath discrepancy : 7.99e-15   against the allowance 1.0e-09 : True
+
+  (iv) THE PROGRAM MUST BE ABLE TO SAY NO.  Re-run the rung 8D = 1 starting one step ABOVE
+       the answer; every A_4 there has to come back excluded.
+       A_4 in [105, 215] : nothing survives   (must be 'nothing survives')
+
+  (v) THE ROUNDING DIRECTION MUST NOT DECIDE ANYTHING.  Every admissibility test uses the
+      permissive bound on G; if the strict one gave a different verdict anywhere on the
+      deciding rung, the answer would be an artefact of the sixteenth digit.
+      contents on 8D = 1, A_4 in [103, 215], whose verdict flips : 0   <-- must be 0
+
+  (vi) THE FIVE-GENERATOR FIBRE MUST CONTAIN WHAT THE EIGHT-GENERATOR ONE DOES.  If the three
+      relations were wrong, the search would be missing potentials; the sharpest test is that
+      the content the paper quotes as its witness turns up in the fibre, as a POTENTIAL --
+      compared in the five independent coordinates, since the sixth is not a coordinate.
+      the paper's witness 16x7(+,+) + 28(+,-) + 48(+,+) + 4x48(+,-) + 84(+,+)
+      is in the fibre at (A_4, 8D) = (104, 1) : True
+      fibre size at that vertex : 49 contents
+
+archived: outputs/semi_infinite.json

@@ -1,0 +1,108 @@
+==============================================================================================
+COLOUR-OCTET vs COLOUR-SINGLET FOUR-QUARK OPERATORS IN DIJET PRODUCTION
+why the CMS-EXO-24-011 contact-interaction limit does not transfer to a KK gluon tower
+==============================================================================================
+
+[0] CONTROLS ON THE GENERATORS
+   C0a Tr(T^a T^b) = delta^ab / 2 ........................... PASS (max dev 1.1e-16)
+   C0b Tr(T^a) = 0 .......................................... PASS (max 0.0e+00)
+   C0c sum_a (T^a T^a) = C_F 1 with C_F = 4/3 ............... PASS (1.333333)
+
+[1] THE COLOUR DECOMPOSITION OF THE OCTET OPERATOR
+    T^a_ij T^a_kl  =  (1/2) delta_il delta_kj  -  (1/(2 N_c)) delta_ij delta_kl
+
+   C1  identity holds elementwise ........................... PASS (max dev 5.6e-17)
+
+    So O_8 = (1/2) O_1~ - (1/6) O_1, where O_1~ is the CROSSED-colour singlet.
+    O_8 is therefore NOT proportional to O_1: the recast is not a rescaling.
+
+[2] COLOUR SUMS FOR q q' -> q q'  (distinct flavours, t-channel)
+    amplitude colour factors:   QCD and OCTET-CI:  T^a_ji T^a_lk
+                                SINGLET-CI:        delta_ji delta_lk
+
+    colour sum                                value
+--------------------------------------------------
+    |QCD|^2      (T.T)x(T.T)               2.000000
+    |octet CI|^2 (T.T)x(T.T)               2.000000
+    |singlet CI|^2 (1.1)x(1.1)             9.000000
+    QCD x octet CI  INTERFERENCE           2.000000
+    QCD x singlet CI INTERFERENCE          0.000000  <-- vanishes
+--------------------------------------------------
+
+   C2  singlet CI does not interfere in THIS contraction ..... PASS
+       reason: the colour factor is Tr(T^a) Tr(T^a) = 0, control C0b.
+       AND THAT IS ALL IT SAYS.  See [2b]: it does not survive identical quarks,
+       and an earlier version of this file drew a conclusion from it that was wrong.
+   C3  octet CI interferes at FULL gluon strength ........... PASS
+       reason: its colour structure is identical to one-gluon exchange.
+   F1  a random colour structure does NOT match C3 ......... PASS
+==============================================================================================
+[2b] AND NOW THE CASE THAT KILLS THE OBVIOUS CONCLUSION: q q -> q q
+==============================================================================================
+
+    For identical quarks the t and u channels both exist, and the CROSSED contractions -- the
+    t-channel gluon against the u-channel contact term -- are contractions C2 never looked at.
+    Writing the colour tensors as C[i,j,k,l] for q(i) q(k) -> q(j) q(l):
+
+      contraction                       value
+--------------------------------------------
+      QCD_t x singlet_t                0.0000
+      QCD_t x singlet_u  (crossed)     4.0000
+      QCD_u x singlet_t  (crossed)     4.0000
+      QCD_u x singlet_u                0.0000
+--------------------------------------------
+      SINGLET, summed over channels     8.0000
+      OCTET,   summed over channels     2.6667
+
+   C2b singlet DOES interfere once quarks are identical .... PASS (8.0000)
+   C2c and its colour weight EXCEEDS the octet's ........... PASS (3.00 x)
+
+    So the earlier reading of C2 -- that a published singlet limit understates what the data
+    say about an octet -- is not merely unproven: in the channel that dominates a high-mass
+    dijet sample it points the other way.  The decisive check needs no algebra at all:
+    [CMSangular] quotes 17 TeV for destructive and 37 TeV for constructive interference.  A
+    vanishing interference cannot produce a limit that depends on the sign.
+==============================================================================================
+[3] WHAT THIS MEANS FOR THE LIMIT
+==============================================================================================
+
+    CMS parametrises its scenarios as   L = (2 pi / Lambda^2) [ eta_LL (qL g qL)(qL g qL) + ... ]
+    with COLOUR-SINGLET currents (their Sec. on CI, Table 3).  Our tower gives
+
+        L_KK = - (pi^2 / 6) g_s^2 R_5^2 (qbar g^mu T^a q)(qbar g_mu T^a q),
+
+    vector-like in chirality -- so it matches their (eta_LL, eta_RR, eta_RL) = (1,1,1) row,
+    the Lambda_VV scenario -- but OCTET in colour, which none of their rows is.
+
+    The two therefore enter the observable differently:
+
+      * the octet carries the colour flow of one-gluon exchange, so it interferes with QCD at
+        full strength in the t-channel (C3);
+      * the singlet does not interfere in that contraction (C2) -- but it does once the quarks
+        are identical, through the crossed t-u terms, and there its colour weight is the LARGER
+        of the two (C2b, C2c).
+
+    Both operators therefore interfere, with different weights in different channels, and which
+    of the two a given dataset constrains more tightly is not decidable from colour factors
+    alone.  It depends on the flavour composition of the sample, which is a PDF question, and on
+    the relative size of the interference and the quadratic term at the scales probed.
+
+    What survives is the weaker and true statement: the colour structure and the interference
+    pattern both differ from the CMS benchmark, so its published CI scale cannot be transferred
+    to the Kaluza-Klein tower.  A recast is required.  Its direction is not known in advance.
+
+    What is still needed, and is NOT done here:
+      - the interference term is signed, and the sign decides destructive vs constructive.  The
+        effective propagator of [DMN01] gives 1/q^2 + sum_n 2/(q^2 - m_n^2), both terms negative
+        for spacelike q^2, so the tower ADDS to QCD -- constructive, and consistent with [DMN01]
+        finding sigma_KK / sigma_SM > 1.  CMS's convention (their Table 3 note) calls that the
+        eta < 0 branch, whose published limit is the STRONGER one.
+      - the actual chi_dijet shape, which needs the partonic cross sections at NLO.  CMS use
+        CIJET 1.0 for exactly this.  Without it we can bound the direction, not the number.
+      - and the EFT itself fails near the resonance: with 1/R_5 = 3.97 TeV the sensitive region
+        M_jj ~ 2-8 TeV sits ON the tower, not below it, so the escape branch needs the full
+        propagator and not a contact operator at all.
+    
+==============================================================================================
+VERDICT: all controls pass; the octet/singlet distinction is exact, not an estimate.
+==============================================================================================

@@ -1,0 +1,71 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+====================================================================================================
+A -- THE ARITHMETIC TESTS, which no normalisation can touch
+====================================================================================================
+row         8D       A4        8D odd? 8D+A4 = 0 (3)?    verdict
+(1)         15      258           True           True     passes
+(2)         29      271           True           True     passes
+(3)          9      189           True           True     passes
+(4)         11      223           True           True     passes
+(5)         15      255           True           True     passes
+
+Their own five rows pass both.  A future table that failed either would be arithmetically
+impossible in this model class, whatever its authors' conventions -- which is the point.
+
+====================================================================================================
+B -- THE CORRELATION: m_h and 1/R_5 are not independent
+====================================================================================================
+With m_h pinned and mu = m_h^2/(K pi^2)^2,   x^2 = 12 z3 D/(6 mu + A_4),  so
+
+     1/R_5 = 2 pi m_W sqrt( (6 mu + A_4) / (12 z3 D) )     -- content in, scale out
+
+row          D       A4   1/R5 theirs     1/R5 ours         ratio
+(1)     1.8750      258          3740          2908         1.286
+(2)     3.6250      271          1985          1936         1.025
+(3)     1.1250      189          7657          3689         2.076
+(4)     1.3750      223          6185          3430         1.803
+(5)     1.8750      255          3740          2909         1.286
+
+The anchor band, stated exactly: the ROW-WISE range of alpha_ours/alpha_theirs is 1.03-2.08.
+Part VI section 7 quotes the GROUP MEANS, which are a different statistic: 1.94 with a 48 (n=2)
+and 1.20 without (n=3).  Every ABSOLUTE scale below carries this factor; it is the one number
+in this paper that is not settled, and the bands quoted use the row-wise range, not the means.
+
+====================================================================================================
+C -- THE CEILING, and what it costs the model to survive
+====================================================================================================
+  ceiling in OUR normalisation, any content, m_h <= 127 GeV :    10034 GeV
+  the same, rescaled by the anchor band                     :    10289 - 20829 GeV
+  ceiling at their own content size (at most 6 multiplets)  :     2182 GeV  (ceiling_ilp.py)
+  their own published 1/R_5 column                          : 3740, 1985, 7657, 6185, 3740 GeV
+
+Read against the collider bounds this scale controls -- the KK excitations of the gauge bosons
+sit at 1/R_5 -- the statement is sharp in both directions:
+
+  * ATLAS/CMS exclude a KK gluon below about 4 TeV and a sequential Z' below about 5 TeV.
+    A content of their own size gives at most 2182 GeV in our normalisation and 4529 GeV even at
+    the top of the anchor band -- BELOW the published exclusions.  The small-content corner of
+    the model class is therefore already disfavoured, and that is a consequence of the closed
+    form, not of any new experiment.
+  * the ceiling caps the whole class at 10.0 TeV (20.8 TeV at the top of the band).  There is no
+    corner of the multiplet lattice that puts the compactification scale beyond that, so a
+    machine that reaches it settles the class.  FCC-hh does; HL-LHC does not.
+
+  >> The prediction is bounded ABOVE, which is the useful direction: the model cannot retreat
+     to higher scales by adding matter.  Adding matter raises A_4, and A_4 raises 1/R_5 only
+     until the Higgs window closes it off -- which is exactly what the integer program measures.
+
+====================================================================================================
+D -- AND A PREDICTION IN SOMEONE ELSE'S FRAMEWORK
+====================================================================================================
+Cacciapaglia et al. (arXiv:2409.16137) decide orbifold stability by comparing the potential at
+a = 0 and a = 1/2, with weight eta(5)/zeta(5) = 15/16.  Our rung k=0 is that criterion, and in
+this model it reads  32 F(0)/zeta(5) = 9 + even, always ODD.  Hence
+
+     |F(0)| >= zeta(5)/32   for every bulk content, and the bound is attained.
+
+Their criterion, applied to a model they did not consider, is NEVER marginal.  That is a
+statement in their language, about their question, that they can check against their own code.
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\prediction.json

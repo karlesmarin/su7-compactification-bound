@@ -1,0 +1,67 @@
+{
+ "charges": {
+  "SU(2)": {
+   "adj": [
+    -2,
+    0,
+    2
+   ],
+   "fund": [
+    -1,
+    1
+   ],
+   "CG": 2.0,
+   "CR": 0.5
+  },
+  "SU(3)": {
+   "adj": [
+    -2,
+    -1,
+    -1,
+    0,
+    0,
+    1,
+    1,
+    2
+   ],
+   "fund": [
+    -1,
+    0,
+    1
+   ],
+   "CG": 3.0,
+   "CR": 0.5
+  }
+ },
+ "critical_nf": [
+  {
+   "group": "SU(2)",
+   "rep": "fund",
+   "nf_ours": 3.0,
+   "nf_theirs": 3.0
+  },
+  {
+   "group": "SU(3)",
+   "rep": "fund",
+   "nf_ours": 4.5,
+   "nf_theirs": 4.5
+  },
+  {
+   "group": "SU(2)",
+   "rep": "adj",
+   "nf_ours": 0.75,
+   "nf_theirs": 0.75
+  },
+  {
+   "group": "SU(3)",
+   "rep": "adj",
+   "nf_ours": 0.75,
+   "nf_theirs": 0.75
+  }
+ ],
+ "minima": {
+  "SU(2)": 0.25,
+  "SU(3)": 0.3333333333333333
+ },
+ "prefactor_ratio": 0.20264236728467555
+}

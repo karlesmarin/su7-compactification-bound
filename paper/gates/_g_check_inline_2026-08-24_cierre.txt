@@ -1,0 +1,22 @@
+================================================================================================
+LA MATEMATICA EN LINEA, EDICION CONTRA EDICION
+  EN 1297 formulas en linea (832 distintas)   ES 1295 (828 distintas)
+================================================================================================
+
+  solo en la inglesa       0 formula(s) que no existen al otro lado
+
+  solo en la castellana    0 formula(s) que no existen al otro lado
+
+  lista blanca (4), comprobadas a mano:
+     -27\to-18              la ES escribe «pasa de $-27$ a $-18$», con los dos numeros sueltos
+     -39\to-30              idem, «$2U$ de $-39$ a $-30$»
+     M_{jj}=5               la ES escribe «$M_{jj}$ entre $5$ y $8$~TeV»
+     (TEXT,TEXT)            «(representation, parity)» va en matematicas en la EN y en prosa en la ES
+
+  falsacion: la errata del cuarto momento
+     la version correcta   (S_2+\Delta_2)/2=\mathcal{A}_2=A_4     presente
+     la version erronea    (S_2+\Delta_2)/2=A_2                   ausente, bien
+
+================================================================================================
+la matematica en linea de las dos ediciones dice lo mismo.
+================================================================================================

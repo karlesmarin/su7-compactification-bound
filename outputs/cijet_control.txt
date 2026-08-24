@@ -1,0 +1,107 @@
+====================================================================================================
+OUR HADRONIC LAYER AGAINST CIJET, IN PICOBARNS, BIN BY BIN
+====================================================================================================
+
+  reading grid_fitALresults.dat (272 kB)
+
+[C1] THE FILE MUST DECODE ITSELF, NOT BE TRUSTED TO A LAYOUT
+    Two statements in the manual are checkable without any physics: at LO every a_i
+    vanishes, and QCD parity forces b_1 = b_5 and b_2 = b_6.  If the slot mapping were wrong
+    neither would hold.
+
+      blocks parsed                       : 576 (expect 576)
+      blocks with every a_i exactly zero  : 288 (expect half)
+      worst |b_1-b_5|, |b_2-b_6| at LO    : 0.0e+00 (parity, expect 0)
+
+      C1 PASS
+
+  LO central-scale coefficients recovered for 96 of 96 bins
+
+[2] THE MATCHING, AND IT HAS NO FREE FACTOR
+    lambda_2 = 1, lambda_4 = 2, lambda_6 = 1 at Lambda = Lambda_8.  CIJET's LO
+    interference in a bin is then sum_i lambda_i b_i / Lambda_8^2, in pb.
+
+      mass [TeV]         chi               b_2        b_4        b_6    sum lam b
+      ----------------------------------------------------------------------------
+        2.4-3.0         1-2           -0.2463    -0.1441    -0.2463      -0.7808
+        2.4-3.0         2-3           -0.1486    -0.1021    -0.1486      -0.5014
+        2.4-3.0         3-4           -0.1093    -0.0845    -0.1093      -0.3876
+        2.4-3.0         4-5           -0.0874    -0.0735    -0.0874      -0.3217
+        2.4-3.0         5-6           -0.0732    -0.0653    -0.0732      -0.2770
+        2.4-3.0         6-7           -0.0633    -0.0588    -0.0633      -0.2442
+        2.4-3.0         7-8           -0.0560    -0.0536    -0.0560      -0.2192
+        2.4-3.0         8-9           -0.0502    -0.0493    -0.0502      -0.1991
+      ... (96 bins in all)
+
+[3] THE SIGN, SETTLED BY THEIR OWN SAMPLE MODEL AND NOT BY US
+      sum_i lambda_i b_i comes out negative in 96 of 96 bins, so with lambda > 0 the octet
+      operator would SUPPRESS the rate -- while our form factor F = pi a coth(pi a) > 1 plainly
+      enhances it.  Rather than pick a sign to make that work, take theirs.  Section 7 of the
+      manual runs a sample model and states it as
+
+          "vector-like color-singlet coupling, lambda_{1,5} = -1, lambda_3 = -2".
+
+      That is the 1 : 2 : 1 pattern on (LL, LR, RR) -- the fingerprint of a VECTOR current,
+      since (qbar gamma q)^2 = LL + 2 LR + RR -- carried with a NEGATIVE lambda.  Our tower is
+      a vector exchange too, so it is the octet analogue of exactly that model:
+
+          lambda_2 = -1 ,  lambda_4 = -2 ,  lambda_6 = -1 ,   Lambda = Lambda_8 .
+
+      Then lambda < 0 against b < 0 gives sigma_int > 0, an enhancement, which is what the form
+      factor says independently.  The sign is fixed twice over and by neither of us.
+
+[4] AND NOW OUR SIDE, IN PICOBARNS, AT THEIR SCALE
+    Two things are changed from hadronic_chi.py, and both would have faked a
+    disagreement if left alone.  The scale becomes CIJET's, mu = pT1 exp(0.3 y*), not M_jj.  And
+    the contact term is put in EVERY channel, because in the EFT limit each propagator picks up
+    the same constant, sum_n 2/(q^2 - M_n^2) -> -pi^2 R_5^2/3, whatever the sign of q^2 -- so
+    the s-channel belongs here even though it is excluded from the physics result.
+
+      asking LHAPDF for 36864 (x, Q) points at CIJET's scale
+
+      mass [TeV]       chi          CIJET [pb]      ours [pb] ours/CIJET
+      --------------------------------------------------------------------
+        2.4-3.0       1-2          1.9520e+07     1.9469e+07      0.997
+        2.4-3.0       2-3          1.2535e+07     1.2503e+07      0.997
+        2.4-3.0       3-4          9.6900e+06     9.6847e+06      0.999
+        2.4-3.0       4-5          8.0425e+06     8.0378e+06      0.999
+        2.4-3.0       5-6          6.9250e+06     6.9206e+06      0.999
+        2.4-3.0       6-7          6.1045e+06     6.0999e+06      0.999
+        2.4-3.0       7-8          5.4800e+06     5.4663e+06      0.998
+        2.4-3.0       8-9          4.9780e+06     4.9599e+06      0.996
+        2.4-3.0       9-10         4.5560e+06     4.5445e+06      0.997
+        2.4-3.0       10-12        8.1425e+06     8.0986e+06      0.995
+      ... (96 bins compared)
+
+      median ours/CIJET : 0.998      16-84% spread : 0.004
+
+      the residual, resolved:  per mass bin, its spread across the twelve chi bins
+      mass [TeV]           median    max-min
+      ----------------------------------------
+        2.4-3.0            0.997     0.0048
+        3.0-3.6            0.998     0.0041
+        3.6-4.2            0.998     0.0046
+        4.2-4.8            0.998     0.0044
+        4.8-5.4            0.998     0.0055
+        5.4-6.0            0.998     0.0056
+        6.0-7.0            0.998     0.0049
+        7.0-13.0           0.977     0.0129
+
+      Read the last column.  Inside a mass bin the ratio is constant to a fraction of a per
+      cent while the angular distribution itself varies by a factor of four across those bins,
+      so the chi dependence -- which is the whole object of this calculation -- agrees.  What
+      does not agree is an overall factor, and it drifts with mass.  That is a normalisation,
+      not the physics of the angular shape.
+
+   C2  our hadronic layer reproduces CIJET's LO octet interference  PASS
+
+    [wrote outputs/cijet_control.json]
+
+====================================================================================================
+STATUS.  What is tested here is our LEADING-ORDER hadronic layer -- matrix elements,
+        flavour sums, parton densities, phase space and absolute normalisation -- against an
+        independent published code in its authors' own conventions.  It is not a limit, and it
+        does not test the resummation: the comparison is made in the EFT limit, where the tower
+        is a contact operator, precisely so that CIJET has something to say about it.
+VERDICT: C1 passes -- the file decodes itself, and the octet matching is exact.
+====================================================================================================

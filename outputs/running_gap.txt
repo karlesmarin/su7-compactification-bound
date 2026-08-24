@@ -1,0 +1,44 @@
+================================================================================================
+1 -- THE GAP  alpha_2^-1 - alpha_3^-1  UNDER FOUR-DIMENSIONAL RUNNING
+================================================================================================
+inputs at M_Z = 91.1876 GeV:  alpha_em^-1 = 127.951, sin^2 theta_W = 0.23121, alpha_s = 0.1179
+   =>  alpha_2^-1(M_Z) = 29.584,  alpha_3^-1(M_Z) = 8.482,  gap = 21.102
+one-loop Standard-Model coefficients:  b_2 = -19/6, b_3 = -7
+
+         scale        a2^-1        a3^-1        gap      e-folds
+           M_Z       29.584        8.482      21.10        0.000
+         1 TeV       30.791       11.150      19.64        2.395
+         2 TeV       31.140       11.922      19.22        3.088
+      3.97 TeV       31.485       12.685      18.80        3.773
+     10.03 TeV       31.953       13.719      18.23        4.701
+
+gap at 2 TeV                : 19.22
+gap at the certified ceiling: 18.23
+it moves by 0.98 over 1.61 e-folds -- 0.61 per e-fold.
+
+  So four-dimensional running cannot close it: the whole burden falls on the
+  Kaluza-Klein tower, and how far the gap has to be closed is 18.2, not 21.1.
+
+================================================================================================
+2 -- THE ANCHOR EXTRAPOLATIONS, which are extrapolations and not bounds
+================================================================================================
+The right-hand column of section 8's table multiplies by 2.08, the largest ratio measured
+over the five published rows.  Printed here so the numbers in that table regenerate.
+
+                                                       ours       x 2.08
+content of their own size (<= 6 multiplets)          2.18 T       4.53 T
+ceiling over all contents                           10.03 T      20.82 T
+ceiling for contents that can afford the escape       3.97 T       8.24 T
+
+  EXTRAPOLATIONS, NOT BOUNDS.  A ratio measured on five rows is a measurement of a
+  discrepancy, not a weight, and a two-loop term is under no obligation to be a uniform
+  rescaling of anything.  The paper marks them with a dagger for that reason.
+
+================================================================================================
+CONTROLS
+================================================================================================
+  gap(2 TeV)   reproduces the 19.2 in the text : True  (19.218)
+  gap(ceiling) reproduces the 18.2 in the text : True  (18.234)
+  control -- flip the sign of b_3 and the gap becomes 28.71, i.e. it moves the other way
+             and by 7.6 instead of 2.9: the sign of the QCD beta function is doing the
+             work, and the test can tell.

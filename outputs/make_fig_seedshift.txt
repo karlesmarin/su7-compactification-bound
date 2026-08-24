@@ -1,0 +1,19 @@
+========================================================================================
+LAS DOS SEMILLAS, EN LAS COORDENADAS ENTERAS (2A_4, 8D, 2U, V, 2W)
+========================================================================================
+  publicada : ['-36', '-27', '-39', '0', '-3']
+  candidata : ['-27', '-18', '-30', '0', '-3']
+  Delta     : ['9', '9', '9', '0', '0']
+
+  CONTROL 1: .es par todo generador de materia en (2A_4, 8D, 2W)?
+     los ocho son pares: la clase de paridad la fija el punto base
+
+  CONTROL 2, y puede fallar: una semilla ficticia de corchete (3/2, 3, 5)
+     celda de la publicada : (0, 1, 1)
+     celda de la candidata : (1, 0, 1)
+     celda de la ficticia  : (1, 1, 0)   distinta de las dos, como debe ser
+
+  la arista publicada -> candidata se mueve en: 2A_4, 8D
+  y NO se mueve en   : 2W
+
+  escrito: fig_seedshift.pdf (aqui y en paper/) y fig_seedshift.png

@@ -1,0 +1,26 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+
+============================================================================================
+THE FIVE PUBLISHED ROWS -- closed form against OUR OWN numerical minimum of the same F
+============================================================================================
+row          D       A4   ours(num) closed form    err %      theirs ours/th
+(1)     1.8750   258.00    0.055304    0.055423    0.215      0.0430   1.286
+(2)     3.6250   271.00    0.083062    0.083579    0.623      0.0810   1.025
+(3)     1.1250   189.00    0.043593    0.043621    0.065      0.0210   2.076   <- has a 48
+(4)     1.3750   223.00    0.046879    0.046929    0.107      0.0260   1.803   <- has a 48
+(5)     1.8750   255.00    0.055277    0.055393    0.209      0.0430   1.286
+
+closed form vs our own minimisation:  max |err| = 0.623 %   median = 0.209 %
+
+CONTROL -- the published ratio pattern must come out (paper section 7: 1.94 with a 48, 1.20 without):
+   with a 48    n=2   mean ratio ours/theirs = 1.939   [2.08, 1.80]
+   without      n=3   mean ratio ours/theirs = 1.199   [1.29, 1.03, 1.29]
+
+CONTROL THAT MUST FAIL -- drop the log term (use G alone, x^2 = 24 z3 D / 4G):
+   (1)   no-log = 0.151655   vs ours 0.055304   err  +174.22 %
+   (2)   no-log = 0.176975   vs ours 0.083062   err  +113.06 %
+   (3)   no-log = 0.089052   vs ours 0.043593   err  +104.28 %
+   (4)   no-log = 0.108671   vs ours 0.046879   err  +131.81 %
+   (5)   no-log = 0.145846   vs ours 0.055277   err  +163.85 %
+
+written: E:\proyectos\Curiosity\research\smeft_formalization\part_vii\outputs\amin_closed_form.json

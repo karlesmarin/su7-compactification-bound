@@ -1,0 +1,35 @@
+extracted from su7_anchor_mh.py: terms(), GAUGE (3 entries), T1 (5 rows)
+============================================================================================
+EVERY RUNG, NOT JUST THE FIRST: the relaxation's boundary is empty on all of them
+============================================================================================
+  8D       boundary    integer   step   1/R5 relaxed   1/R5 integer slack monotone
+  1             215        212      3          10034          10013 True
+  3             336        330      6           6266           6244 True
+  5             436        430      6           5137           5121 True
+  7             533        530      3           4562           4555 True
+
+  the boundary is never attained, and the integer optimum sits one or two steps of three
+  below it.  That is the same phenomenon on all four rungs, not a peculiarity of the
+  first -- which is what makes it worth a sentence in the paper rather than a footnote.
+  Rungs 9 and 11 are NOT shown: their boundaries sit at A4 = 630 and 727, past the
+  dynamic programme's A4 <= 560, and printing them would print a false null.
+
+============================================================================================
+what the right-hand panel is drawn from -- the fibre of reachable budgets, per vertex
+============================================================================================
+  A4     fibre size     max budget       required      slack 
+  203             1        644.973        627.491     17.482 
+  206             1        656.064        640.873     15.191 
+  209             1        658.836        654.266      4.570 
+  212             1        669.927        667.670      2.257 
+  215             1        681.017        681.084     -0.067 EMPTY
+  218             1        692.107        694.510     -2.402 EMPTY
+  221             1        694.880        707.945    -13.065 EMPTY
+
+  CONTROL -- the panel must contain the case it is about: 215 present : True ; 212 : True
+  CONTROL -- the slack must FALL with A4, so the crossing is single and the integer
+            optimum is well defined: monotone = True
+  CONTROL -- exactly one sign change : True   (at A4 = 212 -> 215)
+            everything past the crossing is empty too, which is why the picture is a
+            proof and not a sample: 3 of 7 vertices above it fail
+  written: fig_lift.pdf, fig_lift_es.pdf (here and in paper/), plus .png

@@ -1,5 +1,6 @@
 # ⚛️ An Upper Bound on the Compactification Scale of SU(7) Grand Gauge-Higgs Unification
 
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22087251-1B6F8C?logo=doi&logoColor=white)](https://doi.org/10.5281/zenodo.22087251)
 [![License](https://img.shields.io/badge/License-Apache_2.0-B5530F)](LICENSE)
 [![Gates](https://img.shields.io/badge/gates-15_green-1B6F8C)](paper/)
 [![Language](https://img.shields.io/badge/paper-EN_%2B_ES-1B6F8C)](.)
@@ -7,9 +8,10 @@
 
 **…and the dijet angular distribution that tests it.**
 
-**📄 The paper, in English and Spanish, is in [`paper/`](paper/) — with every script that made a
-number in it, and every archived run.** The Zenodo record and its DOI are being minted; this line
-will carry them.
+**📄 Paper (EN + ES) and every verification script on Zenodo → https://doi.org/10.5281/zenodo.22087251**
+
+That is the *concept* DOI: it always resolves to the current version. The paper, its sources and
+every archived run are also in [`paper/`](paper/), [`scripts/`](scripts/) and [`outputs/`](outputs/).
 
 > ### 📚 Part **VII** of a series
 > - **Part I — *Anomaly- and Tadpole-Compatible Fermion Completion of 6D SU(4) GHU***

@@ -27,6 +27,8 @@ every archived run are also in [`paper/`](paper/), [`scripts/`](scripts/) and [`
 > - **Part VI — *Proton Decay in SU(7) Grand Gauge-Higgs Unification***
 >   → [github.com/karlesmarin/su7-proton-row](https://github.com/karlesmarin/su7-proton-row) · [Zenodo 10.5281/zenodo.22033302](https://doi.org/10.5281/zenodo.22033302)
 > - **Part VII — *An Upper Bound on the Compactification Scale of SU(7) GHU*** (this repo)
+> - **Part VIII — *A Certified 2.68 TeV Gap in the Closed-Form Map of the Compactification Scale***
+>   → [github.com/karlesmarin/su7-certified-gap](https://github.com/karlesmarin/su7-certified-gap) · [Zenodo 10.5281/zenodo.22159036](https://doi.org/10.5281/zenodo.22159036)
 
 In gauge-Higgs unification the Higgs **is** the Wilson-line phase, so the electroweak hierarchy is a
 minimum of a potential rather than a ratio of scales. Part VI computed the curvature of that vacuum

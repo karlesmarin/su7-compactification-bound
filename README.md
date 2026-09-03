@@ -29,6 +29,10 @@ every archived run are also in [`paper/`](paper/), [`scripts/`](scripts/) and [`
 > - **Part VII — *An Upper Bound on the Compactification Scale of SU(7) GHU*** (this repo)
 > - **Part VIII — *A Certified 2.68 TeV Gap in the Closed-Form Map of the Compactification Scale***
 >   → [github.com/karlesmarin/su7-certified-gap](https://github.com/karlesmarin/su7-certified-gap) · [Zenodo 10.5281/zenodo.22159036](https://doi.org/10.5281/zenodo.22159036)
+> - **Part IX-A — *The Alphabet of Orbifold Boundary Conditions***
+>   → [github.com/karlesmarin/orbifold-alphabet](https://github.com/karlesmarin/orbifold-alphabet) · [Zenodo 10.5281/zenodo.22254861](https://doi.org/10.5281/zenodo.22254861)
+> - **Part IX-B — *An Affine Semigroup from Orbifold Boundary Conditions***
+>   → [github.com/karlesmarin/orbifold-semigroup](https://github.com/karlesmarin/orbifold-semigroup) · [Zenodo 10.5281/zenodo.22254863](https://doi.org/10.5281/zenodo.22254863)
 
 In gauge-Higgs unification the Higgs **is** the Wilson-line phase, so the electroweak hierarchy is a
 minimum of a potential rather than a ratio of scales. Part VI computed the curvature of that vacuum
